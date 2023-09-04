@@ -3,6 +3,27 @@
   "configurations": [
     {
       "type": "java",
+      "name": "BooleanExpressionEvaluator",
+      "request": "launch",
+      "mainClass": "BooleanExpressionEvaluator",
+      "projectName": ""
+    },
+    {
+      "type": "java",
+      "name": "AlgebraBooleana",
+      "request": "launch",
+      "mainClass": "AlgebraBooleana",
+      "projectName": ""
+    },
+    {
+      "type": "java",
+      "name": "AlgebraBooleanaRec",
+      "request": "launch",
+      "mainClass": "AlgebraBooleanaRec",
+      "projectName": ""
+    },
+    {
+      "type": "java",
       "name": "Somae2Numeros",
       "request": "launch",
       "mainClass": "exercício1.Somae2Numeros",
