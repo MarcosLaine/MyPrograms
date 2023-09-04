@@ -1,0 +1,151 @@
+html{
+    height: 100%;
+}
+
+body, ul, li, p{
+    margin: 0px;
+    padding: 0px;
+    font-size: 0.8rem;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body nav{
+   background-color: rgb(100, 100, 243);
+}
+
+h1{
+    font-size: 120%;
+    text-align: center;
+}
+
+img{
+    max-width: 100%; /* Acompanha o tamanho da pagina */
+    display: block;
+}
+
+/* Cabeçalho */
+
+.header a{
+    text-decoration: none;
+    color: white;
+}
+
+.header{
+   background: grey ; 
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-between;
+   align-items: center;
+   padding: 10px;
+   position: fixed;
+   top: 0px;
+   width: 100%;
+}
+
+.header h1{
+    text-align: center;
+    float: right;
+}
+
+.menu{
+    display: flex;
+}
+
+.menu li{
+    list-style: none;
+    margin-left: 10px;
+}
+
+
+ /* Flexbox 1 */
+
+ .flex{
+    text-align: center;
+    display: flex;
+    max-width: 800px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+ }
+
+ .flex > div{
+    flex: 1 1 200px;
+    margin: 10px;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 10px;
+ }
+
+ .flex div h5{
+    padding-top: 20px;
+ }
+ .flex div p{
+    padding-bottom: 10px;
+    font-size: 12pt;
+    color: red;
+    font-weight: bold;
+    text-decoration: none;
+ }
+ .flex div img{
+    border: 2px solid black;
+    border-radius: 10px;
+ }
+ body .sec2{
+    padding: 20px;
+ }
+
+/* Rodapé */
+
+.footer{
+    background: rgb(100, 100, 243) ; 
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    padding: 50px;
+    color: rgb(170, 170, 170);
+    min-height: 200px;
+ }
+
+ .footer a{
+    text-decoration: none;
+    color: rgb(170, 170, 170);
+    padding-top: 10px;
+ }
+
+ .footer h1{
+   color: white;
+ }
+ 
+.footer li, h6{list-style: none; text-align: center;}
+
+.footer .col-sm-12{
+   padding: 1px;
+   width: 50%;
+   display: inline;
+}
+
+#news{
+   width: 50%;
+   margin: auto;
+  }
+
+  @media screen and (max-width: 600px){
+   #news{
+      width: 100%;
+   }
+   
+}
+
+/* Carousel */
+
+.carousel_home{
+    padding: 20px;
+    max-width: 50%;
+    margin: auto;
+   
+}
+
+.carousel_home img {
+    max-width: 100%; 
+    max-height: 100%; 
+    border-radius: 20px;
+  }

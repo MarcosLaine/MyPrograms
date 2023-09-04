@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        /* Estilos personalizados */
+        .desc, .categoria, .preco, .img, .aval {
+            border: 2.5px solid #ffc400;
+            border-radius: 25px;
+            padding: 0.1rem;
+            text-align: center;
+            margin: 1rem;
+        }
+    </style>
+    <div id="desc" class="desc">
+
+    </div>
+    <div id="categoria" class="categoria">
+
+    </div>
+    <div id="preco" class="preco">
+
+    </div>
+    <div class="img">
+        <img id="img" src="" alt="">
+    </div>
+    <div class="aval">
+
+    </div>
+
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const id = params.get('id');
+
+        fetch(`https://fakestoreapi.com/products/${id}`)
+            .then(res => res.json())
+            .then(json => {
+                let desc = document.querySelector('#desc'),
+                    categoria = document.querySelector('#categoria'),
+                    preco = document.querySelector('#preco'),
+                    img = document.querySelector('#img');
+
+                desc.innerHTML = json.description;
+                categoria.innerHTML = json.category;
+                preco.innerHTML = json.price;
+                img.src = json.image;
+            });
+    </script>
+</body>
+
+</html>

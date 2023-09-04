@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lanh="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-compatoble" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> 🖋️PAPELARIA LAINE ✏️</title>
+  <link rel="stylesheet" href="papelaria.css" />
+</head>
+
+<body>
+  <div class="navbar show-menu">
+    <div class="header-inner-content">
+      <img src="logo.png" width="50x50">
+      <h1 class="logo">Papelaria<span> Laine</span></h1>
+      <nav>
+        <ul>
+          <li>
+            <h3> Página Inicial </h3>
+          </li>
+          <li>
+            <h3> Produtos </h3>
+          </li>
+          <li>
+            <h3> Sobre Nós </h3>
+          </li>
+          <li>
+            <h3> Categorias </h3>
+          </li>
+          <li>
+            <h3> Contato </h3>
+          </li>
+          <aside>
+            <style>
+              input[type="text"] {
+                width: 15rem;
+                padding: 0.3rem;
+                border: 2px solid #8a2300;
+                border-radius: 10px 10px 10px;
+                box-shadow: 0px 0px 25px brown;
+                margin-left: 1rem;
+                background-color: rgb(223, 212, 223);
+
+              }
+
+              button[type="submit"] {
+                background-color: #7d4100;
+                color: #fff;
+                border: none;
+                padding: 0.4rem;
+                border-radius: 7px 7px 7px;
+                cursor: pointer;
+                box-shadow: 0px 0px 25px#683600;
+              }
+            </style>
+
+            <form id="form">
+              <div class="pesquisa" >
+                <input id="pesquisar" type="text" placeholder=" O que você procura?" value="">
+                <button type="submit">Buscar</button>
+              </div>
+            </form>
+
+          </aside>
+        </ul>
+
+    </div>
+    </nav>
+    <div class="nav-icon-container">
+      <img src="menu.png" class="menu-button" />
+      <img src="carrinho.png" class="carrinho-button" />
+
+    </div>
+  </div>
+  </div>
+  <header>
+    <div class="header--inner-content">
+      <div class="header-bottom-side">
+        <div class="header-bottom-side-left">
+          <h1>OS <span>MELHORES</span> PRODUTOS</h1>
+          <h2>Você encontra aqui!</h2>
+          <button>Confira já!</button>
+        </div>
+        <div class="header-bottom-side-right">
+        </div>
+      </div>
+    </div>
+  </header>
+  <div class="slideshow-container">
+    <div class="mySlides fade">
+      <div class="numbertext">1 / 5</div>
+    </div>
+
+    <div class="mySlides fade">
+      <div class="numbertext">2 / 5</div>
+    </div>
+
+    <div class="mySlides fade">
+      <div class="numbertext">3 / 5</div>
+    </div>
+    <div class="mySlides fade">
+      <div class="numbertext">4 / 5</div>
+
+    </div>
+    <div class="mySlides fade">
+      <div class="numbertext">5 / 5</div>
+    </div>
+
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+  </div>
+  <br>
+
+  <div style="text-align:center">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+    <span class="dot" onclick="currentSlide(4)"></span>
+    <span class="dot" onclick="currentSlide(5)"></span>
+  </div>
+  </div>
+  <main>
+    <div class="destaques">
+      <div class="destaques">
+        <div class="page-inner-content">
+          <div class="cols cols-3">
+            <div class="item" id="destaques-1">
+              <h3>Kit lápis</h3><a class="star">&#9733;&#9733;&#9733;&#9733;&#9733;</a>
+              <h4>R$59,99</h4>
+              <img src="kit lápis.jpg" width="60x62" alt="" />
+            </div>
+            <div class="item" id="destaques-2">
+              <h3>Kit lápis</h3> <a class="star">&#9733;&#9733;&#9733;&#9733;&#9733;</a>
+              <h4>R$99,99</h4>
+              <img src="kit lápis2.jpg" width="60x62" alt="" />
+            </div>
+            <div class="item" id="destaques-3">
+              <h3>Kit lápis</h3> <a class="star">&#9733;&#9733;&#9733;&#9733;&#9733;</a>
+              <h4>R$178,99</h4>
+              <img src="kit lápis3.jpg" width="60x62" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <card class="page-inner-content">
+        <!-- most viewd itens-->
+        <h2 class="section-title">Itens Mais vistos</h2>
+        <div class="subtitle-underline"></div>
+        <div class="produtos">
+          <div class="produto" id="produto-1">
+            <img src="image-903e4e64b55b43d895b315e80738fa41.webp" width="60x62">
+            <p class="product-name">
+            <h4>Kit lápis e pintura profissional</h4>
+            </p>
+            <p class="star">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+            <p class="product-price">450,00<span></span></p>
+            <style>
+              .produto {
+                border: 2.5px solid rgb(255, 213, 0);
+                border-radius: 25px;
+                padding: 0.1rem;
+                text-align: center;
+                margin: 0.3rem;
+              }
+            </style>
+          </div>
+          <div class="produto" id="produto-2">
+            <img src="cadernos1.webp" width="60x62">
+            <p class="product-name">
+            <h4>Kit cadernos Tilibra</h4>
+            </p>
+            <p class="star">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+            <p class="product-price">R$200,00<span></span></p>
+          </div>
+          <div class="produto" id="produto-3">
+            <img src="kit completo.webp" width="60x62">
+            <p class="product-name">
+            <h4>Kit super completo volta às aulas</h4>
+            </p>
+            <p class="star">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+            <p class="product-price">R$350,00<span></span></p>
+          </div>
+          <div class="produto" id="produto-4">
+            <img src="163ef5ba9c1a359d86fb58c998a2a82b.jpg" width="60x62">
+            <p class="product-name">
+            <h4>Kit lápis profissional</h4>
+            </p>
+            <p class="star">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+            <p class="product-price">R$599,99<span></span></p>
+          </div>
+        </div>
+
+
+      </card>
+
+      <div class="page-inner-content">
+        <h3 class="section-title">Escolhidos Para Você</h3>
+        <div class="subtitle-underline"></div>
+        <div class="cols cols-4">
+          <div class="product" id="escolhidos-1">
+            <img src="kit borrachas1.webp" width="60x60" />
+            <p class="product-name">
+            <h4>Kit Completo borrachas</h4>
+            </p>
+            <p class="star">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+            <p class="product-price"><span>R$79,99</span></p>
+          </div>
+          <div class="product" id="escolhidos-2">
+            <img src="kit borrachas2.jpg" width="60x60" />
+            <p class="product-name">
+            <h4></h4>
+            </p>
+            <p class="star">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+            <p class="product-price"><span>R$29,99</span></p>
+          </div>
+          <div class="product" id="escolhidos-3">
+            <img src="kit borrachas3.jpg" width="60x60" />
+            <p class="product-name">
+            <h4>Kit borrachas pretas</h4>
+            </p>
+            <p class="star">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+            <p class="product-price"><span>R$19,99</span></p>
+          </div>
+          <div class="product" id="escolhidos-4">
+            <img src="borrachas 4.webp" width="60x60" />
+            <p class="product-name">
+            <h4>kit borrachas fast-food</h4>
+            </p>
+            <p class="star">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+            <p class="product-price"><span>R$37,98</span></p>
+            <style>
+              .product {
+                padding: 0.1rem;
+                border: 2.5px solid #ffc400;
+                border-radius: 25px;
+                text-align: center;
+                margin: 1;
+              }
+            </style>
+          </div>
+
+        </div>
+
+
+
+        <div class="cols cols-4">
+          <div class="product" id="escolhidos-5">
+            <img src="mesa dig1.jpg" width="60x60" />
+            <p class="product-name">
+            <h4>Mesa Digitalizadora profissional</h4>
+            </p>
+            <p class="star">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+            <p class="product-price"><span>R$799,99</span></p>
+          </div>
+          <div class="product" id="escolhidos-6">
+            <img src="mesa dig2.jpg" width="60x60" />
+            <p class="product-name">
+            <h4>Mesa Digitalizadora Escrita à mão</h4>
+            </p>
+            <p class="star">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+            <p class="product-price"> <span>R$599,99</span></p>
+          </div>
+          <div class="product" id="escolhidos-7">
+            <img src="mesa dig3.jpg" width="60x60" />
+            <p class="product-name">
+            <h4>Mesa digitalizadora com tela</h4>
+            </p>
+            <p class="star">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+            <p class="product-price"><span>R$1.449,99</span></p>
+          </div>
+          <div class="product" id="escolhidos-8">
+            <img src="mesa dig4.jpg" width="60x60" />
+            <p class="product-name">
+            <h4>mesa digitalizadora profissional tela 26''</h4>
+            </p>
+            <p class="star">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+            <p class="product-price"><span>R$1999,99</span></p>
+          </div>
+
+        </div>
+      </div>
+
+  </main>
+
+  <footer class="rodape">
+    <div class="page-inner-content footer-content">
+      <div class="pagamento">
+        <h2>Métodos de pagamento:</h2>
+        <div>
+          <img src="https://d2r9epyceweg5n.cloudfront.net/stores/001/860/687/rte/NO%20CART%C3%83O%20(1).png" alt="" />
+        </div>
+      </div>
+      <div class="contato">
+        <h3>Fale conosco:</h3>
+        <p>Tel: (31) 912345678</p>
+        <p>email: contato@papelarialaine.com</p>
+      </div>
+      <div class="links-footer">
+        <ul>
+          <li>Página inicial</li>
+          <li>Escolhidos para você</li>
+          <li>Melhores avaliados</li>
+          <li>Diversos </li>
+          <li>Fale Conosco</li>
+        </ul>
+      </div>
+      <div class="links2">
+        <p><img src="pngwing3.com.png" alt="" width="50x50"></p>
+        <p><img src="pngwing2.com.png" alt="" width="50x50"></p>
+        <p><img src="pngwing.com.png" alt="" width="50x50"></p>
+
+      </div>
+      <style>
+        .formulario {
+          border: 3px solid #683600;
+          padding: 30px;
+          width: 300px;
+          margin: 4 auto;
+        }
+      </style>
+
+      <div class="formulario">
+        <form>
+          <h4>Inscreva-se em nossa NewsLetter</h4>
+          <input type="texto" placeholder="Seu Nome" id="nome" name="nome"><br><br>
+          <input type="email" placeholder="email@exemple.com" id="email" name="email"><br><br>
+          <input type="submit" value="receber as novidades">
+        </form>
+      </div>
+      <aside class="logo-footer">
+        <img src="logo.png" width="175x175" alt="">
+        <style>
+          .logo-footer {
+            padding-left: 7rem;
+          }
+        </style>
+    </div>
+
+    </aside>
+  </footer>
+  <script src="script.js"></script>
+
+</body>
+
+</html>

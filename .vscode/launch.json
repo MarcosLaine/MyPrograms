@@ -1,0 +1,251 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Somae2Numeros",
+      "request": "launch",
+      "mainClass": "exercício1.Somae2Numeros",
+      "projectName": ""
+    },
+    {
+      "type": "java",
+      "name": "CiframentoCesarRec",
+      "request": "launch",
+      "mainClass": "CiframentoCesarRec",
+      "projectName": ""
+    },
+    {
+      "type": "java",
+      "name": "CiframentoCesarReco",
+      "request": "launch",
+      "mainClass": "CiframentoCesarReco",
+      "projectName": ""
+    },
+    {
+      "type": "java",
+      "name": "CiframentoCesarRecursivo",
+      "request": "launch",
+      "mainClass": "CiframentoCesarRecursivo",
+      "projectName": ""
+    },
+    {
+      "type": "java",
+      "name": "SubstituirLetrasRec",
+      "request": "launch",
+      "mainClass": "SubstituirLetrasRec",
+      "projectName": ""
+    },
+    {
+      "type": "java",
+      "name": "SubstituirLetrasRecursivo",
+      "request": "launch",
+      "mainClass": "SubstituirLetrasRecursivo",
+      "projectName": ""
+    },
+    {
+      "type": "java",
+      "name": "SubstituirLetras",
+      "request": "launch",
+      "mainClass": "SubstituirLetras",
+      "projectName": ""
+    },
+    {
+      "type": "java",
+      "name": "PalindromoRec",
+      "request": "launch",
+      "mainClass": "PalindromoRec",
+      "projectName": ""
+    },
+    {
+      "type": "java",
+      "name": "CiframentoDeCesar",
+      "request": "launch",
+      "mainClass": "CiframentoDeCesar",
+      "projectName": ""
+    },
+    {
+      "type": "java",
+      "name": "palindromo",
+      "request": "launch",
+      "mainClass": "palindromo",
+      "projectName": ""
+    },
+    {
+      "type": "java",
+      "name": "Olá/Ola",
+      "request": "launch",
+      "mainClass": "Olá/Ola",
+      "projectName": "Olá"
+    },
+    {
+      "type": "java",
+      "name": "teste",
+      "request": "launch",
+      "mainClass": "teste",
+      "projectName": ""
+    },
+    {
+      "type": "java",
+      "name": "ExemploMyIO",
+      "request": "launch",
+      "mainClass": "ExemploMyIO",
+      "projectName": ""
+    },
+    {
+      "type": "java",
+      "name": "CiframentoCesar",
+      "request": "launch",
+      "mainClass": "CiframentoCesar",
+      "projectName": ""
+    },
+    {
+      "type": "java",
+      "name": "Aplicacao",
+      "request": "launch",
+      "mainClass": "app.Aplicacao",
+      "projectName": ""
+    },
+    {
+      "type": "java",
+      "name": "TorreDeHanoi",
+      "request": "launch",
+      "mainClass": "TorreDeHanoi.TorreDeHanoi",
+      "projectName": ""
+    },
+    {
+      "type": "java",
+      "name": "Calculadora",
+      "request": "launch",
+      "mainClass": "Calculadora",
+      "projectName": ""
+    },
+    {
+      "type": "java",
+      "name": "Aplicacao",
+      "request": "launch",
+      "mainClass": "Vitor/app.Aplicacao",
+      "projectName": ""
+    },
+    {
+      "type": "java",
+      "name": "Monitoria2",
+      "request": "launch",
+      "mainClass": "Monitoria2",
+      "projectName": ""
+    },
+    {
+      "type": "java",
+      "name": "Monitoria1",
+      "request": "launch",
+      "mainClass": "Monitoria1",
+      "projectName": ""
+    },
+    {
+      "type": "java",
+      "name": "Salario",
+      "request": "launch",
+      "mainClass": "Salario",
+      "projectName": ""
+    },
+    {
+      "type": "java",
+      "name": "Main",
+      "request": "launch",
+      "mainClass": "Main",
+      "projectName": ""
+    },
+    {
+      "type": "java",
+      "name": "Teste",
+      "request": "launch",
+      "mainClass": "teste.Teste",
+      "projectName": ""
+    },
+    {
+      "type": "java",
+      "name": "SomaBeeCrowd",
+      "request": "launch",
+      "mainClass": "SomaBeeCrowd",
+      "projectName": ""
+    },
+    {
+      "type": "java",
+      "name": "MatrizGrid",
+      "request": "launch",
+      "mainClass": "MatrizGrid",
+      "projectName": "Programação_e03b41a7"
+    },
+    {
+      "type": "java",
+      "name": "InteiroNImpares",
+      "request": "launch",
+      "mainClass": "InteiroNImpares",
+      "projectName": "Programação_d67d99f3"
+    },
+    {
+      "type": "java",
+      "name": "triangulos",
+      "request": "launch",
+      "mainClass": "triangulos",
+      "projectName": "Programação_d67d99f3"
+    },
+    {
+      "type": "java",
+      "name": "arquivos",
+      "request": "launch",
+      "mainClass": "arquivos",
+      "projectName": "Programação_d67d99f3"
+    },
+    {
+      "name": "Java Run",
+      "type": "java",
+      "request": "launch",
+      "mainClass": "${file}"
+    },
+    {
+      "name": "(gdb) Launch",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "enter program name, for example ${workspaceFolder}/a.exe",
+      "args": [],
+      "stopAtEntry": false,
+      "cwd": "${fileDirname}",
+      "environment": [],
+      "externalConsole": false,
+      "MIMode": "gdb",
+      "miDebuggerPath": "/path/to/gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        },
+        {
+          "description": "Set Disassembly Flavor to Intel",
+          "text": "-gdb-set disassembly-flavor intel",
+          "ignoreFailures": true
+        }
+      ]
+    },
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "cppdbg",
+      "request": "launch",
+      "args": [],
+      "stopAtEntry": false,
+      "externalConsole": true,
+      "cwd": "c:/Users/kino1/OneDrive/Área de Trabalho/Programação/HTML/DIW/Aulas",
+      "program": "c:/Users/kino1/OneDrive/Área de Trabalho/Programação/HTML/DIW/Aulas/build/Debug/outDebug",
+      "MIMode": "gdb",
+      "miDebuggerPath": "gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ]
+    }
+  ]
+}

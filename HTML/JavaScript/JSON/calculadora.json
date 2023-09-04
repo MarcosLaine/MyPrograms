@@ -1,0 +1,14 @@
+{
+    "capital": "xxxx",
+    "taxa": "xx",
+    "tempo": {
+      "valor": "xxx",
+      "tipo": "meses ou anos?"
+    },
+    "aportes": {
+      "mensal": "true or false",
+      "valor": "xxxx por mes"
+    },
+        "montante": "valor final",
+        "total em juros": "xxxxx,xx"
+}

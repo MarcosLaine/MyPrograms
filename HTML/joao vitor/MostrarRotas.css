@@ -1,0 +1,179 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+body {
+    background-color: #f8f9fa;
+}
+header {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+
+    background-color: #343a40;
+}
+.logo {
+    text-align: center;
+    flex-grow: 1;
+    padding-right:20%;
+}
+.popup{
+    display: none;
+}
+.logo h2 {
+    font-size: 25px;
+    color: white;
+}
+header .logo img {
+    height: 40px;
+    width: auto;
+}
+.destaques .rotas .rota h2 {
+    color: rgb(33, 20, 220);
+}
+.destaques h2 {
+    text-align: center;
+    color :rgb(33,20,220);
+}
+.botao-voltar {
+    padding-right: 5%;
+
+}
+.conteudo-rota button{
+    
+    padding: 0.5rem;
+    margin-top: 1rem;
+    font-size: 16px;
+    color: white;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.conteudo-rota button:hover {
+    background-color: #0056b3;
+}
+.conteudo-rota button:active {
+    background-color: #004085;
+}
+.botao-voltar button {
+
+    padding: 0.5rem;
+    font-size: 16px;
+    color: white;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.botao-voltar button:hover {
+    background-color: #0056b3;
+}
+.botao-voltar button:active {
+    background-color: #004085;
+}
+.destaques {
+
+    padding-top: 5%;
+}
+.rota {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    text-align: center;
+    padding: 2%;
+    width: 70%;
+    background-color: #ffffff;
+    border: 2px solid blue;
+    border-radius: 10%;
+  }
+.rota img {
+    justify-self: center;
+    max-width: 100%;
+    height: auto;
+}
+.rota-link {
+    display: inline-block;
+    text-decoration: none;
+    width: 100%;
+    box-sizing: border-box;
+}
+.rota-link img {
+    border: none;
+}
+main {
+    display: grid;
+    grid-template-columns: 7fr 3fr;
+    background-color: #f8f9fa;
+    max-height: 1000px;
+}
+.rotas {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    overflow-y: auto;
+    max-height: calc(90vh - 200px);
+    padding-top: 1%;
+    
+}
+.popup{
+    grid-column: span 2; 
+    width: 70%;
+    padding-left: 30%;
+    padding-top: 5%;
+}.right-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+}
+.buttons {
+
+    margin: 10%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    height: auto;
+
+}
+.buttons button {
+    padding: 0.5rem;
+    font-size: 16px;
+    color: white;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.buttons button:hover {
+    background-color: #0056b3;
+}
+.buttons button:active {
+    background-color: #004085;
+}
+.botoes-container{
+    display: inline-block;
+    margin-right: 5px;
+}
+footer {
+    background-color: #343a40;
+    color: #f8f9fa;
+    padding: 1rem;
+    text-align: center;
+    font-size: 14px;
+    grid-column: 1 / -1;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+footer p {
+    margin: 0;
+}

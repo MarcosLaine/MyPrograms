@@ -1,0 +1,1 @@
+porque a operação de deslocamento à esquerda por 1 resultou em 46, enquanto a operação de deslocamento à direita por 1 resultou em 11.

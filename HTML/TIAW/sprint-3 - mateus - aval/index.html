@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Página de Inscrição no Campeonato</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <h1>Inscrição no Campeonato</h1>
+
+  <div id="championships">
+    <div class="championship">
+      <h2>Campeonato 1</h2>
+      <p class="creator">Criado por João</p>
+      <button class="register-button" data-championship="Campeonato 1">Inscrever-se</button>
+      <button class="details-button">Detalhes</button>
+      <div class="details hidden">
+        <strong>Data:</strong> 17/06/2022 a 20/06/2022<br>
+        <strong>Ranking Médio:</strong> Divisão 1
+      </div>
+    </div>
+
+    <div class="championship">
+      <h2>Campeonato 2</h2>
+      <p class="creator">Criado por Marcos</p>
+      <button class="register-button" data-championship="Campeonato 2">Inscrever-se</button>
+      <button class="details-button">Detalhes</button>
+      <div class="details hidden">
+        <strong>Data:</strong> 21/06/2022 a 24/06/2022<br>
+        <strong>Ranking Médio:</strong> Divisão 3
+      </div>
+    </div>
+
+    <div class="championship">
+      <h2>Campeonato 3</h2>
+      <p class="creator">Criado por Marcelo</p>
+      <button class="register-button" data-championship="Campeonato 3">Inscrever-se</button>
+      <button class="details-button">Detalhes</button>
+      <div class="details hidden">
+        <strong>Data:</strong> 19/06/2022 a 22/06/2022<br>
+        <strong>Ranking Médio:</strong> Divisão 1
+      </div>
+    </div>
+  </div>
+
+  <form id="registration-form" class="hidden">
+    <h2 id="selected-championship"></h2>
+
+    <label for="team-name">Nome da Equipe:</label>
+    <input type="text" id="team-name" required>
+
+    <button type="submit">Inscrever-se</button>
+  </form>
+
+  <script src="script.js"></script>
+</body>
+</html>

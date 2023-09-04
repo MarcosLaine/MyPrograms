@@ -1,0 +1,71 @@
+
+TEMA 2 - Introdução aos somatórios
+
+1-  
+   3- a) 55
+      b) 45
+      c) -15
+      d) 30+5x
+      e) 30
+      f) (40j - 30)
+   4- Sim, o primeiro (a0), segundo (a1) e sexto (a5) são 0
+   5- C
+
+    Regras de Transformação
+        1->  a) True
+             b) False - No primeiro, será somado 3 1000 vezes, na segunda, será somado 3 ao resultado final
+             c) True
+             d) False - na primeira, elevamos K à P, na segunda, elevamos o resultado à P
+             e) True
+                       n
+        2-> -a1 -a2 + SOM (Ai + Bi)
+                       1
+
+        3-> primeiro: (3+2*0)+(3+2*1)+(3+2*2)+(3+2*3)+(3+2*4)
+            Segundo: (3+2*(4-0)) + (+2*(4-1)) + (3+2*(4-2)) + (3+2*(4-2)) + (3+2*(4-3)) + (3+2*(4-4))
+        
+        4->    ∑    (2*a + b*n)
+            0<=i<=n
+
+        5-> Sn = ((2*0 + 1*n)*(n+1))/2 = (n(n+1))/2
+
+        6-> int som(int n){
+                return ((n*(n+1))/2);
+        }
+
+        7-> ((n²)/2) - (n/2)
+
+        8-> a) o resultado é (a1 + a2 + a3 + ... + an)
+            b) o resultado é (a1 + a2 + a3 + ... + an)
+            c) o resultado é (a1 + a2 + a3 + ... + an)
+
+        9->  m       n       n 
+             ∑ ai +  ∑ ai =  ∑ + am
+             1       m       1
+
+        10->m-3      n       n 
+             ∑ ai +  ∑ ai =  ∑ - A(m-2) - A(m-1)
+             1       m       1
+
+        Metodos Gerais:
+        1-> Sn = (2n3+3n²+n)/6
+        2-> Sn = Sn-1 + an
+            Sn = ((n-1)²+7(n-1)+6)/2 + (3+n)
+            Sn = (n² +7n + 6)/2
+
+        3- Sn = Sn-1 + an
+           Sn = 2(n-1) + 3(n-1) + (4n+1)
+           Sn = 2n² + 3n
+        
+        4- Sn = Sn-1 + an
+           Sn = 10(n-1)² + 10(n-1) + 20n
+           Sn = 10n² + 10n
+
+        5- Sn = Sn-1 + an
+           Sn = [((n-1)-1)2^((n-1)+1)+2]+(n2^n)
+           Sn = (n-1)*2^(n+1) + 2
+
+        6- Sn + (n+1) = Sn + n(n+1) + (n+1)
+
+        7- (n+1)³ = 3Sn + (3n(n+1))/2 + (n+1)
+            Sn = (2n³ + 3n² + n)/6
