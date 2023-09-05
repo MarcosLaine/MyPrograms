@@ -3,6 +3,20 @@
   "configurations": [
     {
       "type": "java",
+      "name": "IsRec",
+      "request": "launch",
+      "mainClass": "IsRec",
+      "projectName": ""
+    },
+    {
+      "type": "java",
+      "name": "Is",
+      "request": "launch",
+      "mainClass": "Is",
+      "projectName": ""
+    },
+    {
+      "type": "java",
       "name": "BooleanExpressionEvaluator",
       "request": "launch",
       "mainClass": "BooleanExpressionEvaluator",
