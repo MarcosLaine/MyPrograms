@@ -3,6 +3,27 @@
   "configurations": [
     {
       "type": "java",
+      "name": "ReverseReadFile",
+      "request": "launch",
+      "mainClass": "ReverseReadFile",
+      "projectName": ""
+    },
+    {
+      "type": "java",
+      "name": "ReverseReadFileWithoutParse",
+      "request": "launch",
+      "mainClass": "ReverseReadFileWithoutParse",
+      "projectName": ""
+    },
+    {
+      "type": "java",
+      "name": "Arquivo",
+      "request": "launch",
+      "mainClass": "Arquivo",
+      "projectName": ""
+    },
+    {
+      "type": "java",
       "name": "IsRec",
       "request": "launch",
       "mainClass": "IsRec",
