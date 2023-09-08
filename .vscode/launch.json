@@ -3,6 +3,48 @@
   "configurations": [
     {
       "type": "java",
+      "name": "ContadorCaracteres",
+      "request": "launch",
+      "mainClass": "ContadorCaracteres",
+      "projectName": ""
+    },
+    {
+      "type": "java",
+      "name": "ContadorWeb",
+      "request": "launch",
+      "mainClass": "ContadorWeb",
+      "projectName": ""
+    },
+    {
+      "type": "java",
+      "name": "LeituraHTML",
+      "request": "launch",
+      "mainClass": "LeituraHTML",
+      "projectName": ""
+    },
+    {
+      "type": "java",
+      "name": "ExpressaoBooleana",
+      "request": "launch",
+      "mainClass": "ExpressaoBooleana",
+      "projectName": ""
+    },
+    {
+      "type": "java",
+      "name": "AlgebraBoleanaJoao",
+      "request": "launch",
+      "mainClass": "AlgebraBoleanaJoao",
+      "projectName": ""
+    },
+    {
+      "type": "java",
+      "name": "AlgebraBoleana",
+      "request": "launch",
+      "mainClass": "AlgebraBoleana",
+      "projectName": ""
+    },
+    {
+      "type": "java",
       "name": "ReverseReadFile",
       "request": "launch",
       "mainClass": "ReverseReadFile",

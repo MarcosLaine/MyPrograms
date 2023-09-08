@@ -1,44 +1,57 @@
 public class AlgebraBooleanaRec {
-    public static boolean avaliarExpressao(String expressao, int[] valores, int indice) {
-        if (expressao.equals("and")) {
-            boolean operando1 = avaliarExpressao("and", valores, indice - 1);
-            boolean operando2 = avaliarExpressao("and", valores, indice - 2);
-            return operando1 && operando2;
-        } else if (expressao.equals("or")) {
-            boolean operando1 = avaliarExpressao("or", valores, indice - 1);
-            boolean operando2 = avaliarExpressao("or", valores, indice - 2);
-            return operando1 || operando2;
-        } else if (expressao.equals("not")) {
-            boolean operando = avaliarExpressao("not", valores, indice - 1);
-            return !operando;
-        } else {
-            int valor = Integer.parseInt(expressao);
-            return valores[valor] == 1;
+
+    public static int[] resolveExpressao(String[] partes, int index) {
+        int[] resultado = new int[2];
+
+        if (partes[index].equals("0")) {
+            resultado[0] = 0;
+            resultado[1] = 1;
+        } else if (partes[index].equals("1")) {
+            resultado[0] = 1;
+            resultado[1] = 0;
+        } else if (partes[index].equals("not")) {
+            int[] subResultado = resolveExpressao(partes, index + 1);
+            resultado[0] = subResultado[1];
+            resultado[1] = subResultado[0];
+        } else if (partes[index].equals("and")) {
+            int[] subResultado1 = resolveExpressao(partes, index + 1);
+            int[] subResultado2 = resolveExpressao(partes, subResultado1[1] + 1);
+            resultado[0] = subResultado1[0] & subResultado2[0];
+            resultado[1] = subResultado2[1];
+        } else if (partes[index].equals("or")) {
+            int[] subResultado1 = resolveExpressao(partes, index + 1);
+            int[] subResultado2 = resolveExpressao(partes, subResultado1[1] + 1);
+            resultado[0] = subResultado1[0] | subResultado2[0];
+            resultado[1] = subResultado2[1];
+        } else if (partes[index].equals("(")) {
+            int[] subResultado = resolveExpressao(partes, index + 1);
+            resultado[0] = subResultado[0];
+            resultado[1] = subResultado[1];
+        } else if (partes[index].equals(")")) {
+            resultado[0] = 0;
+            resultado[1] = 1;
         }
-        
+
+        return resultado;
     }
 
     public static void main(String[] args) {
+        String entrada = "";
+        entrada = MyIO.readLine();
+        while (!entrada.equals("0")) {
+            String[] partes = entrada.split(" ");
+            int A = Integer.parseInt(partes[0]);
+            int B = Integer.parseInt(partes[1]);
+            int C = Integer.parseInt(partes[2]);
+            String expressao = partes[3];
 
-        while (true) {
-            int n = MyIO.readInt();
-            if (n == 0) {
-                break;
-            }
-
-            int[] valores = new int[n];
-            for (int i = 0; i < n; i++) {
-                valores[i] = MyIO.readInt();
-            }
-
-            String entrada = MyIO.readLine();
-            boolean resultado = avaliarExpressao(entrada, valores, n - 1);
-
-            if (resultado) {
-                MyIO.println("SIM");
-            } else {
-                MyIO.println("NAO");
-            }
+            int[] resultado = resolveExpressao(expressao.split(""), 0);
+            
+            int resultadoFinal = (A == 1 && B == 0) ? resultado[0] : resultado[1];
+            
+            MyIO.println(resultadoFinal);
+            
+            entrada = MyIO.readLine();
         }
     }
 }
