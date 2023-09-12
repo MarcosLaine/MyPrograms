@@ -1,30 +1,28 @@
 import java.util.Scanner;
 
 public class Espelho {
-    public static void inverter(int input) {
-        int i = 0;
-        while (input > 0) {
-            i *= 10;
-            i += (input % 10);
-            input /= 10;
-        }
-        System.out.print(i);
-    }
-
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        while (sc.hasNext()) {
-            int B = MyIO.readInt(), E = MyIO.readInt(), F = B;
+        while (sc.hasNextLine()) {
 
+            int B = sc.nextInt(); // Valor de início
+            int E = sc.nextInt(); // Valor de fim
+
+            StringBuilder sequencia = new StringBuilder();
+
+            // Construa a sequência crescente
             for (int i = B; i <= E; i++) {
-                MyIO.print(B);
-
-                if (B == E)
-                    for (int j = B; j > F; j--)
-                        inverter(j);
-                B++;
+                sequencia.append(i);
             }
-            MyIO.print(F);
+
+            // Adicione a sequência decrescente (reflexo no espelho)
+            for (int i = E; i >= B; i--) {
+                sequencia.append(i);
+            }
+
+            System.out.println(sequencia.toString());
+
         }
+        sc.close();
     }
 }

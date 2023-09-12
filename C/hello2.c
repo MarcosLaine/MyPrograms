@@ -1,7 +1,8 @@
 #include <stdio.h>
 
 int main (){
-    printf("hello world");
+    int num;
+    scanf("%d", &num);
+    (num % 2 == 0) ? printf("par") : printf("impar");
     return 0;
- 
 }

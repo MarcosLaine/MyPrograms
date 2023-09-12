@@ -3,6 +3,20 @@
   "configurations": [
     {
       "type": "java",
+      "name": "SequenciaEspelho",
+      "request": "launch",
+      "mainClass": "SequenciaEspelho",
+      "projectName": ""
+    },
+    {
+      "type": "java",
+      "name": "Espelho",
+      "request": "launch",
+      "mainClass": "Espelho",
+      "projectName": ""
+    },
+    {
+      "type": "java",
       "name": "ContadorCaracteres",
       "request": "launch",
       "mainClass": "ContadorCaracteres",
@@ -333,8 +347,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/kino1/OneDrive/Área de Trabalho/Programação/HTML/DIW/Aulas",
-      "program": "c:/Users/kino1/OneDrive/Área de Trabalho/Programação/HTML/DIW/Aulas/build/Debug/outDebug",
+      "cwd": "c:/Users/kino1/Desktop/MyPrograms/C",
+      "program": "c:/Users/kino1/Desktop/MyPrograms/C/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
