@@ -3,6 +3,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "IdadeCompleta",
+      "request": "launch",
+      "mainClass": "IdadeCompleta",
+      "projectName": ""
+    },
+    {
+      "type": "java",
       "name": "SequenciaEspelho",
       "request": "launch",
       "mainClass": "SequenciaEspelho",
