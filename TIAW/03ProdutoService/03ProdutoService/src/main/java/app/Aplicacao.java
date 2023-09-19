@@ -9,7 +9,7 @@ public class Aplicacao {
 	private static ProdutoService produtoService = new ProdutoService();
 	
     public static void main(String[] args) {
-        port(5432);
+        port(6789);
 
         post("/produto", (request, response) -> produtoService.add(request, response));
 
