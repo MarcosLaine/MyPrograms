@@ -3,6 +3,20 @@
   "configurations": [
     {
       "type": "java",
+      "name": "PesquisaSequencialJogador",
+      "request": "launch",
+      "mainClass": "PesquisaSequencialJogador",
+      "projectName": "MyPrograms"
+    },
+    {
+      "type": "java",
+      "name": "OrdenacaoPorSelecaoJogador",
+      "request": "launch",
+      "mainClass": "OrdenacaoPorSelecaoJogador",
+      "projectName": "MyPrograms"
+    },
+    {
+      "type": "java",
       "name": "PesquisaJogador",
       "request": "launch",
       "mainClass": "PesquisaJogador",

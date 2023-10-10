@@ -14,26 +14,24 @@ public class PesquisaSequencialJogador {
     public static int movimentacoes = 0;
 
     // CONSTRUTOR
-    public PesquisaSequencialJogador(int id, String nome, int altura, int peso, String universidade,
-                           int anoNascimento, String cidadeNascimento, String estadoNascimento) {
+    public PesquisaSequencialJogador(int id, String nome) {
         this.id = id;
         this.nome = nome;
-        // Atribua os outros atributos aqui
     }
 
     public static void main(String[] args) throws IOException {
-        listaJogadores = lerDadosDoArquivo(); // chama o arquivo para leitura
-        long startTime = System.currentTimeMillis(); // inicia a contagem de tempo
+        listaJogadores = lerDadosDoArquivo(); // Chama o arquivo para leitura
+        long startTime = System.currentTimeMillis(); // Inicia a contagem de tempo
         List<PesquisaSequencialJogador> listaEscolhidos = new ArrayList<>();
         while (true) {
             String input = MyIO.readLine().trim();
-            if (input.equalsIgnoreCase("FIM")) {// encerra ao receber fim
+            if (input.equalsIgnoreCase("FIM")) {// Encerra ao receber "FIM"
                 break;
             }
             int jogadorId = Integer.parseInt(input);
             for (PesquisaSequencialJogador jogador : listaJogadores) {
                 if (jogador.getId() == jogadorId) {
-                    listaEscolhidos.add(jogador); // adiciona o jogador escolhido na lista
+                    listaEscolhidos.add(jogador); // Adiciona o jogador escolhido na lista
                     break;
                 }
             }
@@ -89,15 +87,9 @@ public class PesquisaSequencialJogador {
                         continue;
                     }
                     String nome = (atributos.length > 1) ? atributos[1].trim() : "";
-                    int altura = (atributos.length > 2) ? Integer.parseInt(atributos[2].trim()) : 0;
-                    int peso = (atributos.length > 3) ? Integer.parseInt(atributos[3].trim()) : 0;
-                    String universidade = (atributos.length > 4) ? atributos[4].trim() : "";
-                    int anoNascimento = (atributos.length > 5) ? Integer.parseInt(atributos[5].trim()) : 0;
-                    String cidadeNascimento = (atributos.length > 6) ? atributos[6].trim() : "";
-                    String estadoNascimento = (atributos.length > 7) ? atributos[7].trim() : "";
-                    PesquisaSequencialJogador jogador = new PesquisaSequencialJogador(id, nome, altura, peso, universidade,
-                            anoNascimento, cidadeNascimento, estadoNascimento);
-                    listaJogadores.add(jogador); // adiciona o jogador a lista de jogadores
+                    // Continue a leitura e inicialização de outros atributos, se necessário.
+                    PesquisaSequencialJogador jogador = new PesquisaSequencialJogador(id, nome);
+                    listaJogadores.add(jogador); // Adiciona o jogador à lista de jogadores
                 }
             }
         } catch (IOException x) {
