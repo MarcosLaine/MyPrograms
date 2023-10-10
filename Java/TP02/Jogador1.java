@@ -38,7 +38,6 @@ public class Jogador1 {
     public Jogador1() {
         while (true) {
             // Loop para ler e buscar jogadores
-            System.out.println("Informe o ID do jogador (ou 'FIM' para encerrar):");
             String input = MyIO.readLine().trim();
             // Condição de parada quando recebe 'FIM'
             if (input.equalsIgnoreCase("FIM")) {
@@ -55,7 +54,7 @@ public class Jogador1 {
                 }
             }
             if (!jogador1Encontrado) {
-                System.out.println("Jogador1 não encontrado");
+                //System.out.println("Jogador não encontrado");
             }
         }
         System.exit(0);
@@ -167,7 +166,7 @@ public class Jogador1 {
                     listaJogadores.add(jogador1);
                 }
             }
-        } catch (IOException x) {
+        } catch (IOException x) {// Tratamento da exceção
             x.printStackTrace();
         }
     }
