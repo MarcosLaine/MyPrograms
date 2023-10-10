@@ -122,28 +122,6 @@ class Jogador {
         setCidadeNascimento(dados[6]);
         setEstadoNascimento(dados[7]);
     }
-}
-
-public class Classe {
-    public static void leArquivo(Jogador[] jogadores) {
-        // Suponha que você tenha uma classe Arq que permite a leitura do arquivo
-        // CSV.
-        // Certifique-se de que a classe Arq esteja corretamente implementada e
-        // importada.
-        Arq.openRead("/tmp/players.csv");
-        Arq.readLine(); // Remove a primeira linha
-        int n = jogadores.length; // Use o tamanho do array
-        for (int i = 0; i < n; i++) {
-            String data = Arq.readLine();
-            jogadores[i] = new Jogador();
-            jogadores[i].ler(data);
-        }
-    }
-
-    // Método para identificar a parada, FIM
-    static boolean parada(String palavra, String parada) {
-        return palavra.equals(parada);
-    }
 
     public static void main(String[] args) {
         int n = 3922;
@@ -158,5 +136,26 @@ public class Classe {
             jogadores[posicao].imprimir();
             parada = MyIO.readString();
         }
+    }
+
+
+    public static void leArquivo(Jogador[] jogadores) {
+        // Suponha que você tenha uma classe Arq que permite a leitura do arquivo
+        // CSV.
+        // Certifique-se de que a classe Arq esteja corretamente implementada e
+        // importada.
+        Arq.openRead("players.csv");
+        Arq.readLine(); // Remove a primeira linha
+        int n = jogadores.length; // Use o tamanho do array
+        for (int i = 0; i < n; i++) {
+            String data = Arq.readLine();
+            jogadores[i] = new Jogador();
+            jogadores[i].ler(data);
+        }
+    }
+
+    // Método para identificar a parada, FIM
+    static boolean parada(String palavra, String parada) {
+        return palavra.equals(parada);
     }
 }

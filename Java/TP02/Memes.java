@@ -9,7 +9,7 @@ public class Memes{
         String arquivoCSV="/tmp/players.csv"; //Nome do arquivo a ser lido
         Jogador jogador = new Jogador();
         String acharId=teclado.nextLine();
-        while(!acharId.equals("FIM")){
+        while(!acharId.equals("FIM")){ 
         jogador.ler(arquivoCSV,acharId);
         acharId=teclado.nextLine();
         }
@@ -122,42 +122,38 @@ public static void imprimir(ArrayList<Jogador> time, int findId) {
 }
 
  public void ler(String arquivoCSV, String acharId) {
-        try (BufferedReader br = new BufferedReader(new FileReader(arquivoCSV))){ //ABre o arquivo com buffered Reader para a leitura.
-            String linha="";
-            int findId=Integer.parseInt(acharId);
-            ArrayList<Jogador> time= new ArrayList<Jogador>();
-            br.readLine();//Lê a primeira linha manualmente para pular o cabeçalho
-            while ((linha = br.readLine()) != null){
-            String palavras[]=linha.split(",",8);
-
+    try (BufferedReader br = new BufferedReader(new FileReader(arquivoCSV))) {
+        String linha = "";
+        int findId = Integer.parseInt(acharId);
+        ArrayList<Jogador> time = new ArrayList<Jogador>();
+        br.readLine(); // Lê a primeira linha manualmente para pular o cabeçalho
+        while ((linha = br.readLine()) != null) {
+            String palavras[] = linha.split(",", 8);
 
             for (int i = 0; i < palavras.length; i++) {
                 if (palavras[i].isEmpty()) {
-               palavras[i] = "nao informado"; // Atribua a nova string de volta ao array
-              }
+                    palavras[i] = "nao informado"; // Atribua a nova string de volta ao array
+                }
             }
 
+            int id = Integer.parseInt(palavras[0]);
+            String nome = palavras[1];
+            int altura = Integer.parseInt(palavras[2]);
+            int peso = Integer.parseInt(palavras[3]);
+            String universidade = palavras[4];
+            int anoNascimento = Integer.parseInt(palavras[5]);
+            String cidadeNascimento = palavras[6];
+            String estadoNascimento = palavras[7];
 
-            setId(Integer.parseInt(palavras[0]));
-            setNome(palavras[1]); //QUando palavras[] tiver o valor dos determinados atributos da classe Jogador, eles serão transformados nos atributos e lidos.
-            setAltura(Integer.parseInt(palavras[2]));
-            setPeso(Integer.parseInt(palavras[3]));
-            setUniversidade(palavras[4]);
-            setAnoNascimento(Integer.parseInt(palavras[5]));
-            setCidadeNascimento(palavras[6]);
-            setEstadoNascimento(palavras[7]);
-                 
-
-                Jogador jogador= new Jogador(getId(), getNome(), getAltura(), getPeso(), getUniversidade(), getAnoNascimento(), getCidadeNascimento(), getEstadoNascimento());//É criado um objeto jogador para mandar para o construtor imprimir.
-                time.add(jogador);
-            }
-            Jogador.imprimir(time, findId);
-        } catch (IOException e) {
-            e.printStackTrace();
+            Jogador jogador = new Jogador(id, nome, altura, peso, universidade, anoNascimento, cidadeNascimento, estadoNascimento);
+            time.add(jogador);
         }
-        catch (NumberFormatException e) {
-             e.printStackTrace();
-        } 
- }
+        imprimir(time, findId);
+    } catch (IOException e) {
+        e.printStackTrace();
+    } catch (NumberFormatException e) {
+        e.printStackTrace();
+    }
+}
 
 }

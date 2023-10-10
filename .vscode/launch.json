@@ -3,6 +3,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "Jogador1",
+      "request": "launch",
+      "mainClass": "Jogador1",
+      "projectName": "MyPrograms"
+    },
+    {
+      "type": "java",
       "name": "Memes",
       "request": "launch",
       "mainClass": "Memes",
