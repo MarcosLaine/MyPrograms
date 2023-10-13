@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.*;
 
-public class OrdenacaoPorSelecaoJogador {
+public class InsertionSortJogador {
     private int id;
     private String name;
     private int weight;
@@ -11,7 +11,7 @@ public class OrdenacaoPorSelecaoJogador {
     private String estadoNasc;
     private String cidadeNasc;
 
-    public OrdenacaoPorSelecaoJogador(int id, String name, int weight, int height, String ondeEstudou, int anoNasc, String estadoNasc, String cidadeNasc) {
+    public InsertionSortJogador(int id, String name, int weight, int height, String ondeEstudou, int anoNasc, String estadoNasc, String cidadeNasc) {
         this.id = id;
         this.name = name;
         this.weight = weight;
@@ -27,16 +27,16 @@ public class OrdenacaoPorSelecaoJogador {
     private static final String FILE_NAME = "/tmp/players.csv"; // Caminho do arquivo de dados
 
     public static void main(String[] args) {
-        List<OrdenacaoPorSelecaoJogador> listaJogadores = lerDadosDoArquivo(); // Lê os dados do arquivo
+        List<InsertionSortJogador> listaJogadores = lerDadosDoArquivo(); // Lê os dados do arquivo
 
-        List<OrdenacaoPorSelecaoJogador> listaEscolhidos = new ArrayList<>();
+        List<InsertionSortJogador> listaEscolhidos = new ArrayList<>();
         while (true) {
             String input = MyIO.readLine().trim();
             if (input.equalsIgnoreCase("FIM")) {
                 break; // Encerra ao receber "FIM"
             }
             int jogadorId = Integer.parseInt(input);
-            for (OrdenacaoPorSelecaoJogador jogador : listaJogadores) {
+            for (InsertionSortJogador jogador : listaJogadores) {
                 if (jogador.id == jogadorId) {
                     listaEscolhidos.add(jogador);
                     jogador.toString(); // Adiciona a funcionalidade de impressão do jogador
@@ -45,30 +45,30 @@ public class OrdenacaoPorSelecaoJogador {
             }
         }
 
-        ordenacaoPorSelecaoJogador(listaEscolhidos); // Realiza a ordenação por seleção
+        InsertionSortJogador(listaEscolhidos); // Realiza a ordenação por inserção
 
         // Imprime a lista de jogadores ordenada
-        for (OrdenacaoPorSelecaoJogador jogador : listaEscolhidos) {
+        for (InsertionSortJogador jogador : listaEscolhidos) {
             System.out.println(jogador);
         }
     }
 
-    public static void ordenacaoPorSelecaoJogador(List<OrdenacaoPorSelecaoJogador> vetor) {
+    public static void InsertionSortJogador(List<InsertionSortJogador> vetor) {
         int n = vetor.size();
-        for (int i = 0; i < n - 1; i++) {
-            int menorIndice = i;
-            for (int j = i + 1; j < n; j++) {
+        for (int i = 1; i < n; i++) {
+            InsertionSortJogador chave = vetor.get(i);
+            int j = i - 1;
+            while (j >= 0 && (vetor.get(j).anoNasc > chave.anoNasc || (vetor.get(j).anoNasc == chave.anoNasc && vetor.get(j).name.compareTo(chave.name) > 0))) {
                 comparacoes++; // Incrementa o número de comparações
-                if (vetor.get(j).name.compareTo(vetor.get(menorIndice).name) < 0) {
-                    menorIndice = j;
-                }
-            }
-            if (i != menorIndice) {
-                Collections.swap(vetor, i, menorIndice);
+                vetor.set(j + 1, vetor.get(j));
+                j = j - 1;
                 movimentacoes++; // Incrementa o número de movimentações (trocas)
             }
+            vetor.set(j + 1, chave);
         }
     }
+    
+    
 
     @Override
     public String toString() {
@@ -76,8 +76,8 @@ public class OrdenacaoPorSelecaoJogador {
     }
 
     /* A função a seguir lê e ordena os dados do arquivo .csv, separando sempre que encontra uma ',' */
-    public static List<OrdenacaoPorSelecaoJogador> lerDadosDoArquivo() {
-        List<OrdenacaoPorSelecaoJogador> listaJogadores = new ArrayList<>();
+    public static List<InsertionSortJogador> lerDadosDoArquivo() {
+        List<InsertionSortJogador> listaJogadores = new ArrayList<>();
         try (BufferedReader ler = new BufferedReader(new FileReader(FILE_NAME))) {
             String ln;
             while ((ln = ler.readLine()) != null) {
@@ -97,7 +97,7 @@ public class OrdenacaoPorSelecaoJogador {
                     String estadoNasc = atributos[6].trim();
                     String cidadeNasc = atributos[7].trim();
 
-                    OrdenacaoPorSelecaoJogador jogador = new OrdenacaoPorSelecaoJogador(id, name, weight, height, ondeEstudou, anoNasc, estadoNasc, cidadeNasc);
+                    InsertionSortJogador jogador = new InsertionSortJogador(id, name, weight, height, ondeEstudou, anoNasc, estadoNasc, cidadeNasc);
                     listaJogadores.add(jogador);
                 }
             }
@@ -110,7 +110,7 @@ public class OrdenacaoPorSelecaoJogador {
     public static void criarArquivoLog(long tempoExecucao, int comparacoes, int movimentacoes) {
         String matricula = "803627";
 
-        try (PrintWriter logFile = new PrintWriter("matricula_selecao.txt")) {
+        try (PrintWriter logFile = new PrintWriter("matricula_insercao.txt")) {
             logFile.println(matricula + "\t" + comparacoes + "\t" + movimentacoes + "\t" + tempoExecucao);
         } catch (IOException e) {
             e.printStackTrace();

@@ -3,6 +3,27 @@
   "configurations": [
     {
       "type": "java",
+      "name": "OrdenacaoPorHeapsortJogador",
+      "request": "launch",
+      "mainClass": "OrdenacaoPorHeapsortJogador",
+      "projectName": "MyPrograms"
+    },
+    {
+      "type": "java",
+      "name": "HeapsortJogador",
+      "request": "launch",
+      "mainClass": "HeapsortJogador",
+      "projectName": "MyPrograms"
+    },
+    {
+      "type": "java",
+      "name": "InsertionSortJogador",
+      "request": "launch",
+      "mainClass": "InsertionSortJogador",
+      "projectName": "MyPrograms"
+    },
+    {
+      "type": "java",
       "name": "PesquisaSequencialJogador",
       "request": "launch",
       "mainClass": "PesquisaSequencialJogador",
