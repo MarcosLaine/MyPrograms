@@ -3,6 +3,34 @@
   "configurations": [
     {
       "type": "java",
+      "name": "OrdenacaoParcialQuicksort",
+      "request": "launch",
+      "mainClass": "OrdenacaoParcialQuicksort",
+      "projectName": "MyPrograms"
+    },
+    {
+      "type": "java",
+      "name": "OrdenacaoParcialPorSelecao",
+      "request": "launch",
+      "mainClass": "OrdenacaoParcialPorSelecao",
+      "projectName": "MyPrograms"
+    },
+    {
+      "type": "java",
+      "name": "OrdenacaoPorMergesortJogador",
+      "request": "launch",
+      "mainClass": "OrdenacaoPorMergesortJogador",
+      "projectName": "MyPrograms"
+    },
+    {
+      "type": "java",
+      "name": "OrdenacaoPorCountingSortJogador",
+      "request": "launch",
+      "mainClass": "OrdenacaoPorCountingSortJogador",
+      "projectName": "MyPrograms"
+    },
+    {
+      "type": "java",
       "name": "OrdenacaoPorHeapsortJogador",
       "request": "launch",
       "mainClass": "OrdenacaoPorHeapsortJogador",
