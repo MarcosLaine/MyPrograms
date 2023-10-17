@@ -1,61 +1,47 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <stdbool.h>
 #include <time.h>
 
-typedef struct Jogador{
-
-    char id[100];
-    char nome[100];
-    char peso[100];
-    char altura[100];
-    char universidade[100];
-    char anoNascimento[100];
-    char cidadeNascimento[100];
-    char estadoNascimento[100];
-
+// Estrutura de dados para armazenar informações de um jogador
+typedef struct {
+    char id[10];
+    char nome[150];
+    char altura[10];
+    char peso[10];
+    char universidade[150];
+    char anoNascimento[10];
+    char cidadeNascimento[150];
+    char estadoNascimento[150];
 } Jogador;
 
-Jogador clone (Jogador *jogador){ 
-    Jogador novo; 
+int mov = 0;  // Variável para contar as movimentações
+int comp = 0; // Variável para contar as comparações
+
+// Função para clonar um jogador
+Jogador clone(Jogador *jogador) {
+    Jogador novo;
     strcpy(novo.id, jogador->id);
     strcpy(novo.nome, jogador->nome);
     strcpy(novo.altura, jogador->altura);
     strcpy(novo.peso, jogador->peso);
+    strcpy(novo.universidade, jogador->universidade);
     strcpy(novo.anoNascimento, jogador->anoNascimento);
     strcpy(novo.cidadeNascimento, jogador->cidadeNascimento);
     strcpy(novo.estadoNascimento, jogador->estadoNascimento);
-    strcpy(novo.universidade, jogador->universidade);
     return novo;
 }
 
-void imprimir (Jogador *jogador){
-    printf("[%s ## %s ## %s ## %s ## %s ## %s ## %s ## %s]\n", jogador->id, jogador->nome, jogador->altura, jogador->peso, jogador->anoNascimento , jogador->universidade, jogador->cidadeNascimento, jogador->estadoNascimento);
+// Função para imprimir os dados de um jogador
+void imprimir(Jogador *jogador) {
+    printf("[%s ## %s ## %s ## %s ## %s ## %s ## %s ## %s]\n",
+           jogador->id, jogador->nome, jogador->altura, jogador->peso,
+           jogador->anoNascimento, jogador->universidade, jogador->cidadeNascimento,
+           jogador->estadoNascimento);
 }
 
-int frase(char* frase){
-    int numero = 0;
-    for(int i = 0; frase[i] != '\0'; i++){
-      numero += (int)frase[i];
-    }
-    return numero;
-}
-
-void insercao(Jogador* jogador, int tam){
-    for(int i = 1; i < tam; i++){
-        Jogador tmp = jogador[i];
-        int j = i - 1;
-        while(j >= 0 && frase(jogador[j].nome) > frase(tmp.nome)){
-            jogador[j + 1] = jogador[j];
-            j--;
-        }
-        jogador[j + 1] = tmp;
-    }
-}
-
-void ler (Jogador *jogador, char linha[1000]){
-
+// Função para ler os dados de um jogador a partir de uma linha
+void ler(Jogador *jogador, char linha[]) {
     int posicao[7];
     int virgulas = 0;
     for (int i = 0; i < strlen(linha); i++){
@@ -169,90 +155,89 @@ void ler (Jogador *jogador, char linha[1000]){
     count = 0;
 }
 
-int main (){
-    clock_t inicio, fim;
-    int comparacoes = 0;
-    char dados[1000];
-    FILE* arquivo = fopen("/tmp/players.csv","r");
-    Jogador jogador[3922];
-    char id[100];
-    char nome[100];
-    Jogador buscaBinaria[1000];
-    int contador = 0;
-    
-    fgets (dados, sizeof(dados), arquivo); 
-    int i = 0; 
-    while (fgets (dados, 1000, arquivo)){
-        ler(&jogador[i], dados); 
+// Função para trocar a posição de dois jogadores
+void swap(Jogador *jogador1, Jogador *jogador2) {
+    Jogador temp = *jogador1;
+    *jogador1 = *jogador2;
+    *jogador2 = temp;
+}
+
+// Função para obter o ano de nascimento de um jogador como inteiro
+int anoInt(Jogador *jogador) {
+    int ano = atoi(jogador->anoNascimento);
+    return ano;
+}
+
+// Função de ordenação por bolha
+void bolha(Jogador *jogadores, int n) {
+    int i, j;
+    for (int i = (n - 1); i > 0; i--) {
+        for (int j = 0; j < i; j++) {
+            if (anoInt(&jogadores[j]) > anoInt(&jogadores[j + 1])) {
+                swap(&jogadores[j], &jogadores[j + 1]);
+                mov += 3;
+            } else if (anoInt(&jogadores[j]) == anoInt(&jogadores[j + 1])) {
+                if (strcmp(jogadores[j].nome, jogadores[j + 1].nome) > 0) {
+                    swap(&jogadores[j], &jogadores[j + 1]);
+                    mov += 3;
+                }
+                comp += 2;
+            }
+            comp++;
+        }
+    }
+}
+
+int main() {
+    clock_t t;
+    t = clock();
+
+    // Abre o arquivo de entrada
+    FILE *arq;
+    arq = fopen("/tmp/players.csv", "r");
+    char linha[1000];
+    fgets(linha, 1000, arq);
+
+    // Lê os dados dos jogadores do arquivo
+    Jogador jogadores[3923];
+    int i = 0;
+    while (fgets(linha, 1000, arq)) {
+        ler(&jogadores[i], linha);
         i++;
     }
-    
+    fclose(arq);
+
+    // Cria um array para os jogadores escolhidos
+    Jogador escolhidos[3923];
+    int k = 0;
+    char id[100];
+
+    // Lê os IDs dos jogadores escolhidos e os filtra
     scanf("%s", id);
-    while (strcmp(id, "FIM") != 0){
-        for (int j = 0; j < 3922; j++){
-            if(strcmp(jogador[j].id,id) == 0) {
-                buscaBinaria[contador] = clone(&jogador[j]);
-                contador++; 
+    while (strcmp(id, "FIM") != 0) {
+        for (int j = 0; j < 3923; j++) {
+            if (atoi(id) == atoi(jogadores[j].id)) {
+                escolhidos[k++] = clone(&jogadores[j]);
             }
         }
         scanf("%s", id);
     }
- 
-    inicio = clock();
-    insercao(buscaBinaria, contador);
-    scanf(" %[^\n]", nome);
 
-    while(strcmp(nome, "FIM") != 0){
-        comparacoes++;
-        bool check = false;
-        int esq = 0;
-        int dir = contador - 1;
-        int meio;
-        while(esq <= dir){
-            comparacoes++;
-            meio = (esq + dir) / 2;
-            if(strcmp(buscaBinaria[meio].nome, nome) == 0){
-                comparacoes++;
-                check = true;
-                esq = contador;
-            }else{
-                if((frase(buscaBinaria[meio].nome) - frase(nome)) < 0){
-                    comparacoes++;
-                    esq = meio + 1;
-                }else{
-                    dir = meio - 1;
-                }
-            }
-        }
-        if(check){
-            printf("SIM\n");
-        }else{
-            printf("NAO\n");
-        }
-        scanf(" %[^\n]", nome);
+    // Ordena os jogadores escolhidos
+    bolha(escolhidos, k);
+
+    // Imprime os jogadores ordenados
+    for (int i = 0; i < k; i++) {
+        imprimir(&escolhidos[i]);
     }
 
-    fim = clock();
+    t = clock() - t;
 
-FILE *arquivoLog;
-    char nomeArquivoLog[] = "matricula_binaria.txt";
+    // Cria e escreve no arquivo de log
+    FILE *log;
+    log = fopen("matricula_bolha.txt", "w");
+    fprintf(log, "Matricula: 803627\t Comparações: %d\t Movimentações: %d\t Execução: %lfms", comp, mov, ((double)t) / (CLOCKS_PER_SEC / 1000));
+    fclose(log);
 
-    arquivoLog = fopen(nomeArquivoLog, "w");
-
-    if (arquivo == NULL) {
-        perror("Erro ao abrir o arquivo");
-        return 1;
-    }
-
-    int matricula = 803627;
-    double tempoExecucao = (double)(fim - inicio) / CLOCKS_PER_SEC; 
-
-    fprintf(arquivo, "Matricula: %d\tTempo: %.2f\tComparacoes: %d\n",
-            matricula, tempoExecucao, comparacoes);
-
-    fclose(arquivoLog);
-
-
-    fclose(arquivo);
     return 0;
 }

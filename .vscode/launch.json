@@ -3,6 +3,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "TP02Q05",
+      "request": "launch",
+      "mainClass": "TP02Q05",
+      "projectName": "MyPrograms"
+    },
+    {
+      "type": "java",
       "name": "OrdenacaoParcialQuicksort",
       "request": "launch",
       "mainClass": "OrdenacaoParcialQuicksort",

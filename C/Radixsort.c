@@ -4,8 +4,10 @@
 #include <stdbool.h>
 #include <time.h>
 
-typedef struct Jogador{
+int comparacoes = 0;
+int movimentacoes = 0;
 
+typedef struct Jogador {
     char id[100];
     char nome[100];
     char peso[100];
@@ -14,11 +16,10 @@ typedef struct Jogador{
     char anoNascimento[100];
     char cidadeNascimento[100];
     char estadoNascimento[100];
-
 } Jogador;
 
-Jogador clone (Jogador *jogador){ 
-    Jogador novo; 
+Jogador clone(Jogador *jogador) {
+    Jogador novo;
     strcpy(novo.id, jogador->id);
     strcpy(novo.nome, jogador->nome);
     strcpy(novo.altura, jogador->altura);
@@ -30,33 +31,61 @@ Jogador clone (Jogador *jogador){
     return novo;
 }
 
-void imprimir (Jogador *jogador){
-    printf("[%s ## %s ## %s ## %s ## %s ## %s ## %s ## %s]\n", jogador->id, jogador->nome, jogador->altura, jogador->peso, jogador->anoNascimento , jogador->universidade, jogador->cidadeNascimento, jogador->estadoNascimento);
+void imprimir(Jogador *jogador) {
+    printf("[%s ## %s ## %s ## %s ## %s ## %s ## %s ## %s]\n", jogador->id, jogador->nome, jogador->altura, jogador->peso, jogador->anoNascimento, jogador->universidade, jogador->cidadeNascimento, jogador->estadoNascimento);
 }
 
-int frase(char* frase){
-    int numero = 0;
-    for(int i = 0; frase[i] != '\0'; i++){
-      numero += (int)frase[i];
-    }
-    return numero;
-}
-
-void insercao(Jogador* jogador, int tam){
-    for(int i = 1; i < tam; i++){
-        Jogador tmp = jogador[i];
-        int j = i - 1;
-        while(j >= 0 && frase(jogador[j].nome) > frase(tmp.nome)){
-            jogador[j + 1] = jogador[j];
-            j--;
+int getMax(int *lista, int n) {
+    int maior = lista[0];
+    for (int i = 1; i < n; i++) {
+        if (maior < lista[i]) {
+            maior = lista[i];
         }
-        jogador[j + 1] = tmp;
+    }
+    return maior;
+}
+
+void radixSort(Jogador *lista, int n) {
+    int max = 0;
+
+    for (int i = 0; i < n; i++) {
+        int atual = atoi(lista[i].id);
+        if (atual > max) {
+            max = atual;
+        }
+    }
+    for (int exp = 1; max / exp > 0; exp *= 10) {
+        radixCountingSort(lista, n, exp);
     }
 }
 
-void ler (Jogador *jogador, char linha[1000]){
+void radixCountingSort(Jogador *lista, int n, int exp) {
+    Jogador out[n];
+    int cont[10] = {0};
 
-    int posicao[7];
+    for (int i = 0; i < n; i++) {
+        int atual = atoi(lista[i].id);
+        cont[(atual / exp) % 10]++;
+    }
+
+    for (int i = 1; i < 10; i++) {
+        cont[i] += cont[i - 1];
+    }
+
+    for (int i = n - 1; i >= 0; i--) {
+        int atual = atoi(lista[i].id);
+        int position = (atual / exp) % 10;
+        out[cont[position] - 1] = lista[i];
+        cont[position]--;
+    }
+
+    for (int i = 0; i < n - 1; i++) {
+        lista[i] = out[i];
+    }
+}
+
+void ler(Jogador *jogador, char linha[1000]) {
+int posicao[7];
     int virgulas = 0;
     for (int i = 0; i < strlen(linha); i++){
         if(linha[i] == ','){
@@ -169,73 +198,45 @@ void ler (Jogador *jogador, char linha[1000]){
     count = 0;
 }
 
-int main (){
+int main() {
     clock_t inicio, fim;
-    int comparacoes = 0;
     char dados[1000];
-    FILE* arquivo = fopen("/tmp/players.csv","r");
+    FILE *arquivo = fopen("/tmp/players.csv", "r");
     Jogador jogador[3922];
     char id[100];
-    char nome[100];
-    Jogador buscaBinaria[1000];
+    Jogador busca[1000];
     int contador = 0;
-    
-    fgets (dados, sizeof(dados), arquivo); 
-    int i = 0; 
-    while (fgets (dados, 1000, arquivo)){
-        ler(&jogador[i], dados); 
+
+    fgets(dados, sizeof(dados), arquivo);
+    int i = 0;
+    while (fgets(dados, 1000, arquivo)) {
+        ler(&jogador[i], dados);
         i++;
     }
-    
+
     scanf("%s", id);
-    while (strcmp(id, "FIM") != 0){
-        for (int j = 0; j < 3922; j++){
-            if(strcmp(jogador[j].id,id) == 0) {
-                buscaBinaria[contador] = clone(&jogador[j]);
-                contador++; 
+    while (strcmp(id, "FIM") != 0) {
+        for (int j = 0; j < 3922; j++) {
+            if (strcmp(jogador[j].id, id) == 0) {
+                busca[contador] = clone(&jogador[j]);
+                contador++;
             }
         }
         scanf("%s", id);
     }
- 
-    inicio = clock();
-    insercao(buscaBinaria, contador);
-    scanf(" %[^\n]", nome);
 
-    while(strcmp(nome, "FIM") != 0){
-        comparacoes++;
-        bool check = false;
-        int esq = 0;
-        int dir = contador - 1;
-        int meio;
-        while(esq <= dir){
-            comparacoes++;
-            meio = (esq + dir) / 2;
-            if(strcmp(buscaBinaria[meio].nome, nome) == 0){
-                comparacoes++;
-                check = true;
-                esq = contador;
-            }else{
-                if((frase(buscaBinaria[meio].nome) - frase(nome)) < 0){
-                    comparacoes++;
-                    esq = meio + 1;
-                }else{
-                    dir = meio - 1;
-                }
-            }
-        }
-        if(check){
-            printf("SIM\n");
-        }else{
-            printf("NAO\n");
-        }
-        scanf(" %[^\n]", nome);
+    inicio = clock();
+
+    radixSort(busca, contador - 1);
+
+    for (int i = 0; i < contador; i++) {
+        imprimir(&busca[i]);
     }
 
     fim = clock();
 
-FILE *arquivoLog;
-    char nomeArquivoLog[] = "matricula_binaria.txt";
+    FILE *arquivoLog;
+    char nomeArquivoLog[] = "matricula_radixSort.txt";
 
     arquivoLog = fopen(nomeArquivoLog, "w");
 
@@ -245,14 +246,11 @@ FILE *arquivoLog;
     }
 
     int matricula = 803627;
-    double tempoExecucao = (double)(fim - inicio) / CLOCKS_PER_SEC; 
+    double tempoExecucao = (double)(fim - inicio) / CLOCKS_PER_SEC;
 
-    fprintf(arquivo, "Matricula: %d\tTempo: %.2f\tComparacoes: %d\n",
-            matricula, tempoExecucao, comparacoes);
+    fprintf(arquivo, "Matricula: %d\tTempo: %.2f\tComparacoes: %d\tMovimentacoes: %d\n", matricula, tempoExecucao, comparacoes, movimentacoes);
 
     fclose(arquivoLog);
-
-
     fclose(arquivo);
     return 0;
 }
