@@ -24,7 +24,7 @@ public class OrdenacaoPorHeapsortJogador {
 
     public static int comparacoes = 0; // Variável para contar o número de comparações
     public static int movimentacoes = 0; // Variável para contar o número de movimentações (trocas)
-    private static final String FILE_NAME = "/tmp/players.csv"; // Caminho do arquivo de dados
+    private static final String FILE_NAME = "/tmp/playersAtualizado.csv"; // Caminho do arquivo de dados
 
     public static void main(String[] args) {
         List<OrdenacaoPorHeapsortJogador> listaJogadores = lerDadosDoArquivo(); // Lê os dados do arquivo
@@ -55,7 +55,7 @@ public class OrdenacaoPorHeapsortJogador {
         }
 
         // Cria o arquivo de log
-        criarArquivoLog("sua_matricula", comparacoes, movimentacoes, (endTime - startTime));
+        criarArquivoLog("803627", comparacoes, movimentacoes, (endTime - startTime));
     }
 
     public static void ordenacaoPorHeapsortJogador(List<OrdenacaoPorHeapsortJogador> vetor) {

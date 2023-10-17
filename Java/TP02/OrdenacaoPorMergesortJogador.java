@@ -22,7 +22,7 @@ public class OrdenacaoPorMergesortJogador {
         this.cidadeNasc = cidadeNasc;
     }
 
-    public static final String FILE_NAME = "/tmp/players.csv"; // Substitua pelo caminho correto do arquivo
+    public static final String FILE_NAME = "/tmp/playersAtualizado.csv"; // Substitua pelo caminho correto do arquivo
 
     public static void main(String[] args) {
         List<OrdenacaoPorMergesortJogador> listaJogadores = lerDadosDoArquivo();

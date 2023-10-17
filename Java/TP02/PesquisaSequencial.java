@@ -41,7 +41,7 @@ public class PesquisaSequencial {
         }
 
         // Escreva o registro de log.
-        String matricula = "SUA_MATRICULA"; // Substitua pelo seu número de matrícula.
+        String matricula = "803627"; // Substitua pelo seu número de matrícula.
         long tempoExecucao = System.currentTimeMillis();
         try (PrintWriter logFile = new PrintWriter("matricula_sequencial.txt")) {
             logFile.println(matricula + "\t" + tempoExecucao + "\t" + comparacoes);

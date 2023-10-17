@@ -22,7 +22,7 @@ public class OrdenacaoParcialQuicksort {
         this.cidadeNasc = cidadeNasc;
     }
 
-    private static final String FILE_NAME = "/tmp/players.csv"; // Caminho do arquivo de dados
+    private static final String FILE_NAME = "/tmp/playersAtualizado.csv"; // Caminho do arquivo de dados
 
     public static void ordenacaoParcialQuicksort(List<OrdenacaoParcialQuicksort> vetor, int k) {
         quicksort(vetor, 0, vetor.size() - 1, k);

@@ -22,7 +22,7 @@ public class OrdenacaoParcialPorSelecao {
         this.cidadeNasc = cidadeNasc;
     } 
 
-    private static final String FILE_NAME = "/tmp/players.csv"; // Caminho do arquivo de dados
+    private static final String FILE_NAME = "/tmp/playersAtualizado.csv"; // Caminho do arquivo de dados
 
 
     public static void ordenacaoParcialPorSelecao(List<OrdenacaoParcialPorSelecao> vetor, int k) {

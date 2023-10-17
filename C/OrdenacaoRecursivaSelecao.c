@@ -188,7 +188,7 @@ void read(Player *player, char line[1000]) {
 int main() {
     clock_t start, end;
     char data[1000];
-    FILE *file = fopen("/tmp/players.csv", "r");
+    FILE *file = fopen("/tmp/playersAtualizado.csv", "r");
     Player players[3922];
     char id[100];
     char name[100];

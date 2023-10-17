@@ -9,7 +9,7 @@ public class PesquisaSequencialJogador {
     private int id;
     private String nome;
     private static List<PesquisaSequencialJogador> listaJogadores = new ArrayList<>();
-    private static final String FILE_NAME = "/tmp/players.csv"; // Para acessar o arquivo com os jogadores
+    private static final String FILE_NAME = "/tmp/playersAtualizado.csv"; // Para acessar o arquivo com os jogadores
     public static int comparacoes = 0;
     public static int movimentacoes = 0;
 

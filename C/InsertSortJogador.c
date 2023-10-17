@@ -173,7 +173,7 @@ int main (){
     clock_t inicio, fim;
     int comparacoes = 0;
     char dados[1000];
-    FILE* arquivo = fopen("/tmp/players.csv","r");
+    FILE* arquivo = fopen("/tmp/playersAtualizado.csv","r");
     Jogador jogador[3922];
     char id[100];
     char nome[100];

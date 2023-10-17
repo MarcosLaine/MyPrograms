@@ -194,7 +194,7 @@ int main() {
 
     // Abre o arquivo de entrada
     FILE *arq;
-    arq = fopen("/tmp/players.csv", "r");
+    arq = fopen("/tmp/playersAtualizado.csv", "r");
     char linha[1000];
     fgets(linha, 1000, arq);
 

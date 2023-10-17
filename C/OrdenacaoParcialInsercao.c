@@ -190,7 +190,7 @@ int main() {
     clock_t inicio, fim;
     inicio = clock();
     char dados[1000];
-    FILE *arquivo = fopen("/tmp/players.csv", "r");
+    FILE *arquivo = fopen("/tmp/playersAtualizado.csv", "r");
     Jogador jogador[3922];
     char id[100];
     Jogador busca[1000];

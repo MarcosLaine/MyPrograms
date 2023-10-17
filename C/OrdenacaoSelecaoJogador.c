@@ -16,7 +16,7 @@ struct Jogador {
 
 int comparacoes = 0;
 int movimentacoes = 0;
-const char *FILE_NAME = "tmp/players.csv";  // Caminho completo para o arquivo
+const char *FILE_NAME = "tmp/playersAtualizado.csv";  // Caminho completo para o arquivo
 
 void ordenacaoPorSelecaoRecursiva(struct Jogador vetor[], int n) {
     if (n <= 1) {

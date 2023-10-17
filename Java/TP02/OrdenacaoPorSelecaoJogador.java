@@ -24,7 +24,7 @@ public class OrdenacaoPorSelecaoJogador {
 
     public static int comparacoes = 0; // Variável para contar o número de comparações
     public static int movimentacoes = 0; // Variável para contar o número de movimentações (trocas)
-    private static final String FILE_NAME = "/tmp/players.csv"; // Caminho do arquivo de dados
+    private static final String FILE_NAME = "/tmp/playersAtualizado.csv"; // Caminho do arquivo de dados
 
     public static void main(String[] args) {
         List<OrdenacaoPorSelecaoJogador> listaJogadores = lerDadosDoArquivo(); // Lê os dados do arquivo
