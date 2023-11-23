@@ -3,6 +3,69 @@
   "configurations": [
     {
       "type": "java",
+      "name": "ArvoreBinaria2",
+      "request": "launch",
+      "mainClass": "ArvoreBinaria2",
+      "projectName": "MyPrograms"
+    },
+    {
+      "type": "java",
+      "name": "QuicksortJogador",
+      "request": "launch",
+      "mainClass": "QuicksortJogador",
+      "projectName": "MyPrograms"
+    },
+    {
+      "type": "java",
+      "name": "Matriz",
+      "request": "launch",
+      "mainClass": "Matriz",
+      "projectName": "MyPrograms"
+    },
+    {
+      "type": "java",
+      "name": "Player3",
+      "request": "launch",
+      "mainClass": "Player3",
+      "projectName": "MyPrograms"
+    },
+    {
+      "type": "java",
+      "name": "Player2",
+      "request": "launch",
+      "mainClass": "Player2",
+      "projectName": "MyPrograms"
+    },
+    {
+      "type": "java",
+      "name": "Player",
+      "request": "launch",
+      "mainClass": "Player",
+      "projectName": "MyPrograms"
+    },
+    {
+      "type": "java",
+      "name": "BeeCrowdOlimpieda",
+      "request": "launch",
+      "mainClass": "BeeCrowdOlimpieda",
+      "projectName": "MyPrograms"
+    },
+    {
+      "type": "java",
+      "name": "ListaSequencialJogador",
+      "request": "launch",
+      "mainClass": "ListaSequencialJogador",
+      "projectName": "MyPrograms"
+    },
+    {
+      "type": "java",
+      "name": "listaSequencialJogador",
+      "request": "launch",
+      "mainClass": "listaSequencialJogador",
+      "projectName": "MyPrograms"
+    },
+    {
+      "type": "java",
       "name": "TP02Q05",
       "request": "launch",
       "mainClass": "TP02Q05",
@@ -466,8 +529,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/kino1/Desktop/MyPrograms/C",
-      "program": "c:/Users/kino1/Desktop/MyPrograms/C/build/Debug/outDebug",
+      "cwd": "c:/Users/kino1/Desktop/MyPrograms/C/TP03",
+      "program": "c:/Users/kino1/Desktop/MyPrograms/C/TP03/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
