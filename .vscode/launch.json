@@ -3,6 +3,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "JogadorArvoreArvore",
+      "request": "launch",
+      "mainClass": "JogadorArvoreArvore",
+      "projectName": "MyPrograms"
+    },
+    {
+      "type": "java",
       "name": "ArvoreBinaria2",
       "request": "launch",
       "mainClass": "ArvoreBinaria2",
