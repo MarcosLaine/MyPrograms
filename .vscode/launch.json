@@ -3,6 +3,69 @@
   "configurations": [
     {
       "type": "java",
+      "name": "HashIndireta",
+      "request": "launch",
+      "mainClass": "HashIndireta",
+      "projectName": "MyPrograms"
+    },
+    {
+      "type": "java",
+      "name": "rehash",
+      "request": "launch",
+      "mainClass": "rehash",
+      "projectName": "MyPrograms"
+    },
+    {
+      "type": "java",
+      "name": "TabelaHashRehashing",
+      "request": "launch",
+      "mainClass": "TabelaHashRehashing",
+      "projectName": "MyPrograms"
+    },
+    {
+      "type": "java",
+      "name": "Rehash",
+      "request": "launch",
+      "mainClass": "Rehash",
+      "projectName": "MyPrograms"
+    },
+    {
+      "type": "java",
+      "name": "ReHash",
+      "request": "launch",
+      "mainClass": "ReHash",
+      "projectName": "MyPrograms"
+    },
+    {
+      "type": "java",
+      "name": "TabelaHash",
+      "request": "launch",
+      "mainClass": "TabelaHash",
+      "projectName": "MyPrograms"
+    },
+    {
+      "type": "java",
+      "name": "Tree",
+      "request": "launch",
+      "mainClass": "Tree",
+      "projectName": "MyPrograms"
+    },
+    {
+      "type": "java",
+      "name": "Principal",
+      "request": "launch",
+      "mainClass": "Principal",
+      "projectName": "MyPrograms"
+    },
+    {
+      "type": "java",
+      "name": "Doidona",
+      "request": "launch",
+      "mainClass": "Doidona",
+      "projectName": "MyPrograms"
+    },
+    {
+      "type": "java",
       "name": "JogadorArvoreArvore",
       "request": "launch",
       "mainClass": "JogadorArvoreArvore",
