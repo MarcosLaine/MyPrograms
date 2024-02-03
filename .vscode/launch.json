@@ -599,8 +599,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/kino1/Desktop/MyPrograms/C/TP03",
-      "program": "c:/Users/kino1/Desktop/MyPrograms/C/TP03/build/Debug/outDebug",
+      "cwd": "c:/Users/kino1/Desktop/MyPrograms/C/TP04",
+      "program": "c:/Users/kino1/Desktop/MyPrograms/C/TP04/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
