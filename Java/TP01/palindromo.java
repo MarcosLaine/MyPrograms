@@ -4,7 +4,7 @@ public class palindromo {
         int tamanho, i, j;
         boolean palindromo;
 
-        while (true) {
+        while (true){
             linha = MyIO.readLine();
 
             // Verifica se a linha é "FIM" para sair do programa

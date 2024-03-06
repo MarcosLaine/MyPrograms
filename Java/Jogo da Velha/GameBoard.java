@@ -34,7 +34,7 @@ public class GameBoard extends JPanel {
         board[index] = currentPlayer;  // Atualiza o tabuleiro
         button.setText(currentPlayer);
         checkGameStatus();
-        currentPlayer = currentPlayer.equals("X") ? "O" : "X";
+        currentPlayer = currentPlayer.equals("X") ? "0" : "X";
     }
 
     private void checkGameStatus() {

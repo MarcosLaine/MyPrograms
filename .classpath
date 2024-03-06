@@ -6,5 +6,7 @@
 	<classpathentry kind="src" path="Java/Exercícios_e_testes"/>
 	<classpathentry kind="src" path="Java/TP04"/>
 	<classpathentry kind="src" path="Java/Estudos"/>
+	<classpathentry kind="src" path="Java/Jogo da Velha"/>
+	<classpathentry kind="src" path="TPs/TP1"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

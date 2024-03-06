@@ -3,6 +3,20 @@
   "configurations": [
     {
       "type": "java",
+      "name": "CifrementoRec",
+      "request": "launch",
+      "mainClass": "CifrementoRec",
+      "projectName": "MyPrograms"
+    },
+    {
+      "type": "java",
+      "name": "TicTacToe",
+      "request": "launch",
+      "mainClass": "TicTacToe",
+      "projectName": "MyPrograms"
+    },
+    {
+      "type": "java",
       "name": "HashIndireta",
       "request": "launch",
       "mainClass": "HashIndireta",
@@ -599,8 +613,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/kino1/Desktop/MyPrograms/C/TP04",
-      "program": "c:/Users/kino1/Desktop/MyPrograms/C/TP04/build/Debug/outDebug",
+      "cwd": "c:/Users/kino1/Desktop/Programacao/MyPrograms/TPs/TP1",
+      "program": "c:/Users/kino1/Desktop/Programacao/MyPrograms/TPs/TP1/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [

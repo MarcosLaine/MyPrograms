@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marcos Laine</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Marcos Laine</h1>
+        <h2>Estudante de Ciência da Computação</h2>
+    </header>
+    <main>
+        <section>
+            <h3>Sobre Mim</h3>
+            <p>Me chamo Marcos Paulo Laine e busco desenvolver minha carreira na área da Ciência da Computação,
+                explorando meu interesse e entusiasmo por tecnologia e programação com uma vontade incomparável de
+                aprender. Possuo conhecimentos sólidos em fundamentos da computação, algoritmos e programação básica,
+                visto que estou no 3° (terceiro) período do curso. Meu objetivo é expandir esse conhecimento, aprimorar
+                minhas
+                habilidades de desenvolvimento de software e contribuir para projetos inovadores. Estou em busca
+                de oportunidades de estágio ou emprego que me permitam aplicar meus conhecimentos teóricos na prática,
+                enquanto continuo aprendendo e me desenvolvendo profissionalmente.</p>
+        </section>
+        <section>
+            <h3>Projetos</h3>
+            <p>Realizei projetos como uma página de auxiliar de investimentos, que conta com Front-end, Back-end e
+                Banco de dados básicos; calculadora com inteface gráfica em Java e em JavaScript; jogos básicos como
+                Memória e Tic-Tac-Toe utilizando JavaScript, Java, Python, entre outros.</p>
+            <div class="carousel">
+                <div class="carousel-container">
+                    <img src="financiart.png" alt="Projeto 1" class="carousel-image active">
+                    <img src="memoria.png" alt="Projeto 2" class="carousel-image">
+                    <img src="tictactoe.png" alt="Projeto 3" class="carousel-image">
+                </div>
+                <button class="carousel-button prev-button">&lt;</button>
+                <button class="carousel-button next-button">&gt;</button>
+            </div>
+        </section>
+        
+        <script>
+        const prevButton = document.querySelector('.prev-button');
+        const nextButton = document.querySelector('.next-button');
+        const carouselContainer = document.querySelector('.carousel-container');
+        let currentIndex = 0;
+
+        prevButton.addEventListener('click', () => {
+            if (currentIndex > 0) {
+                currentIndex--;
+                updateCarousel();
+            }
+        });
+
+        nextButton.addEventListener('click', () => {
+            if (currentIndex < carouselContainer.children.length - 1) {
+                currentIndex++;
+                updateCarousel();
+            }
+        });
+
+        function updateCarousel() {
+            const offset = -currentIndex * 100;
+            carouselContainer.style.transform = `translateX(${offset}%)`;
+            const slides = document.querySelectorAll('.carousel-image');
+            slides.forEach(slide => slide.classList.remove('active'));
+            slides[currentIndex].classList.add('active');
+        }
+        
+    </script>        
+    <div class="skills-conhecimentos-container">
+        <section class="conhecimentos">
+            <h2>Conhecimentos</h2>
+            <ul>
+                <li>Algoritmos e Estrutura de Dados</li>
+                <li>Front-end</li>
+                <li>Back-end</li>
+                <li>Banco de Dados</li>
+                <li>Engenharia de software</li>
+            </ul>
+        </section>
+        <section class="skills">
+            <h2>Skills</h2>
+            <div class="skills-list-container">
+                <div class="column">
+                    <ul>
+                        <li>Java</li>
+                        <li>Python</li>
+                        <li>HTML, CSS & JavaScript</li>
+                        <li>C++, C & C#</li>
+                    </ul>
+                </div>
+                <div class="column">
+                    <ul>
+                        <li>PostgreSQL</li>
+                        <li>Git e GitHub</li>
+                        <li>Linux</li>
+                        <li>Estudando React.js</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </div>
+    </main>
+    <footer>
+        <h3>Contate-me</h3>
+        <div class="social-icons">
+            <a href="https://github.com/marcoslaine" target="_blank"><img src="GitHub.png" alt="GitHub"></a>
+            <a href="https://www.linkedin.com/in/marcos-laine" target="_blank"><img src="Linkedin.png" alt="LinkedIn"></a>
+            <a href="mailto:marcospslaine@gmail.com" target="_blank"><img src="gmail_2020.png" alt="Gmail"></a>
+        </div>
+        <p>&copy; 2024 Marcos Laine. Todos direitos reservados.</p>
+    </footer>
+    
+</body>
+
+</html>
