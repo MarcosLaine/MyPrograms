@@ -1,5 +1,3 @@
-import java.util.concurrent.Flow.Subscriber;
-
 class Is {
     static boolean verificaSoVogal(String str) {
         for (int i = 0; i < str.length(); i++) {

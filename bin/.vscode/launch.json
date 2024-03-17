@@ -3,6 +3,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "Palindromo",
+      "request": "launch",
+      "mainClass": "Palindromo",
+      "projectName": "TP1_d37c9ed3"
+    },
+    {
+      "type": "java",
       "name": "Is",
       "request": "launch",
       "mainClass": "Is",

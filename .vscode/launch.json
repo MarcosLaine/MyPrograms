@@ -3,6 +3,20 @@
   "configurations": [
     {
       "type": "java",
+      "name": "Contrato",
+      "request": "launch",
+      "mainClass": "Contrato",
+      "projectName": "MyPrograms"
+    },
+    {
+      "type": "java",
+      "name": "Criptografia",
+      "request": "launch",
+      "mainClass": "Criptografia",
+      "projectName": "MyPrograms"
+    },
+    {
+      "type": "java",
       "name": "CifrementoRec",
       "request": "launch",
       "mainClass": "CifrementoRec",
