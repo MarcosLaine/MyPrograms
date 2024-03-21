@@ -41,7 +41,8 @@
     "stdio.h": "c",
     "iostream": "cpp",
     "stdlib.h": "c",
-    "time.h": "c"
+    "time.h": "c",
+    "string.h": "c"
   },
   "C_Cpp_Runner.showCompilationTime": false,
   "java.debug.settings.onBuildFailureProceed": true,

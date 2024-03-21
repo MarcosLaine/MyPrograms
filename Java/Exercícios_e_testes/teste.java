@@ -1,8 +1,5 @@
-/*class teste {
-   public static void main (String[] args){
-      do{
-         char letra = MyIO.readChar();
-         MyIO.println(letra);
-   } while(letra != 'l');
+class teste{
+   public static void main(String[] args) {
+      int x[] = {10, 30, null, 5};
    }
-}*/
+}

@@ -33,15 +33,16 @@ void saque(int valor)
     }
     for (int i = 0; i < TOTAL_NOTAS; i++)
     {
-    {
-        totalEstoque += estoque[i] * notas[i];
+        {
+            totalEstoque += estoque[i] * notas[i];
+        }
+        if (totalEstoque < 100)
+        {
+            printf("Atenção, o saldo está baixo! Reabasteça o caixa\n\n");
+            return;
+        }
+        printf("\n");
     }
-    if (totalEstoque < 100)
-    {
-        printf("Atenção, o saldo está baixo! Reabasteça o caixa\n\n");
-        return;
-    }
-    printf("\n");
 }
 void carregarNotas(int notas[], int quantidade[], int tamanho)
 {
@@ -128,6 +129,5 @@ int main()
             printf("Opção inválida. Tente novamente.\n");
         }
         printf("\n");
-    }
     return 0;
-}
+    }
