@@ -648,8 +648,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/kino1/Desktop/Programacao/MyPrograms/C/estudos",
-      "program": "c:/Users/kino1/Desktop/Programacao/MyPrograms/C/estudos/build/Debug/outDebug",
+      "cwd": "c:/Users/kino1/Desktop/Programacao/MyPrograms/C/Warm-ups",
+      "program": "c:/Users/kino1/Desktop/Programacao/MyPrograms/C/Warm-ups/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [

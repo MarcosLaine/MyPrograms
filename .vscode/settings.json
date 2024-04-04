@@ -69,5 +69,11 @@
   "C_Cpp_Runner.useUndefinedSanitizer": false,
   "C_Cpp_Runner.useLeakSanitizer": false,
   "C_Cpp_Runner.useLinkTimeOptimization": false,
-  "C_Cpp_Runner.msvcSecureNoWarnings": false
+  "C_Cpp_Runner.msvcSecureNoWarnings": false,
+  "dotnet.defaultSolution": "ConsoleApp1.sln",
+  "csharp.debug.console": "externalTerminal",
+  "CodeGPT.apiKey": "OpenAI",
+  "CodeGPT.Autocomplete.maxTokens": 6000,
+  "CodeGPT.Autocomplete.suggestionDelay": 4300,
+  "CodeGPT.Autocomplete.enabled": true
 }
