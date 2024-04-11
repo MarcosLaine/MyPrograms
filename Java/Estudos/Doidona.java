@@ -1,5 +1,5 @@
 class HashTable {
-    private Integer[] table;
+    Integer[] table;
 
     public HashTable(int size) {
         table = new Integer[size];

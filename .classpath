@@ -8,5 +8,6 @@
 	<classpathentry kind="src" path="Java/Estudos"/>
 	<classpathentry kind="src" path="Java/Jogo da Velha"/>
 	<classpathentry kind="src" path="TPs/TP1"/>
+	<classpathentry kind="src" path="TPs/TP2"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
