@@ -3,6 +3,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "TPQ01",
+      "request": "launch",
+      "mainClass": "TPQ01",
+      "projectName": "MyPrograms"
+    },
+    {
+      "type": "java",
       "name": "Personagem",
       "request": "launch",
       "mainClass": "Personagem",
