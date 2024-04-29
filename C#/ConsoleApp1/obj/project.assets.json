@@ -8,24 +8,26 @@
     "net8.0": []
   },
   "packageFolders": {
-    "/home/marcoslaine/.nuget/packages/": {}
+    "C:\\Users\\kino1\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/marcoslaine/Área de trabalho/Programacao/MyPrograms/C#/ConsoleApp1/ConsoleApp1.csproj",
+      "projectUniqueName": "C:\\Users\\kino1\\Desktop\\Programacao\\MyPrograms\\C#\\ConsoleApp1\\ConsoleApp1.csproj",
       "projectName": "ConsoleApp1",
-      "projectPath": "/home/marcoslaine/Área de trabalho/Programacao/MyPrograms/C#/ConsoleApp1/ConsoleApp1.csproj",
-      "packagesPath": "/home/marcoslaine/.nuget/packages/",
-      "outputPath": "/home/marcoslaine/Área de trabalho/Programacao/MyPrograms/C#/ConsoleApp1/obj/",
+      "projectPath": "C:\\Users\\kino1\\Desktop\\Programacao\\MyPrograms\\C#\\ConsoleApp1\\ConsoleApp1.csproj",
+      "packagesPath": "C:\\Users\\kino1\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\kino1\\Desktop\\Programacao\\MyPrograms\\C#\\ConsoleApp1\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/marcoslaine/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\kino1\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -38,6 +40,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -59,7 +66,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/lib64/dotnet/sdk/8.0.103/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

@@ -64,7 +64,6 @@ public class Selecao {
             String line = br.readLine(); // Pula a primeira linha (cabeçalho)
     
             while ((line = br.readLine()) != null) {
-                // Certifique-se de usar o delimitador correto. Se for ponto e vírgula, use line.split(";");
                 String[] data = line.split(";"); 
     
                 // Verificar se a linha tem o número esperado de campos
@@ -162,8 +161,8 @@ public class Selecao {
 
         public String getName() {
             return name;
-        }
-
+        } 
+ 
         @Override
         public String toString() {
             return "[" + id + " ## " + name + " ## " + alternateNames + " ## " + house + " ## " +

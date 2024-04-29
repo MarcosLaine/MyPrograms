@@ -118,7 +118,7 @@ public class BuscaSequencial {
                     } else {
                         System.err.println("Linha com formato incorreto: " + line);
                     }
-                    line = br.readLine(); // Lê a próxima linha
+                    line = br.readLine();
                 }
             } catch (IOException e) {
                 e.printStackTrace();

@@ -9,7 +9,6 @@ public class Insercao {
     public static void main(String[] args) {
         List<Personagem> personagens = Personagem.lerDadosDoArquivo(Personagem.FILE_NAME);
         
-        // Verifique se a lista de personagens foi preenchida corretamente
         if (personagens == null || personagens.isEmpty()) {
             System.out.println("Nenhum personagem encontrado ou erro ao ler o arquivo.");
             return;
@@ -21,7 +20,7 @@ public class Insercao {
         // Imprimir os personagens ordenados
         personagens.forEach(System.out::println);
 
-        // Escrever o log aqui conforme necessário
+        
     }
 
     // Implementação do algoritmo de ordenação por seleção

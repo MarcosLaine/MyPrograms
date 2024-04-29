@@ -130,9 +130,8 @@ int main() {
     if (personagens == NULL) {
         return 1;
     }
-
+ 
     char nomeBusca[MAX_NAME_LENGTH];
-    //printf("Digite os nomes para buscar (ou 'FIM' para encerrar):\n");
 
     while (fgets(nomeBusca, MAX_NAME_LENGTH, stdin)) {
         nomeBusca[strcspn(nomeBusca, "\n")] = 0; // Remove new line character

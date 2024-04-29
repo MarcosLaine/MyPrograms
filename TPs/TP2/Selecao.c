@@ -57,7 +57,7 @@ int lerDadosDoArquivo(const char *fileName, Personagem personagens[], int maxPer
     }
 
     char line[MAX_LINE_LENGTH];
-    fgets(line, sizeof(line), file); // Pular cabeçalho
+    fgets(line, sizeof(line), file);
 
     int count = 0;
     while (fgets(line, sizeof(line), file) && count < maxPersonagens) {
@@ -134,7 +134,7 @@ void stripNewline(char *str) {
         *ptr = '\0';
     }
 }
-
+ 
 int main() {
     Personagem personagens[MAX_PERSONAGENS];
     char ids[MAX_PERSONAGENS][MAX_FIELD_LENGTH]; // Suponha que não teremos mais IDs do que personagens
