@@ -7,6 +7,7 @@ import java.util.Scanner;
 
 public class BuscaSequencial {
 
+<<<<<<< HEAD
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         List<Personagem> personagens = Personagem.lerDadosDoArquivo(Personagem.FILE_NAME);
@@ -39,6 +40,38 @@ public class BuscaSequencial {
 
     static class Personagem {
         static final String FILE_NAME = "/tmp/characters.csv";
+=======
+    public static boolean buscarPorId(List<Personagem> listaPersonagens, String IdProcurado) {
+        for (Personagem personagem : listaPersonagens) {
+            if (personagem.getName().equalsIgnoreCase(IdProcurado)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public static void main(String[] args) {
+        List<Personagem> listaPersonagens = Personagem.lerDadosDoArquivo(Personagem.FILE_NAME);
+        Scanner scanner = new Scanner(System.in);
+
+        // Processamento das entradas para inserção
+        String input;
+        while (!(input = scanner.nextLine().trim()).equalsIgnoreCase("FIM")) {
+            // Processamento das entradas para pesquisa
+        }
+
+        while (!(input = scanner.nextLine().trim()).equalsIgnoreCase("FIM")) {
+            boolean encontrado = buscarPorId(listaPersonagens, input);
+            System.out.println(encontrado ? "SIM" : "NAO");
+        }
+        scanner.close();
+    }
+
+    static class Personagem {
+
+        static final String FILE_NAME = "/tmp/characters.csv";
+
+>>>>>>> 7b94ed9833d640c49f2a23515318c2cbd35c5b0f
         private String id;
         private String name;
         private String alternateNames;
@@ -58,9 +91,15 @@ public class BuscaSequencial {
         private String hairColour;
         private boolean wizard;
 
+<<<<<<< HEAD
         public Personagem(String id, String name, String alternateNames, String house, String ancestry,
                           String species, String patronus, boolean hogwartsStaff, boolean hogwartsStudent,
                           String actorName, boolean alive, String alternateActors, String dateOfBirth,
+=======
+        public Personagem(String id, String name, String alternateNames, String house, String ancestry, 
+                          String species, String patronus, boolean hogwartsStaff, boolean hogwartsStudent, 
+                          String actorName, boolean alive, String alternateActors, String dateOfBirth, 
+>>>>>>> 7b94ed9833d640c49f2a23515318c2cbd35c5b0f
                           int yearOfBirth, String eyeColour, String gender, String hairColour, boolean wizard) {
             this.id = id;
             this.name = name;
@@ -82,16 +121,108 @@ public class BuscaSequencial {
             this.wizard = wizard;
         }
 
+<<<<<<< HEAD
         
         public String getName() {
             return name;
         }
 
+=======
+        // Getters e Setters
+        public String getActorName() {
+            return actorName;
+        }
+        public String getAlternateActors() {
+            return alternateActors;
+        }
+        public String getAlternateNames() {
+            return alternateNames;
+        }
+        public String getAncestry() {
+            return ancestry;
+        }
+        public String getDateOfBirth() {
+            return dateOfBirth;
+        }
+        public String getEyeColour() {
+            return eyeColour;
+        }
+        public String getGender() {
+            return gender;
+        }
+        public String getHairColour() {
+            return hairColour;
+        }
+        public String getHouse() {
+            return house;
+        }
+        public String getId() {
+            return id;
+        }
+        public String getName() {
+            return name;
+        }
+        public String getPatronus() {
+            return patronus;
+        }
+        public String getSpecies() {
+            return species;
+        }
+        public int getYearOfBirth() {
+            return yearOfBirth;
+        }
+        public void setActorName(String actorName) {
+            this.actorName = actorName;
+        }
+        public void setAlive(boolean alive) {
+            this.alive = alive;
+        }
+        public void setAlternateActors(String alternateActors) {
+            this.alternateActors = alternateActors;
+        }
+        public void setAlternateNames(String alternateNames) {
+            this.alternateNames = alternateNames;
+        }
+        public void setAncestry(String ancestry) {
+            this.ancestry = ancestry;
+        }
+        public void setDateOfBirth(String dateOfBirth) {
+            this.dateOfBirth = dateOfBirth;
+        }
+        public void setEyeColour(String eyeColour) {
+            this.eyeColour = eyeColour;
+        }
+        public void setGender(String gender) {
+            this.gender = gender;
+        }
+        public void setHairColour(String hairColour) {
+            this.hairColour = hairColour;
+        }
+        public void setHouse(String house) {
+            this.house = house;
+        }
+        public void setId(String id) {
+            this.id = id;
+        }
+        public void setName(String name) {
+            this.name = name;
+        }
+        public void setPatronus(String patronus) {
+            this.patronus = patronus;
+        }
+        public void setSpecies(String species) {
+            this.species = species;
+        }
+        public void setYearOfBirth(int yearOfBirth) {
+            this.yearOfBirth = yearOfBirth;
+        }
+>>>>>>> 7b94ed9833d640c49f2a23515318c2cbd35c5b0f
 
         // Método para ler dados do arquivo
         public static List<Personagem> lerDadosDoArquivo(String fileName) {
             List<Personagem> personagens = new ArrayList<>();
             try (BufferedReader br = new BufferedReader(new FileReader(fileName))) {
+<<<<<<< HEAD
                 String line = br.readLine(); // Lê a primeira linha
                 
                 // Verifica se a primeira linha é um cabeçalho
@@ -114,11 +245,30 @@ public class BuscaSequencial {
                             personagens.add(personagem);
                         } catch (NumberFormatException e) {
                             System.err.println("Erro na conversão de dados: " + line);
+=======
+                br.readLine(); // pula o cabeçalho se existir
+                String line;
+                while ((line = br.readLine()) != null) {
+                    String[] data = line.split(";");
+                    if (data.length == 18) {
+                        try {
+                            int yearOfBirth = Integer.parseInt(data[13].trim());
+                            Personagem personagem = new Personagem(data[0], data[1], data[2], data[3], data[4], data[5], data[6],
+                                                                  Boolean.parseBoolean(data[7]), Boolean.parseBoolean(data[8]), data[9],
+                                                                  Boolean.parseBoolean(data[10]), data[11], data[12], yearOfBirth,
+                                                                  data[14], data[15], data[16], Boolean.parseBoolean(data[17]));
+                            personagens.add(personagem);
+                        } catch (NumberFormatException e) {
+                            System.err.println("Erro na conversão do ano de nascimento: " + line);
+>>>>>>> 7b94ed9833d640c49f2a23515318c2cbd35c5b0f
                         }
                     } else {
                         System.err.println("Linha com formato incorreto: " + line);
                     }
+<<<<<<< HEAD
                     line = br.readLine();
+=======
+>>>>>>> 7b94ed9833d640c49f2a23515318c2cbd35c5b0f
                 }
             } catch (IOException e) {
                 e.printStackTrace();
