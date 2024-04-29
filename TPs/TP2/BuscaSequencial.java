@@ -7,7 +7,6 @@ import java.util.Scanner;
 
 public class BuscaSequencial {
 
-<<<<<<< HEAD
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         List<Personagem> personagens = Personagem.lerDadosDoArquivo(Personagem.FILE_NAME);
@@ -40,7 +39,6 @@ public class BuscaSequencial {
 
     static class Personagem {
         static final String FILE_NAME = "/tmp/characters.csv";
-=======
     public static boolean buscarPorId(List<Personagem> listaPersonagens, String IdProcurado) {
         for (Personagem personagem : listaPersonagens) {
             if (personagem.getName().equalsIgnoreCase(IdProcurado)) {
@@ -71,7 +69,6 @@ public class BuscaSequencial {
 
         static final String FILE_NAME = "/tmp/characters.csv";
 
->>>>>>> 7b94ed9833d640c49f2a23515318c2cbd35c5b0f
         private String id;
         private String name;
         private String alternateNames;
@@ -91,15 +88,9 @@ public class BuscaSequencial {
         private String hairColour;
         private boolean wizard;
 
-<<<<<<< HEAD
-        public Personagem(String id, String name, String alternateNames, String house, String ancestry,
-                          String species, String patronus, boolean hogwartsStaff, boolean hogwartsStudent,
-                          String actorName, boolean alive, String alternateActors, String dateOfBirth,
-=======
         public Personagem(String id, String name, String alternateNames, String house, String ancestry, 
                           String species, String patronus, boolean hogwartsStaff, boolean hogwartsStudent, 
                           String actorName, boolean alive, String alternateActors, String dateOfBirth, 
->>>>>>> 7b94ed9833d640c49f2a23515318c2cbd35c5b0f
                           int yearOfBirth, String eyeColour, String gender, String hairColour, boolean wizard) {
             this.id = id;
             this.name = name;
@@ -121,13 +112,6 @@ public class BuscaSequencial {
             this.wizard = wizard;
         }
 
-<<<<<<< HEAD
-        
-        public String getName() {
-            return name;
-        }
-
-=======
         // Getters e Setters
         public String getActorName() {
             return actorName;
@@ -216,36 +200,11 @@ public class BuscaSequencial {
         public void setYearOfBirth(int yearOfBirth) {
             this.yearOfBirth = yearOfBirth;
         }
->>>>>>> 7b94ed9833d640c49f2a23515318c2cbd35c5b0f
 
         // Método para ler dados do arquivo
         public static List<Personagem> lerDadosDoArquivo(String fileName) {
             List<Personagem> personagens = new ArrayList<>();
             try (BufferedReader br = new BufferedReader(new FileReader(fileName))) {
-<<<<<<< HEAD
-                String line = br.readLine(); // Lê a primeira linha
-                
-                // Verifica se a primeira linha é um cabeçalho
-                if (line != null && line.toLowerCase().contains("id")) {
-                    line = br.readLine(); // Pula a linha do cabeçalho
-                }
-                
-                while (line != null) {
-                    String[] data = line.split(";");
-                    if (data.length == 18) {
-                        try {
-                            // Utiliza uma expressão regular para verificar se o ano de nascimento é numérico
-                            int yearOfBirth = data[13].matches("-?\\d+(\\.\\d+)?") ? Integer.parseInt(data[13]) : -1;
-                            Personagem personagem = new Personagem(
-                                data[0], data[1], data[2], data[3], data[4], data[5], data[6],
-                                Boolean.parseBoolean(data[7]), Boolean.parseBoolean(data[8]), data[9],
-                                Boolean.parseBoolean(data[10]), data[11], data[12], yearOfBirth,
-                                data[14], data[15], data[16], Boolean.parseBoolean(data[17])
-                            );
-                            personagens.add(personagem);
-                        } catch (NumberFormatException e) {
-                            System.err.println("Erro na conversão de dados: " + line);
-=======
                 br.readLine(); // pula o cabeçalho se existir
                 String line;
                 while ((line = br.readLine()) != null) {
@@ -260,15 +219,10 @@ public class BuscaSequencial {
                             personagens.add(personagem);
                         } catch (NumberFormatException e) {
                             System.err.println("Erro na conversão do ano de nascimento: " + line);
->>>>>>> 7b94ed9833d640c49f2a23515318c2cbd35c5b0f
                         }
                     } else {
                         System.err.println("Linha com formato incorreto: " + line);
                     }
-<<<<<<< HEAD
-                    line = br.readLine();
-=======
->>>>>>> 7b94ed9833d640c49f2a23515318c2cbd35c5b0f
                 }
             } catch (IOException e) {
                 e.printStackTrace();
