@@ -75,5 +75,6 @@
   "CodeGPT.apiKey": "OpenAI",
   "CodeGPT.Autocomplete.maxTokens": 6000,
   "CodeGPT.Autocomplete.suggestionDelay": 4300,
-  "CodeGPT.Autocomplete.enabled": true
+  "CodeGPT.Autocomplete.enabled": true,
+  "commentTranslate.multiLineMerge": false
 }

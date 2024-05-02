@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/marcoslaine/programacao/MyPrograms/C#/ConsoleApp1/ConsoleApp1.csproj": {}
+    "/home/marcoslaine/programacao/MyPrograms/C#/MeuProjetoDeIndices/MeuProjetoDeIndices.csproj": {}
   },
   "projects": {
-    "/home/marcoslaine/programacao/MyPrograms/C#/ConsoleApp1/ConsoleApp1.csproj": {
+    "/home/marcoslaine/programacao/MyPrograms/C#/MeuProjetoDeIndices/MeuProjetoDeIndices.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/marcoslaine/programacao/MyPrograms/C#/ConsoleApp1/ConsoleApp1.csproj",
-        "projectName": "ConsoleApp1",
-        "projectPath": "/home/marcoslaine/programacao/MyPrograms/C#/ConsoleApp1/ConsoleApp1.csproj",
+        "projectUniqueName": "/home/marcoslaine/programacao/MyPrograms/C#/MeuProjetoDeIndices/MeuProjetoDeIndices.csproj",
+        "projectName": "MeuProjetoDeIndices",
+        "projectPath": "/home/marcoslaine/programacao/MyPrograms/C#/MeuProjetoDeIndices/MeuProjetoDeIndices.csproj",
         "packagesPath": "/home/marcoslaine/.nuget/packages/",
-        "outputPath": "/home/marcoslaine/programacao/MyPrograms/C#/ConsoleApp1/obj/",
+        "outputPath": "/home/marcoslaine/programacao/MyPrograms/C#/MeuProjetoDeIndices/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/marcoslaine/.nuget/NuGet/NuGet.Config"

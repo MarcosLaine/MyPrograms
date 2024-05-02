@@ -1,0 +1,15 @@
+/home/marcoslaine/programacao/MyPrograms/C#/MeuProjetoDeIndices/bin/Debug/net8.0/MeuProjetoDeIndices
+/home/marcoslaine/programacao/MyPrograms/C#/MeuProjetoDeIndices/bin/Debug/net8.0/MeuProjetoDeIndices.deps.json
+/home/marcoslaine/programacao/MyPrograms/C#/MeuProjetoDeIndices/bin/Debug/net8.0/MeuProjetoDeIndices.runtimeconfig.json
+/home/marcoslaine/programacao/MyPrograms/C#/MeuProjetoDeIndices/bin/Debug/net8.0/MeuProjetoDeIndices.dll
+/home/marcoslaine/programacao/MyPrograms/C#/MeuProjetoDeIndices/bin/Debug/net8.0/MeuProjetoDeIndices.pdb
+/home/marcoslaine/programacao/MyPrograms/C#/MeuProjetoDeIndices/obj/Debug/net8.0/MeuProjetoDeIndices.GeneratedMSBuildEditorConfig.editorconfig
+/home/marcoslaine/programacao/MyPrograms/C#/MeuProjetoDeIndices/obj/Debug/net8.0/MeuProjetoDeIndices.AssemblyInfoInputs.cache
+/home/marcoslaine/programacao/MyPrograms/C#/MeuProjetoDeIndices/obj/Debug/net8.0/MeuProjetoDeIndices.AssemblyInfo.cs
+/home/marcoslaine/programacao/MyPrograms/C#/MeuProjetoDeIndices/obj/Debug/net8.0/MeuProjetoDeIndices.csproj.CoreCompileInputs.cache
+/home/marcoslaine/programacao/MyPrograms/C#/MeuProjetoDeIndices/obj/Debug/net8.0/MeuProjetoDeIndices.sourcelink.json
+/home/marcoslaine/programacao/MyPrograms/C#/MeuProjetoDeIndices/obj/Debug/net8.0/MeuProjetoDeIndices.dll
+/home/marcoslaine/programacao/MyPrograms/C#/MeuProjetoDeIndices/obj/Debug/net8.0/refint/MeuProjetoDeIndices.dll
+/home/marcoslaine/programacao/MyPrograms/C#/MeuProjetoDeIndices/obj/Debug/net8.0/MeuProjetoDeIndices.pdb
+/home/marcoslaine/programacao/MyPrograms/C#/MeuProjetoDeIndices/obj/Debug/net8.0/MeuProjetoDeIndices.genruntimeconfig.cache
+/home/marcoslaine/programacao/MyPrograms/C#/MeuProjetoDeIndices/obj/Debug/net8.0/ref/MeuProjetoDeIndices.dll
