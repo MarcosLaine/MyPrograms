@@ -3,6 +3,20 @@
   "configurations": [
     {
       "type": "java",
+      "name": "TPQ01",
+      "request": "launch",
+      "mainClass": "TPQ01",
+      "projectName": "MyPrograms"
+    },
+    {
+      "type": "java",
+      "name": "Personagem",
+      "request": "launch",
+      "mainClass": "Personagem",
+      "projectName": "MyPrograms"
+    },
+    {
+      "type": "java",
       "name": "Cartas",
       "request": "launch",
       "mainClass": "Cartas",
@@ -648,8 +662,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/kino1/Desktop/Programacao/MyPrograms/C/Warm-ups",
-      "program": "c:/Users/kino1/Desktop/Programacao/MyPrograms/C/Warm-ups/build/Debug/outDebug",
+      "cwd": "c:/Users/kino1/Desktop/Programacao/MyPrograms/TPs/TP2",
+      "program": "c:/Users/kino1/Desktop/Programacao/MyPrograms/TPs/TP2/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
