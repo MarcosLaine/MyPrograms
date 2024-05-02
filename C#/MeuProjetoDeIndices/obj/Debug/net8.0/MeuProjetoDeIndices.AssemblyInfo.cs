@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MeuProjetoDeIndices")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8a31b22f30ee79a9ff2f6e890c2f8a1e384bd74c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0ade3cfb1c8b486f14a3d48ef007239635003b68")]
 [assembly: System.Reflection.AssemblyProductAttribute("MeuProjetoDeIndices")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MeuProjetoDeIndices")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

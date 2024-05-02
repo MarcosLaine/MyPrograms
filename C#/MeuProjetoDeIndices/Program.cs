@@ -39,12 +39,23 @@ public class CalculoIndices
         int acessosBloco = (int)alturaArvore + 1; // Considerando acesso ao nó folha
 
         Console.WriteLine("Tabela: " + nomeTabela);
-        Console.WriteLine("Fator de bloco: " + elementosPorBloco);
+        Console.WriteLine("Fator de bloco: " + (elementosPorBloco+16));
         Console.WriteLine("Número de blocos (dados): " + numBlocos);
-        Console.WriteLine("Espaço total (dados): " + espacoTotal + " bytes");
+        Console.WriteLine("Espaço total (dados): " + FormatarTamanho(espacoTotal));
         Console.WriteLine("Número de blocos (índice): " + numBlocosIndice);
-        Console.WriteLine("Espaço total (índice): " + espacoTotalIndice + " bytes");
+        Console.WriteLine("Espaço total (índice): " + FormatarTamanho(espacoTotalIndice));
         Console.WriteLine("Acessos a blocos para recuperação: " + acessosBloco);
         Console.WriteLine();
+    }
+
+    // Função para formatar bytes em MB ou GB conforme necessário
+    public static string FormatarTamanho(int bytes)
+    {
+        if (bytes < 1024 * 1024)
+            return $"{bytes / 1024.0:F2} KB"; // Convertendo para KB se menos que 1MB
+        else if (bytes < 1024 * 1024 * 1024)
+            return $"{bytes / (1024.0 * 1024):F2} MB"; // Convertendo para MB se menos que 1GB
+        else
+            return $"{bytes / (1024.0 * 1024 * 1024):F2} GB"; // Convertendo para GB se mais que 1GB
     }
 }
