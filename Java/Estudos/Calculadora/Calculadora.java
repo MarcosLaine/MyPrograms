@@ -1,5 +1,6 @@
+package Calculadora;
+
 import java.util.Scanner;
-import java.lang.Math;
 
 public class Calculadora {
       static double taxa;

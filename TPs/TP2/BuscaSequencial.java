@@ -65,7 +65,7 @@ public class BuscaSequencial {
             scanner.close();
         }
 
-        static class Personagem {
+        class Personagem {
 
             static final String FILE_NAME = "/tmp/characters.csv";
 
