@@ -77,5 +77,8 @@
   "CodeGPT.Autocomplete.suggestionDelay": 4300,
   "CodeGPT.Autocomplete.enabled": true,
   "commentTranslate.multiLineMerge": false,
-  "commentTranslate.hover.enabled": false
+  "commentTranslate.hover.enabled": false,
+  "files.watcherExclude": {
+    "**/target": true
+  }
 }
