@@ -55,7 +55,7 @@ public class MergeSort {
         printArray(array, level);
     }
 
-    private static void merge(int[] esquerda, int[] direita, int[] array) {
+    private static void merge(int[] esquerda, int[] direita, int[] array) {//intercalar
         int parteEsquerda = esquerda.length;
         int parteDireita = direita.length;
 
