@@ -3,6 +3,48 @@
   "configurations": [
     {
       "type": "java",
+      "name": "ArvoreRodar",
+      "request": "launch",
+      "mainClass": "ArvoreRodar",
+      "projectName": "MyPrograms"
+    },
+    {
+      "type": "java",
+      "name": "PrincipalListas",
+      "request": "launch",
+      "mainClass": "PrincipalListas",
+      "projectName": "MyPrograms"
+    },
+    {
+      "type": "java",
+      "name": "MergeSortPresentation",
+      "request": "launch",
+      "mainClass": "MergeSortPresentation",
+      "projectName": "MyPrograms"
+    },
+    {
+      "type": "java",
+      "name": "MergeSort",
+      "request": "launch",
+      "mainClass": "MergeSort",
+      "projectName": "MyPrograms"
+    },
+    {
+      "type": "java",
+      "name": "QuickSort",
+      "request": "launch",
+      "mainClass": "QuickSort",
+      "projectName": "MyPrograms"
+    },
+    {
+      "type": "java",
+      "name": "LinkedListTeste",
+      "request": "launch",
+      "mainClass": "LinkedListTeste",
+      "projectName": "MyPrograms"
+    },
+    {
+      "type": "java",
       "name": "HashtableDemo",
       "request": "launch",
       "mainClass": "HashtableDemo",
