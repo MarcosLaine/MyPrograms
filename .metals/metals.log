@@ -15,3 +15,60 @@ mai. 17, 2024 9:10:37 AM scala.meta.internal.pc.CompilerAccess handleError
 GRAVE: A severe compiler error occurred, full details of the error can be found in the error report C:\Users\kino1\Desktop\Programacao\MyPrograms\.metals\.reports\metals-full\2024-05-17\r_compiler-error_09-10-37-018.md
 mai. 17, 2024 9:11:54 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
 INFORMAÇÕES: Unsupported notification method: $/setTrace
+mai. 17, 2024 9:17:23 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+ADVERTÊNCIA: Unmatched cancel notification for request id 18
+2024.05.17 09:17:23 WARN  no build target for: C:\Users\kino1\Desktop\Programacao\MyPrograms\Java\Estudos\MergeSort.java
+2024.05.17 09:17:25 WARN  no build target for: C:\Users\kino1\Desktop\Programacao\MyPrograms\Java\Estudos\MergeSort.java
+2024.05.17 09:17:25 WARN  no build target for: C:\Users\kino1\Desktop\Programacao\MyPrograms\Java\Estudos\MergeSort.java
+2024.05.17 09:17:25 WARN  no build target for: C:\Users\kino1\Desktop\Programacao\MyPrograms\Java\Estudos\MergeSort.java
+mai. 17, 2024 9:17:25 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+ADVERTÊNCIA: Unmatched cancel notification for request id 34
+2024.05.17 09:17:25 WARN  no build target for: C:\Users\kino1\Desktop\Programacao\MyPrograms\Java\Estudos\MergeSort.java
+2024.05.17 09:17:26 WARN  no build target for: C:\Users\kino1\Desktop\Programacao\MyPrograms\Java\Estudos\MergeSort.java
+2024.05.17 09:17:26 WARN  no build target for: C:\Users\kino1\Desktop\Programacao\MyPrograms\Java\Estudos\MergeSort.java
+2024.05.17 09:17:25 WARN  no build target for: C:\Users\kino1\Desktop\Programacao\MyPrograms\Java\Estudos\MergeSort.java
+2024.05.17 09:17:26 WARN  no build target for: C:\Users\kino1\Desktop\Programacao\MyPrograms\Java\Estudos\MergeSort.java
+2024.05.17 09:17:25 WARN  no build target for: C:\Users\kino1\Desktop\Programacao\MyPrograms\Java\Estudos\MergeSort.java
+2024.05.17 09:17:26 WARN  no build target for: C:\Users\kino1\Desktop\Programacao\MyPrograms\Java\Estudos\MergeSort.java
+mai. 17, 2024 9:54:02 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleNotification
+ADVERTÊNCIA: Notification threw an exception: {
+  "jsonrpc": "2.0",
+  "method": "metals/didFocusTextDocument",
+  "params": [
+    "git:/c%3A/Users/kino1/Desktop/Programacao/MyPrograms/Java/Estudos/MergeSort.java?%7B%22path%22%3A%22c%3A%5C%5CUsers%5C%5Ckino1%5C%5CDesktop%5C%5CProgramacao%5C%5CMyPrograms%5C%5CJava%5C%5CEstudos%5C%5CMergeSort.java%22%2C%22ref%22%3A%22~%22%7D"
+  ]
+}
+java.lang.RuntimeException: java.lang.reflect.InvocationTargetException
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$null$0(GenericEndpoint.java:67)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.notify(GenericEndpoint.java:152)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleNotification(RemoteEndpoint.java:220)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:187)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:194)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:94)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:113)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: java.lang.reflect.InvocationTargetException
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$null$0(GenericEndpoint.java:65)
+	... 11 more
+Caused by: java.nio.file.FileSystemNotFoundException: Provider "git" not installed
+	at java.base/java.nio.file.Path.of(Path.java:212)
+	at java.base/java.nio.file.Paths.get(Paths.java:98)
+	at scala.meta.internal.mtags.MtagsEnrichments$XtensionURIMtags.toAbsolutePath(MtagsEnrichments.scala:131)
+	at scala.meta.internal.mtags.MtagsEnrichments$XtensionStringMtags.toAbsolutePath(MtagsEnrichments.scala:187)
+	at scala.meta.internal.metals.MetalsEnrichments$XtensionString.toAbsolutePath(MetalsEnrichments.scala:732)
+	at scala.meta.internal.metals.MetalsEnrichments$XtensionString.toAbsolutePath(MetalsEnrichments.scala:729)
+	at scala.meta.internal.metals.WorkspaceLspService.didFocus(WorkspaceLspService.scala:639)
+	at scala.meta.metals.lsp.DelegatingScalaService.didFocus(DelegatingScalaService.scala:43)
+	... 16 more
+
+2024.05.17 09:54:36 INFO  Shutting down server
+2024.05.17 09:54:36 INFO  shutting down Metals
+2024.05.17 09:54:36 INFO  Exiting server
