@@ -48,6 +48,16 @@ public class BuscaSequencial {
             return false;
         }
 
+        public static List<BuscaSequencial.Personagem> lerDadosDoArquivo(String fileName) {
+            // TODO Auto-generated method stub
+            throw new UnsupportedOperationException("Unimplemented method 'lerDadosDoArquivo'");
+        }
+
+        public String getName() {
+            // TODO Auto-generated method stub
+            throw new UnsupportedOperationException("Unimplemented method 'getName'");
+        }
+
         public static void main(String[] args) {
             List<Personagem> listaPersonagens = Personagem.lerDadosDoArquivo(Personagem.FILE_NAME);
             Scanner scanner = new Scanner(System.in);
