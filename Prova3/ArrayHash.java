@@ -1,3 +1,4 @@
+package Prova3;
 import java.util.Scanner;
 
 public class ArrayHash {
