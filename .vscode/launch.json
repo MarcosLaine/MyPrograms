@@ -3,6 +3,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "GodOfWar",
+      "request": "launch",
+      "mainClass": "GodOfWar",
+      "projectName": "MyPrograms"
+    },
+    {
+      "type": "java",
       "name": "ArvoreRodar",
       "request": "launch",
       "mainClass": "ArvoreRodar",
