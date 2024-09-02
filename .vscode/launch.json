@@ -3,6 +3,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "test",
+      "request": "launch",
+      "mainClass": "test",
+      "projectName": "MyPrograms"
+    },
+    {
+      "type": "java",
       "name": "GodOfWar",
       "request": "launch",
       "mainClass": "GodOfWar",
