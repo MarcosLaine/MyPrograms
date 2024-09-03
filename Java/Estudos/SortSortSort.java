@@ -42,8 +42,8 @@ public class SortSortSort {
                 System.out.println(vet[i]);
             }
 
-            System.out.println("0 0");
         }
+        System.out.println("0 0");
     }
 
     static int[] sort(int[] vetor, int tamanho, int mod) {
