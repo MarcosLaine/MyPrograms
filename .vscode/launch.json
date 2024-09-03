@@ -3,6 +3,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "SortSortSort",
+      "request": "launch",
+      "mainClass": "SortSortSort",
+      "projectName": "MyPrograms"
+    },
+    {
+      "type": "java",
       "name": "test",
       "request": "launch",
       "mainClass": "test",
