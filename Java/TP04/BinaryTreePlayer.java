@@ -1,9 +1,6 @@
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
-import java.io.IOException;
-import java.io.RandomAccessFile;
-import java.util.Scanner;
 
 class BinaryTree {
     private Player3Node root;
@@ -74,6 +71,11 @@ class Player3 {
 
     Player3() {}
 
+    public String getNome() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getNome'");
+    }
+
     Player3(int id, String nome, int altura, int peso, String universidade, int anoNascimento, String cidadeNascimento, String estadoNascimento) {
         this.id = id;
         this.nome = nome;
@@ -89,6 +91,7 @@ class Player3 {
     // ...
 
     public static String[] tratarString(String csv) {
+        return null;
         // Implementação do método tratarString como no seu código original
         // ...
     }

@@ -43,10 +43,12 @@ class Player {
     }
 
     public Player read(Player player) {
+        return player;
         // Read player info
     }
 
     public static String[] handleString(String csv) {
+        return null;
         // Handle CSV string
     }
 
