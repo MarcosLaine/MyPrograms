@@ -23,7 +23,10 @@ public class ArraySort {
 
         System.arraycopy(array, 0, arrayOrdenado, 0, 10);  // Copia o array original para arrayOrdenado
         
+
+        long tempoInicio = System.currentTimeMillis();
         Arrays.sort(arrayOrdenado);  // Ordena o arrayOrdenado
+        long tempoFim = System.currentTimeMillis();
 
         // Imprimindo o array ordenado
         System.out.print("Array ordenado: [");
@@ -31,6 +34,7 @@ public class ArraySort {
             System.out.print(i + " ");
         }
         System.out.println("]");
+        System.out.println("Tempo de ordenação: " + (tempoFim - tempoInicio)  + " milissegundos, "  + (tempoFim - tempoInicio) / 1000.0 + " segundos");
 
         //================================== ARRAY SORTING ======================================
 
@@ -39,7 +43,9 @@ public class ArraySort {
         // Copia o array original para arrayOrdenadoParcialmente
         System.arraycopy(array, 0, arrayOrdenadoParcialmente, 0, 10);
 
+        long tempoInicioParcial = System.currentTimeMillis();
         Arrays.sort(arrayOrdenadoParcialmente, 0, 6);  // Ordena parcialmente os primeiros 6 elementos
+        long tempoFimParcial = System.currentTimeMillis();
 
         // Imprimindo o array parcialmente ordenado
         System.out.print("Array parcialmente ordenado: [");
@@ -47,5 +53,7 @@ public class ArraySort {
             System.out.print(i + " ");
         }
         System.out.println("]");
+        System.out.println("Tempo de ordenação: " + (tempoFimParcial - tempoInicioParcial)  + " milissegundos, "  + (tempoFimParcial - tempoInicioParcial) / 1000.0 + " segundos");
+        
     }
 }
