@@ -3,6 +3,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "BinaryTreePlayer",
+      "request": "launch",
+      "mainClass": "BinaryTreePlayer",
+      "projectName": "MyPrograms"
+    },
+    {
+      "type": "java",
       "name": "ArraySort",
       "request": "launch",
       "mainClass": "ArraySort",
