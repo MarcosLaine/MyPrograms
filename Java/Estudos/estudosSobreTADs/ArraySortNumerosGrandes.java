@@ -1,3 +1,4 @@
+package estudos_sobre_tads;
 import java.util.Arrays;
 import java.util.Random;
 
@@ -10,13 +11,15 @@ public class ArraySortNumerosGrandes {
             array[i] = random.nextInt(100000000);  // Preenche o array com números aleatórios entre 0 e 99
         }
 
-        // Imprimindo o array original
-        // System.out.print("Array original: [");
-        // for (int i : array) {
-        //     System.out.print(i + " ");
-        // }
-        // System.out.println("]");
 
+        /* 
+        Imprimindo o array original
+        System.out.print("Array original: [");
+        for (int i : array) {
+            System.out.print(i + " ");
+        }
+        System.out.println("]");
+        */
         //================================== ARRAY SORTING ======================================
 
 
@@ -29,12 +32,13 @@ public class ArraySortNumerosGrandes {
         long  tempoFim = System.currentTimeMillis();  // Registra o tempo de fim
 
 
-        // Imprimindo o array ordenado
-        // System.out.print("Array ordenado: [");
-        // for (int i : arrayOrdenado) {
-        //     System.out.print(i + " ");
-        // }
-        // System.out.println("]");
+     /* Imprimindo o array ordenado
+        System.out.print("Array ordenado: [");
+        for (int i : arrayOrdenado) {
+            System.out.print(i + " ");
+        }
+        System.out.println("]");
+        */
         long tempoTotal = tempoFim - tempoInicio;
         System.out.println("Tempo de ordenação: " + tempoTotal + " ms, " +  tempoTotal / 1000.0 + " s");
 

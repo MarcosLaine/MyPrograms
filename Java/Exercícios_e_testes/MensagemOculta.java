@@ -1,6 +1,7 @@
 import java.util.Scanner;
 
 public class MensagemOculta {
+    @SuppressWarnings("unused")
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int teste = sc.nextInt();

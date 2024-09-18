@@ -134,8 +134,9 @@ class BinaryTree {
 }
 
 public class Doidona {
-    private HashTable T1, T3;
-    private BinaryTree reservaT3;
+    private final HashTable T1;
+    private final HashTable T3;
+    private final BinaryTree reservaT3;
 
     public Doidona(int tamanhoT1, int tamanhoT3) {
         T1 = new HashTable(tamanhoT1);

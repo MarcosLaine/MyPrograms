@@ -1,9 +1,10 @@
+package estudos_sobre_tads;
 import java.util.Arrays;
 import java.util.LinkedList;
 
 public class LinkedListTeste {
     public static void main(String[] args) {
-        LinkedList<String> lista = new LinkedList<String>();
+        LinkedList<String> lista = new LinkedList<>();
 
         // Adicionando elementos à lista
         lista.add("joao");

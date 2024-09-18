@@ -3,6 +3,20 @@
   "configurations": [
     {
       "type": "java",
+      "name": "QueueCreation",
+      "request": "launch",
+      "mainClass": "QueueCreation",
+      "projectName": "MyPrograms"
+    },
+    {
+      "type": "java",
+      "name": "StackTest",
+      "request": "launch",
+      "mainClass": "StackTest",
+      "projectName": "MyPrograms"
+    },
+    {
+      "type": "java",
       "name": "AlfabetoAlienigena",
       "request": "launch",
       "mainClass": "AlfabetoAlienigena",

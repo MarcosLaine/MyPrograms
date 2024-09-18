@@ -1,6 +1,11 @@
-import java.io.*;
-import java.nio.charset.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintStream;
+import java.io.UnsupportedEncodingException;
+import java.nio.charset.Charset;
 
+@SuppressWarnings("unused")
 class MyIO {
 
    private static BufferedReader in = new BufferedReader(new InputStreamReader(System.in, Charset.forName("ISO-8859-1")));
@@ -112,7 +117,7 @@ class MyIO {
       double d = -1;
       try{
          d = Double.parseDouble(readString().trim().replace(",","."));
-      }catch(Exception e){}
+      }catch(NumberFormatException e){}
       return d;
    }
 
@@ -136,7 +141,7 @@ class MyIO {
       int i = -1;
       try{
          i = Integer.parseInt(readString().trim());
-      }catch(Exception e){}
+      }catch(NumberFormatException e){}
       return i;
    }
 
@@ -200,7 +205,7 @@ class MyIO {
       char resp = ' ';
       try{
          resp  = (char)in.read();
-      }catch(Exception e){}
+      }catch(IOException e){}
       return resp;
    }
 
@@ -239,7 +244,7 @@ class MyIO {
    public static void pause(){
       try{
          in.read();
-      }catch(Exception e){}
+      }catch(IOException e){}
    }
 
    public static void pause(String str){
