@@ -1,4 +1,4 @@
-package estudosSobreTADs;
+package estudos_sobre_tads;
 
 import java.util.Arrays;
 import java.util.Random;

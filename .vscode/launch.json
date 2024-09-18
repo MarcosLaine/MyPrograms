@@ -5,6 +5,13 @@
       "type": "java",
       "name": "QueueCreation",
       "request": "launch",
+      "mainClass": "estudos_sobre_tads.QueueCreation",
+      "projectName": "MyPrograms"
+    },
+    {
+      "type": "java",
+      "name": "QueueCreation",
+      "request": "launch",
       "mainClass": "QueueCreation",
       "projectName": "MyPrograms"
     },

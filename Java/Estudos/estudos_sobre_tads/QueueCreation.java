@@ -33,7 +33,7 @@ public class QueueCreation {
         queue.iterator();
         System.out.println("Elementos da fila após a adição: " + queue);
 
-        Integer[] queueArray = queue.toArray(new Integer[0]);
+        Integer[] queueArray = queue.toArray(Integer[]::new);
 
         Arrays.sort(queueArray);
 
