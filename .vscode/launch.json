@@ -3,6 +3,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "AlfabetoAlienigena",
+      "request": "launch",
+      "mainClass": "AlfabetoAlienigena",
+      "projectName": "MyPrograms"
+    },
+    {
+      "type": "java",
       "name": "BinaryTreePlayer",
       "request": "launch",
       "mainClass": "BinaryTreePlayer",
