@@ -8,21 +8,22 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+@SuppressWarnings("rawtypes")
 public class Pokemon {
 
-    private String id;
-    private int generation;
-    private String name;
-    private String description;
-    private ArrayList types;
-    private ArrayList abilities;
-    private double weight;
-    private double height;
-    private int captureRate;
-    private boolean isLegendary;
-    private Date captureDate;
+    private final String id;
+    private final int generation;
+    private final String name;
+    private final String description;
+    private final ArrayList types;
+    private final ArrayList abilities;
+    private final double weight;
+    private final double height;
+    private final int captureRate;
+    private final boolean isLegendary;
+    private final Date captureDate;
 
-    private static List<Pokemon> listaDePokemons = new ArrayList<>();
+    private static final List<Pokemon> listaDePokemons = new ArrayList<>();
 
     private static final String FILE_NAME = "/tmp/pokemon.csv";
 
@@ -118,4 +119,7 @@ public class Pokemon {
 
         }
     }
+    
+    
+
 }

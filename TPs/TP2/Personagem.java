@@ -1,30 +1,36 @@
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 // Definição da classe Personagem
 public class Personagem {
-    private String id;
-    private String name;
-    private String alternateNames;
-    private String house;
-    private String ancestry;
-    private String species;
-    private String patronus;
-    private boolean hogwartsStaff;
-    private boolean hogwartsStudent;
-    private String actorName;
-    private boolean alive;
-    private String alternateActors;
-    private String dateOfBirth;
-    private int yearOfBirth;
-    private String eyeColour;
-    private String gender;
-    private String hairColour;
-    private boolean wizard;
+
+    public static List<Personagem> getListaPersonagens() {
+        return listaPersonagens;
+    }
+    private final String id;
+    private final String name;
+    private final String alternateNames;
+    private final String house;
+    private final String ancestry;
+    private final String species;
+    private final String patronus;
+    private final boolean hogwartsStaff;
+    private final boolean hogwartsStudent;
+    private final String actorName;
+    private final boolean alive;
+    private final String alternateActors;
+    private final String dateOfBirth;
+    private final int yearOfBirth;
+    private final String eyeColour;
+    private final String gender;
+    private final String hairColour;
+    private final boolean wizard;
 
     // Lista para armazenar os objetos Personagem
-    private static List<Personagem> listaPersonagens = new ArrayList<>();
+    private static final List<Personagem> listaPersonagens = new ArrayList<>();
 
     // Nome do arquivo CSV que contém os dados dos personagens
     private static final String FILE_NAME = "/tmp/characters.csv";
