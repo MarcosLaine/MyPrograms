@@ -3,6 +3,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "Pokemon",
+      "request": "launch",
+      "mainClass": "Pokemon",
+      "projectName": "MyPrograms"
+    },
+    {
+      "type": "java",
       "name": "QueueCreation",
       "request": "launch",
       "mainClass": "estudos_sobre_tads.QueueCreation",
