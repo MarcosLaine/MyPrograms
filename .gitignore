@@ -1,2 +1,7 @@
 *.exe
 *.class
+*.in
+*.out
+bin
+.vs
+.metals
