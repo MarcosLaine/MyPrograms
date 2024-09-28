@@ -9,8 +9,8 @@ import java.util.List;
 import java.util.Scanner;
 
 class Pokedex {
-    //  private final String FILE_NAME = "C:\\Users\\kino1\\Desktop\\Programacao\\MyPrograms\\TPs\\TP2\\tmp\\pokemon.csv";
-    private static final String FILE_NAME = "/tmp/pokemon.csv";
+    private final String FILE_NAME = "C:\\Users\\kino1\\Desktop\\Programacao\\MyPrograms\\TPs\\TP2\\tmp\\pokemon.csv";
+    // private static final String FILE_NAME = "/tmp/pokemon.csv";
     public List<Pokemon> listaDePokemons = new ArrayList<>();
 
     public void lerDadosDoArquivo() {
@@ -72,7 +72,7 @@ class Pokedex {
     }
 }
 
-public class Pokemon {
+class Pokemon {
     private String id;
     private int generation;
     private String name;
@@ -150,6 +150,51 @@ public class Pokemon {
         this.captureDate = captureDate;
     }
 
+    // getter methods
+    public String getId() {
+        return id;
+    }
+
+    public int getGeneration() {
+        return generation;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public ArrayList<String> getTypes() {
+        return types;
+    }
+
+    public ArrayList<String> getAbilities() {
+        return abilities;
+    }
+
+    public double getWeight() {
+        return weight;
+    }
+
+    public double getHeight() {
+        return height;
+    }
+
+    public int getCaptureRate() {
+        return captureRate;
+    }
+
+    public boolean isLegendary() {
+        return isLegendary;
+    }
+
+    public Date getCaptureDate() {
+        return captureDate;
+    }
+
     public void imprimir() {
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
         String formattedDate = dateFormat.format(captureDate);
@@ -181,6 +226,9 @@ public class Pokemon {
                 generation, formattedDate);
     }
 
+}
+
+public class ImprimirPokemons{
     public static void main(String[] args) {
         Pokedex pokedex = new Pokedex();
         pokedex.lerDadosDoArquivo();
@@ -192,7 +240,7 @@ public class Pokemon {
             boolean pokemonEncontrado = false;
             
             for (Pokemon pokemon : pokedex.listaDePokemons) {
-                if (pokemon.id.equals(entrada)) {
+                if (pokemon.getId().equals(entrada)) {
                     pokemonEncontrado = true;
                     pokemon.imprimir();
                     break;

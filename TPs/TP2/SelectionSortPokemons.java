@@ -4,66 +4,15 @@ import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
 
-public class PesquisaSequencial {
-    public static LinkedList<Pokemon> Lista = new LinkedList<>();
-
-    public static void verificaPesquisa(String nome){
-        boolean achou = false;
-        for(Pokemon pokemon : PesquisaSequencial.Lista){
-            if(pokemon.getName().equals(nome)){
-                achou = true;
-                break; // Optional: Exit the loop early if found
-            }
-        }
-        if(achou)
-            System.out.println("SIM");
-        else
-            System.out.println("NAO");
-    }
-    
-
-    public static void main(String[] args) {
-        Pokedex pokedex = new Pokedex();
-        pokedex.lerDadosDoArquivo();
-        Scanner sc = new Scanner(System.in);
-    
-        String entrada = sc.nextLine();
-        while (!entrada.equals("FIM")) {
-            boolean pokemonEncontrado = false;
-    
-            for (Pokemon pokemon : pokedex.listaDePokemons) {
-                if (pokemon.getId().equals(entrada)) {
-                    PesquisaSequencial.Lista.add(pokemon);
-                    pokemonEncontrado = true;
-                    break;
-                }
-            }
-    
-            if (!pokemonEncontrado) {
-                System.out.println("Pokemon não encontrado");
-            }
-            entrada = sc.nextLine();
-        }
-    
-        entrada = sc.nextLine();
-    
-        while(!entrada.equals("FIM")){
-            PesquisaSequencial.verificaPesquisa(entrada);
-            entrada = sc.nextLine();
-        }
-    
-        sc.close();
-    }
-    
-}
+// Existing Pokedex class with an added getPokemonById method 
 class Pokedex {
-    //  private final String FILE_NAME = "C:\\Users\\kino1\\Desktop\\Programacao\\MyPrograms\\TPs\\TP2\\tmp\\pokemon.csv";
-    private static final String FILE_NAME = "/tmp/pokemon.csv";
+    private final String FILE_NAME = "C:\\Users\\kino1\\Desktop  \\Programacao\\MyPrograms\\TPs\\TP2\\tmp\\pokemon.csv";
+    // private static final String FILE_NAME = "/tmp/pokemon.csv";
     public List<Pokemon> listaDePokemons = new ArrayList<>();
 
     public void lerDadosDoArquivo() {
@@ -71,48 +20,37 @@ class Pokedex {
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
         try (BufferedReader ler = new BufferedReader(new FileReader(FILE_NAME))) {
             String ln;
-            ler.readLine();  // Pula o cabeçalho
+            ler.readLine();  // Skip header
             while ((ln = ler.readLine()) != null) {
-                double weight, height;
-                String[] blocos = ln.split("\"");
-                String[] atributo = blocos[0].split(",");
-                String[] atributo2 = blocos[1].split(",");
-                String[] atributo3 = blocos[2].split(",");
-
-                if (atributo.length < 13000) { // Garante que todas as 11 colunas estão presentes
-                    String id = atributo[0].trim();
-                    int generation = Integer.parseInt(atributo[1].trim());
-                    String name = atributo[2].trim();
-                    String description = atributo[3].trim();
-
-                    ArrayList<String> types = new ArrayList<>();
-                    for (String type : atributo[4].split(",")) {
-                        types.add(type.trim());
-                    }
-
-                    ArrayList<String> abilities = new ArrayList<>();
-                    for (int i = 0; i < atributo2.length; i++) {
-                        atributo2[i] = atributo2[i].replaceAll("\\[", "").replaceAll("\\]", "").replaceAll("\"", "");
-                    }
-                    for (String ability : atributo2) {
-                        abilities.add(ability.trim());
-                    }
-
-                    weight = atributo3[1].equals("") ? 0 : Double.parseDouble(atributo3[1].trim());
-                    height = atributo3[2].equals("") ? 0 : Double.parseDouble(atributo3[2].trim());
-                    int captureRate = Integer.parseInt(atributo3[3].trim().replace("%", ""));
-
-                    int isLegendaryInt = Integer.parseInt(atributo3[4].trim());
-                    boolean isLegendary = isLegendaryInt == 1;
-
+                // Use regex to split on commas outside quotes
+                String[] tokens = ln.split(",(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)");
+    
+                if (tokens.length >= 11) { // Ensure all columns are present
+                    String id = tokens[0].trim();
+                    int generation = Integer.parseInt(tokens[1].trim());
+                    String name = tokens[2].trim();
+                    String description = tokens[3].trim();
+    
+                    // Types
+                    String typesString = tokens[4].trim().replaceAll("[\\[\\]'\"]", "");
+                    ArrayList<String> types = new ArrayList<>(Arrays.asList(typesString.split(", ")));
+    
+                    // Abilities
+                    String abilitiesString = tokens[5].trim().replaceAll("[\\[\\]'\"]", "");
+                    ArrayList<String> abilities = new ArrayList<>(Arrays.asList(abilitiesString.split(", ")));
+    
+                    double weight = Double.parseDouble(tokens[6].trim());
+                    double height = Double.parseDouble(tokens[7].trim());
+                    int captureRate = Integer.parseInt(tokens[8].trim().replace("%", ""));
+                    boolean isLegendary = tokens[9].trim().equals("1");
+    
                     Date captureDate = null;
-
                     try {
-                        captureDate = dateFormat.parse(atributo3[5].trim());
+                        captureDate = dateFormat.parse(tokens[10].trim());
                     } catch (ParseException e) {
-                        System.out.println("Erro ao parsear a data: " + atributo3[5].trim());
+                        System.out.println("Erro ao parsear a data: " + tokens[10].trim());
                     }
-
+    
                     Pokemon pokemon = new Pokemon(id, generation, name, description, types, abilities, weight, height, captureRate, isLegendary, captureDate);
                     listaDePokemons.add(pokemon);
                 } else {
@@ -123,8 +61,21 @@ class Pokedex {
             x.printStackTrace();
         }
     }
+    
+
+    public Pokemon getPokemonById(String idStr) {
+        int id = Integer.parseInt(idStr.trim());
+        for (Pokemon p : listaDePokemons) {
+            if (Integer.parseInt(p.getId().trim()) == id) {
+                return p;
+            }
+        }
+        return null;
+    }
+    
 }
 
+// Existing Pokemon class
 class Pokemon {
     private String id;
     private int generation;
@@ -138,7 +89,7 @@ class Pokemon {
     private boolean isLegendary;
     private Date captureDate;
 
-    public Pokemon(String id, int generation, String name, String description, ArrayList<String> types, ArrayList<String> abilities, 
+    public Pokemon(String id, int generation, String name, String description, ArrayList<String> types, ArrayList<String> abilities,
                    double weight, double height, int captureRate, boolean isLegendary, Date captureDate) {
         this.id = id;
         this.generation = generation;
@@ -203,7 +154,7 @@ class Pokemon {
         this.captureDate = captureDate;
     }
 
-    // getter methods
+    // Getter methods
     public String getId() {
         return id;
     }
@@ -248,11 +199,9 @@ class Pokemon {
         return captureDate;
     }
 
-
-
     public void imprimir() {
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
-        String formattedDate = dateFormat.format(captureDate);
+        String formattedDate = (captureDate != null) ? dateFormat.format(captureDate) : "Data não informada";
 
         System.out.print("[#" + id + " -> " + name + ": " + description + " - [");
 
@@ -274,11 +223,67 @@ class Pokemon {
         }
         System.out.print("] - ");
 
-
         System.out.printf("%.1fkg - %.1fm - %d%% - %s - %d gen] - %s\n",
                 weight, height, captureRate,
                 isLegendary ? "true" : "false",
                 generation, formattedDate);
     }
 
+}
+
+// Implemented SelectionSortPokemons class
+public class SelectionSortPokemons {
+    public static void main(String[] args) {
+        Pokedex pokedex = new Pokedex();
+        pokedex.lerDadosDoArquivo();
+
+        Scanner scanner = new Scanner(System.in);
+        ArrayList<Pokemon> pokemonsList = new ArrayList<>();
+
+        while (scanner.hasNextLine()) {
+            String line = scanner.nextLine();
+            if (line.equals("FIM")) {
+                break;
+            }
+            String id = line.trim();
+            Pokemon pokemon = pokedex.getPokemonById(id);
+            if (pokemon != null) {
+                pokemonsList.add(pokemon);
+            } else {
+                System.out.println("Pokemon com ID " + id + " não encontrado.");
+            }
+        }
+
+        // Convert ArrayList to array
+        Pokemon[] pokemonsArray = pokemonsList.toArray(new Pokemon[0]);
+
+        // Perform selection sort on pokemonsArray based on name
+        selectionSortByName(pokemonsArray);
+
+        // Print the sorted array in specified format
+        for (Pokemon p : pokemonsArray) {
+            p.imprimir();
+        }
+    }
+
+    public static void selectionSortByName(Pokemon[] arr) {
+        int n = arr.length;
+
+        for (int i = 0; i < n - 1; i++) {
+            int min_idx = i;
+
+            for (int j = i + 1; j < n; j++) {
+                if (arr[j].getName().compareTo(arr[min_idx].getName()) < 0) {
+                    min_idx = j;
+                }
+            }
+
+            // Swap arr[min_idx] and arr[i] if min_idx is different
+            if (min_idx != i) {
+                Pokemon temp = arr[min_idx];
+                arr[min_idx] = arr[i];
+                arr[i] = temp;
+            }
+        }
+    }
 }

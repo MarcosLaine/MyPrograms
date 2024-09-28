@@ -3,6 +3,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "SelectionSortPokemons",
+      "request": "launch",
+      "mainClass": "SelectionSortPokemons",
+      "projectName": "MyPrograms"
+    },
+    {
+      "type": "java",
       "name": "Pokemon",
       "request": "launch",
       "mainClass": "Pokemon",
