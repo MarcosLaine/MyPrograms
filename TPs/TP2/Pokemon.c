@@ -209,7 +209,7 @@ void lerDadosDoArquivo(Pokedex *pokedex) {
                 printf("Erro ao parsear a data: %s\n", captureDateStr);
             }
         }
-
+        
         // Add the Pokemon to the array
         if (pokedex->numPokemons >= capacity) {
             capacity *= 2;

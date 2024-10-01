@@ -42,7 +42,8 @@
     "iostream": "cpp",
     "stdlib.h": "c",
     "time.h": "c",
-    "string.h": "c"
+    "string.h": "c",
+    "SelectionSortRecursivo.C": "cpp"
   },
   "C_Cpp_Runner.showCompilationTime": false,
   "java.debug.settings.onBuildFailureProceed": true,

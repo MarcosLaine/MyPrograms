@@ -252,10 +252,65 @@ void imprimirPokemon(Pokemon *pokemon) {
         pokemon->generation, dateStr);
 }
 
+// Function to copy a Pokemon (deep copy)
+void copyPokemon(Pokemon *dest, Pokemon *src) {
+    strcpy(dest->id, src->id);
+    dest->generation = src->generation;
+    strcpy(dest->name, src->name);
+    strcpy(dest->description, src->description);
+
+    dest->num_types = src->num_types;
+    dest->types = malloc(dest->num_types * sizeof(char *));
+    for (int i = 0; i < dest->num_types; i++) {
+        dest->types[i] = strdup(src->types[i]);
+    }
+
+    dest->num_abilities = src->num_abilities;
+    dest->abilities = malloc(dest->num_abilities * sizeof(char *));
+    for (int i = 0; i < dest->num_abilities; i++) {
+        dest->abilities[i] = strdup(src->abilities[i]);
+    }
+
+    dest->weight = src->weight;
+    dest->height = src->height;
+    dest->captureRate = src->captureRate;
+    dest->isLegendary = src->isLegendary;
+    dest->captureDate = src->captureDate;
+}
+
+// Recursive Selection Sort function to sort Pokémons by their names
+void recursiveSelectionSort(Pokemon arr[], int n, int index) {
+    // Base case: If starting index is greater than or equal to n-1
+    if (index >= n - 1)
+        return;
+
+    // Find the minimum element in the unsorted array
+    int min_idx = index;
+    for (int i = index + 1; i < n; i++) {
+        if (strcmp(arr[i].name, arr[min_idx].name) < 0) {
+            min_idx = i;
+        }
+    }
+
+    // Swap the found minimum element with the current element
+    if (min_idx != index) {
+        Pokemon temp = arr[min_idx];
+        arr[min_idx] = arr[index];
+        arr[index] = temp;
+    }
+
+    // Recursively call selection sort for the rest of the array
+    recursiveSelectionSort(arr, n, index + 1);
+}
+
 int main() {
     Pokedex pokedex;
     lerDadosDoArquivo(&pokedex);
 
+    char ids[100][20];
+    int numIds = 0;
+
+    // Collect IDs from user input
     char entrada[100];
     while (fgets(entrada, sizeof(entrada), stdin)) {
         // Remove newline character
@@ -265,12 +320,20 @@ int main() {
             break;
         }
 
+        strcpy(ids[numIds++], entrada);
+    }
+
+    Pokemon selectedPokemons[100];
+    int numSelectedPokemons = 0;
+
+    // Retrieve Pokémons based on IDs
+    for (int i = 0; i < numIds; i++) {
         int pokemonEncontrado = 0;
 
-        for (int i = 0; i < pokedex.numPokemons; i++) {
-            if (strcmp(pokedex.listaDePokemons[i].id, entrada) == 0) {
+        for (int j = 0; j < pokedex.numPokemons; j++) {
+            if (strcmp(pokedex.listaDePokemons[j].id, ids[i]) == 0) {
                 pokemonEncontrado = 1;
-                imprimirPokemon(&pokedex.listaDePokemons[i]);
+                copyPokemon(&selectedPokemons[numSelectedPokemons++], &pokedex.listaDePokemons[j]);
                 break;
             }
         }
@@ -280,7 +343,28 @@ int main() {
         }
     }
 
-    // Free allocated memory
+    // Sort the selected Pokémons by their names using recursive selection sort
+    recursiveSelectionSort(selectedPokemons, numSelectedPokemons, 0);
+
+    // Print the sorted Pokémons
+    for (int i = 0; i < numSelectedPokemons; i++) {
+        imprimirPokemon(&selectedPokemons[i]);
+    }
+
+    // Free allocated memory for selectedPokemons
+    for (int i = 0; i < numSelectedPokemons; i++) {
+        Pokemon *pokemon = &selectedPokemons[i];
+        for (int j = 0; j < pokemon->num_types; j++) {
+            free(pokemon->types[j]);
+        }
+        free(pokemon->types);
+        for (int j = 0; j < pokemon->num_abilities; j++) {
+            free(pokemon->abilities[j]);
+        }
+        free(pokemon->abilities);
+    }
+
+    // Free allocated memory for pokedex
     for (int i = 0; i < pokedex.numPokemons; i++) {
         Pokemon *pokemon = &pokedex.listaDePokemons[i];
         for (int j = 0; j < pokemon->num_types; j++) {
@@ -296,3 +380,4 @@ int main() {
 
     return 0;
 }
+

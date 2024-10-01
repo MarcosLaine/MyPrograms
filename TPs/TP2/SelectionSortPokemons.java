@@ -11,8 +11,8 @@ import java.util.Scanner;
 
 // Existing Pokedex class with an added getPokemonById method 
 class Pokedex {
-    private final String FILE_NAME = "C:\\Users\\kino1\\Desktop  \\Programacao\\MyPrograms\\TPs\\TP2\\tmp\\pokemon.csv";
-    // private static final String FILE_NAME = "/tmp/pokemon.csv";
+    // private final String FILE_NAME = "C:\\Users\\kino1\\Desktop  \\Programacao\\MyPrograms\\TPs\\TP2\\tmp\\pokemon.csv";
+    private static final String FILE_NAME = "/tmp/pokemon.csv";
     public List<Pokemon> listaDePokemons = new ArrayList<>();
 
     public void lerDadosDoArquivo() {
@@ -64,9 +64,9 @@ class Pokedex {
     
 
     public Pokemon getPokemonById(String idStr) {
-        int id = Integer.parseInt(idStr.trim());
+        String id = idStr.trim();
         for (Pokemon p : listaDePokemons) {
-            if (Integer.parseInt(p.getId().trim()) == id) {
+            if (p.getId().trim().equals(id)) {
                 return p;
             }
         }
@@ -246,6 +246,7 @@ public class SelectionSortPokemons {
                 break;
             }
             String id = line.trim();
+            
             Pokemon pokemon = pokedex.getPokemonById(id);
             if (pokemon != null) {
                 pokemonsList.add(pokemon);
@@ -268,16 +269,17 @@ public class SelectionSortPokemons {
 
     public static void selectionSortByName(Pokemon[] arr) {
         int n = arr.length;
-
+    
         for (int i = 0; i < n - 1; i++) {
             int min_idx = i;
-
+    
             for (int j = i + 1; j < n; j++) {
-                if (arr[j].getName().compareTo(arr[min_idx].getName()) < 0) {
+                // Use compareToIgnoreCase for case-insensitive comparison
+                if (arr[j].getName().compareToIgnoreCase(arr[min_idx].getName()) < 0) {
                     min_idx = j;
                 }
             }
-
+    
             // Swap arr[min_idx] and arr[i] if min_idx is different
             if (min_idx != i) {
                 Pokemon temp = arr[min_idx];
@@ -286,4 +288,5 @@ public class SelectionSortPokemons {
             }
         }
     }
+    
 }
