@@ -5,6 +5,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
@@ -77,17 +78,17 @@ class Pokedex {
 
 // Existing Pokemon class
 class Pokemon {
-    private String id;
-    private int generation;
-    private String name;
-    private String description;
-    private ArrayList<String> types;
-    private ArrayList<String> abilities;
-    private double weight;
-    private double height;
-    private int captureRate;
-    private boolean isLegendary;
-    private Date captureDate;
+    public String id;
+    public int generation;
+    public String name;
+    public String description;
+    public ArrayList<String> types;
+    public ArrayList<String> abilities;
+    public double weight;
+    public double height;
+    public int captureRate;
+    public boolean isLegendary;
+    public Date captureDate;
 
     public Pokemon(String id, int generation, String name, String description, ArrayList<String> types, ArrayList<String> abilities,
                    double weight, double height, int captureRate, boolean isLegendary, Date captureDate) {
@@ -239,6 +240,7 @@ public class SelectionSortPokemons {
 
         Scanner scanner = new Scanner(System.in);
         ArrayList<Pokemon> pokemonsList = new ArrayList<>();
+        ArrayList<Pokemon> pokemonsEscolhidos = new ArrayList<>();
 
         while (scanner.hasNextLine()) {
             String line = scanner.nextLine();
@@ -256,18 +258,35 @@ public class SelectionSortPokemons {
         }
 
         // Convert ArrayList to array
-        Pokemon[] pokemonsArray = pokemonsList.toArray(new Pokemon[0]);
+        // Pokemon[] pokemonsArray = pokemonsList.toArray(new Pokemon[0]);
 
         // Perform selection sort on pokemonsArray based on name
-        selectionSortByName(pokemonsArray);
+        ordenacaoPorSelecao(pokemonsEscolhidos);
 
         // Print the sorted array in specified format
-        for (Pokemon p : pokemonsArray) {
+        for (Pokemon p : pokemonsEscolhidos) {
             p.imprimir();
         }
     }
 
-    public static void selectionSortByName(Pokemon[] arr) {
+    public static void ordenacaoPorSelecao(List<Pokemon> vetor) {
+        int n = vetor.size();
+        for (int i = 0; i < n - 1; i++) {
+            int menorIndice = i;
+            for (int j = i + 1; j < n; j++) {
+                // comparacoes++; // Incrementa o número de comparações
+                if (vetor.get(j).name.compareTo(vetor.get(menorIndice).name) < 0) {
+                    menorIndice = j;
+                }
+            }
+            if (i != menorIndice) {
+                Collections.swap(vetor, i, menorIndice);
+                // movimentacoes++; // Incrementa o número de movimentações (trocas)
+            }
+        }
+    }
+
+    /*public static void selectionSortByName(Pokemon[] arr) {
         int n = arr.length;
     
         for (int i = 0; i < n - 1; i++) {
@@ -287,6 +306,6 @@ public class SelectionSortPokemons {
                 arr[i] = temp;
             }
         }
-    }
+    }*/
     
 }
