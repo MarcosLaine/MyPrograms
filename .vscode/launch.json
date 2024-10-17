@@ -3,6 +3,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "PythonToExecutable",
+      "request": "launch",
+      "mainClass": "PythonToExecutable",
+      "projectName": "MyPrograms"
+    },
+    {
+      "type": "java",
       "name": "SelectionSortPokemons",
       "request": "launch",
       "mainClass": "SelectionSortPokemons",
