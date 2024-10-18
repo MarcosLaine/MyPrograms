@@ -11,7 +11,7 @@ import java.util.Scanner;
 
 // Existing Pokedex class with an added getPokemonById method 
 class Pokedex {
-    // private final String FILE_NAME = "C:\\Users\\kino1\\Desktop\\Programacao\\MyPrograms\\TPs\\TP2\\tmp\\pokemon.csv";
+    // private final String FILE_NAME = "C:\\Users\\kino1\\Desktop\\Programacao\\MyPrograms\\TPs\\TP2\\tmp\\pokemon.csv"; // diretorio para teste na minha máquina
     private static final String FILE_NAME = "/tmp/pokemon.csv";
     public List<Pokemon> listaDePokemons = new ArrayList<>();
 
