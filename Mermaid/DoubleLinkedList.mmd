@@ -1,0 +1,12 @@
+flowchart LR
+    A[NULL] -->B[Elemento 1]
+    B --> C[Elemento 2]
+    C --> D[Elemento 3]
+    D --> E[Elemento 4]
+    E --> F[NULL]
+
+    F --> E
+    E --> D
+    D --> C
+    C --> B
+    B --> A
