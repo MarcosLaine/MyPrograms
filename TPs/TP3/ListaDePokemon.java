@@ -14,27 +14,14 @@ import java.util.Scanner;
 public class ListaDePokemon {
     private ArrayList<Pokemon> lista;
 
-    /**
-     * Construtor da classe.
-     */
     public ListaDePokemon() {
         lista = new ArrayList<>();
     }
 
-    /**
-     * Insere um Pokemon na primeira posição da lista.
-     * @param pokemon Pokemon a ser inserido.
-     */
     public void inserirInicio(Pokemon pokemon) {
         lista.add(0, pokemon);
     }
 
-    /**
-     * Insere um Pokemon em uma posição específica da lista.
-     * @param pokemon Pokemon a ser inserido.
-     * @param pos Posição de inserção.
-     * @throws Exception Se a posição for inválida.
-     */
     public void inserir(Pokemon pokemon, int pos) throws Exception {
         if (pos < 0 || pos > lista.size()) {
             throw new Exception("Erro ao inserir: posição inválida!");
@@ -42,19 +29,10 @@ public class ListaDePokemon {
         lista.add(pos, pokemon);
     }
 
-    /**
-     * Insere um Pokemon na última posição da lista.
-     * @param pokemon Pokemon a ser inserido.
-     */
     public void inserirFim(Pokemon pokemon) {
         lista.add(pokemon);
     }
 
-    /**
-     * Remove e retorna o Pokemon da primeira posição da lista.
-     * @return Pokemon removido.
-     * @throws Exception Se a lista estiver vazia.
-     */
     public Pokemon removerInicio() throws Exception {
         if (lista.isEmpty()) {
             throw new Exception("Erro ao remover: lista vazia!");
@@ -62,11 +40,6 @@ public class ListaDePokemon {
         return lista.remove(0);
     }
 
-    /**
-     * Remove e retorna o Pokemon da última posição da lista.
-     * @return Pokemon removido.
-     * @throws Exception Se a lista estiver vazia.
-     */
     public Pokemon removerFim() throws Exception {
         if (lista.isEmpty()) {
             throw new Exception("Erro ao remover: lista vazia!");
@@ -74,12 +47,6 @@ public class ListaDePokemon {
         return lista.remove(lista.size() - 1);
     }
 
-    /**
-     * Remove e retorna um Pokemon de uma posição específica da lista.
-     * @param pos Posição de remoção.
-     * @return Pokemon removido.
-     * @throws Exception Se a lista estiver vazia ou a posição for inválida.
-     */
     public Pokemon remover(int pos) throws Exception {
         if (lista.isEmpty() || pos < 0 || pos >= lista.size()) {
             throw new Exception("Erro ao remover: posição inválida ou lista vazia!");
@@ -87,9 +54,6 @@ public class ListaDePokemon {
         return lista.remove(pos);
     }
 
-    /**
-     * Mostra os Pokemons cadastrados na lista.
-     */
     public void mostrar() {
         for (int i = 0; i < lista.size(); i++) {
             System.out.print("[" + i + "] ");
@@ -103,6 +67,18 @@ public class ListaDePokemon {
         Pokedex pokedex = new Pokedex();
         pokedex.lerDadosDoArquivo();
 
+        // Leitura dos IDs de Pokémon
+        while (true) {
+            String id = sc.nextLine().trim();
+            if (id.equalsIgnoreCase("FIM")) {
+                break;
+            }
+            Pokemon pokemon = buscarPokemonPorId(pokedex, id);
+            if (pokemon != null) {
+                listaDePokemon.inserirFim(pokemon);
+            }
+        }
+
         // Ler e processar comandos
         int n = sc.nextInt();
         sc.nextLine(); // Consumir a linha restante
@@ -115,23 +91,23 @@ public class ListaDePokemon {
 
                 switch (operacao) {
                     case "II": // Inserir no início
-                        String nomePokemonII = partes[1];
-                        Pokemon pokemonII = buscarPokemonPorNome(pokedex, nomePokemonII);
+                        String idPokemonII = partes[1];
+                        Pokemon pokemonII = buscarPokemonPorId(pokedex, idPokemonII);
                         if (pokemonII != null) {
                             listaDePokemon.inserirInicio(pokemonII);
                         }
                         break;
                     case "IF": // Inserir no fim
-                        String nomePokemonIF = partes[1];
-                        Pokemon pokemonIF = buscarPokemonPorNome(pokedex, nomePokemonIF);
+                        String idPokemonIF = partes[1];
+                        Pokemon pokemonIF = buscarPokemonPorId(pokedex, idPokemonIF);
                         if (pokemonIF != null) {
                             listaDePokemon.inserirFim(pokemonIF);
                         }
                         break;
                     case "I*": // Inserir em posição específica
-                        String nomePokemonI = partes[1];
-                        int posicaoI = Integer.parseInt(partes[2]);
-                        Pokemon pokemonI = buscarPokemonPorNome(pokedex, nomePokemonI);
+                        int posicaoI = Integer.parseInt(partes[1]);
+                        String idPokemonI = partes[2];
+                        Pokemon pokemonI = buscarPokemonPorId(pokedex, idPokemonI);
                         if (pokemonI != null) {
                             listaDePokemon.inserir(pokemonI, posicaoI);
                         }
@@ -164,12 +140,16 @@ public class ListaDePokemon {
         }
     }
 
-    /**
-     * Busca um Pokemon pelo nome na Pokedex.
-     * @param pokedex Pokedex contendo todos os Pokemons.
-     * @param nome Nome do Pokemon a ser buscado.
-     * @return Pokemon encontrado ou null se não encontrado.
-     */
+    private static Pokemon buscarPokemonPorId(Pokedex pokedex, String id) {
+        for (Pokemon pokemon : pokedex.listaDePokemons) {
+            if (pokemon.getId().equalsIgnoreCase(id)) {
+                return pokemon;
+            }
+        }
+        System.out.println("Pokemon não encontrado: " + id);
+        return null;
+    }
+
     private static Pokemon buscarPokemonPorNome(Pokedex pokedex, String nome) {
         for (Pokemon pokemon : pokedex.listaDePokemons) {
             if (pokemon.getName().equalsIgnoreCase(nome)) {
@@ -182,7 +162,8 @@ public class ListaDePokemon {
 }
 
 class Pokedex {
-    // private final String FILE_NAME = "C:\\Users\\kino1\\Desktop\\Programacao\\MyPrograms\\TPs\\TP2\\tmp\\pokemon.csv";
+    // private final String FILE_NAME = "/home/marcoslaine/Área de
+    // trabalho/Programacao/MyPrograms/TPs/TP3/tmp/pokemon.csv";
     private static final String FILE_NAME = "/tmp/pokemon.csv";
     public List<Pokemon> listaDePokemons = new ArrayList<>();
 
@@ -191,7 +172,7 @@ class Pokedex {
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
         try (BufferedReader ler = new BufferedReader(new FileReader(FILE_NAME))) {
             String ln;
-            ler.readLine();  // Pula o cabeçalho
+            ler.readLine(); // Pula o cabeçalho
             while ((ln = ler.readLine()) != null) {
                 double weight, height;
                 String[] blocos = ln.split("\"");
@@ -233,7 +214,8 @@ class Pokedex {
                         System.out.println("Erro ao parsear a data: " + atributo3[5].trim());
                     }
 
-                    Pokemon pokemon = new Pokemon(id, generation, name, description, types, abilities, weight, height, captureRate, isLegendary, captureDate);
+                    Pokemon pokemon = new Pokemon(id, generation, name, description, types, abilities, weight, height,
+                            captureRate, isLegendary, captureDate);
                     listaDePokemons.add(pokemon);
                 } else {
                     System.out.println("Linha mal formatada ou incompleta: " + ln);
@@ -244,8 +226,6 @@ class Pokedex {
         }
     }
 }
-
-
 
 class Pokemon {
     private String id;
@@ -260,7 +240,9 @@ class Pokemon {
     private boolean isLegendary;
     private Date captureDate;
 
-    public Pokemon(String id, int generation, String name, String description, ArrayList<String> types, ArrayList<String> abilities, double weight, double height, int captureRate, boolean isLegendary, Date captureDate) {
+    public Pokemon(String id, int generation, String name, String description, ArrayList<String> types,
+            ArrayList<String> abilities, double weight, double height, int captureRate, boolean isLegendary,
+            Date captureDate) {
         this.id = id;
         this.generation = generation;
         this.name = name;
@@ -274,7 +256,6 @@ class Pokemon {
         this.captureDate = captureDate;
     }
 
-    // Métodos de acesso (getters e setters)
     public String getId() {
         return id;
     }
@@ -289,7 +270,6 @@ class Pokemon {
 
         System.out.print("[#" + id + " -> " + name + ": " + description + " - [");
 
-        // Imprime os tipos
         for (int i = 0; i < types.size(); i++) {
             System.out.print("'" + types.get(i) + "'");
             if (i < types.size() - 1) {
@@ -298,7 +278,6 @@ class Pokemon {
         }
         System.out.print("] - [");
 
-        // Imprime as habilidades
         for (int i = 0; i < abilities.size(); i++) {
             System.out.print(abilities.get(i));
             if (i < abilities.size() - 1) {
