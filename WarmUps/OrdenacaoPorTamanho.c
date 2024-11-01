@@ -9,22 +9,6 @@ A saída deve conter o conjunto de strings da entrada ordenado pelo tamanho das 
 #include <stdio.h>
 #include <string.h>
 
-
-void bubbleSort(char meiaPalavra[][50], int n) {
-    for (int i = 0; i < n - 1; i++) {
-        for (int j = 0; j < n - i - 1; j++) {
-            if (strlen(meiaPalavra[j]) > strlen(meiaPalavra[j + 1])) {
-                // Swap strings
-                char temp[50];
-                strcpy(temp, meiaPalavra[j]);
-                strcpy(meiaPalavra[j], meiaPalavra[j + 1]);
-                strcpy(meiaPalavra[j + 1], temp);
-            }
-        }
-    }
-}
-
-
 int main()
 {
     int n;
@@ -44,15 +28,12 @@ int main()
             palavra = strtok(NULL, " ");
         }
 
-        for(int t = 0; t<i;t++){
-            printf(" %s",meiaPalavra[t]);
-        } 
-        printf(" \n"); 
         bubbleSort(meiaPalavra, i);
 
         for(int t = 0; t<i;t++){
-            printf(" %s",meiaPalavra[t]);
+            printf("%s ",meiaPalavra[t]);
         }   
+        printf(" \n"); 
 
 
         n--;
@@ -60,4 +41,17 @@ int main()
 
     }
     return 0;
+}
+void bubbleSort(char meiaPalavra[][50], int n) {
+    for (int i = 0; i < n - 1; i++) {
+        for (int j = 0; j < n - i - 1; j++) {
+            if (strlen(meiaPalavra[j]) < strlen(meiaPalavra[j + 1])) {
+                // Swap strings
+                char temp[50];
+                strcpy(temp, meiaPalavra[j]);
+                strcpy(meiaPalavra[j], meiaPalavra[j + 1]);
+                strcpy(meiaPalavra[j + 1], temp);
+            }
+        }
+    }
 }
