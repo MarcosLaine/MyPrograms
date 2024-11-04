@@ -802,8 +802,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": false,
-      "cwd": "/home/marcoslaine/Área de trabalho/Programacao/MyPrograms/TPs/TP3",
-      "program": "/home/marcoslaine/Área de trabalho/Programacao/MyPrograms/TPs/TP3/build/Debug/outDebug",
+      "cwd": "/home/marcoslaine/Área de trabalho/Programacao/MyPrograms/C/estudos",
+      "program": "/home/marcoslaine/Área de trabalho/Programacao/MyPrograms/C/estudos/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
