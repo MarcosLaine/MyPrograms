@@ -3,6 +3,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "ListaDePokemon",
+      "request": "launch",
+      "mainClass": "ListaDePokemon",
+      "projectName": "MyPrograms"
+    },
+    {
+      "type": "java",
       "name": "PythonToExecutable",
       "request": "launch",
       "mainClass": "PythonToExecutable",
@@ -794,9 +801,9 @@
       "request": "launch",
       "args": [],
       "stopAtEntry": false,
-      "externalConsole": true,
-      "cwd": "c:/Users/kino1/Desktop/Programacao/MyPrograms/TPs/TP2",
-      "program": "c:/Users/kino1/Desktop/Programacao/MyPrograms/TPs/TP2/build/Debug/outDebug",
+      "externalConsole": false,
+      "cwd": "/home/marcoslaine/Área de trabalho/Programacao/MyPrograms/TPs/TP3",
+      "program": "/home/marcoslaine/Área de trabalho/Programacao/MyPrograms/TPs/TP3/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
