@@ -1,9 +1,11 @@
 flowchart LR
-    A[NULL] -->B[Elemento 1]
+    Nada1(( )) -->|Primeiro| A[Head]
+    A --> B[Elemento 1]
     B --> C[Elemento 2]
     C --> D[Elemento 3]
     D --> E[Elemento 4]
     E --> F[NULL]
+    F -->|Último| Nada2(( ))
 
     F --> E
     E --> D
