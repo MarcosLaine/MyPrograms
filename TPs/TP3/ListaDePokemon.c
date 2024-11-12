@@ -58,6 +58,7 @@ int split_at_char(char *str, char delimiter, char **tokens, int max_tokens) {
 void lerDadosDoArquivo(Pokedex *pokedex) {
     const char *FILE_NAME = "/tmp/pokemon.csv";
     // const char *FILE_NAME = "/home/marcoslaine/Área de trabalho/Programacao/MyPrograms/TPs/TP3/tmp/pokemon.csv"; //my directory in linux
+    // contr char *FILE_NAME = "C:\Users\kino1\Desktop\Programacao\MyPrograms\TPs\TP3\tmp\pokemon.csv"; //my directory in windows   
     FILE *file = fopen(FILE_NAME, "r");
     if (!file) {
         perror("Erro ao abrir o arquivo");

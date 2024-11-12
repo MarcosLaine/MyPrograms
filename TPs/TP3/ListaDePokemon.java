@@ -163,6 +163,7 @@ public class ListaDePokemon {
 
 class Pokedex {
     // private final String FILE_NAME = "/home/marcoslaine/Área de trabalho/Programacao/MyPrograms/TPs/TP3/tmp/pokemon.csv"; //my diretory in linux
+    // private final String FILE_NAME = "C:\Users\kino1\Desktop\Programacao\MyPrograms\TPs\TP3\tmp\pokemon.csv"; //my directory in windows
     private static final String FILE_NAME = "/tmp/pokemon.csv";
     public List<Pokemon> listaDePokemons = new ArrayList<>();
 
