@@ -20,7 +20,9 @@ class Pokemon {
     private boolean isLegendary;
     private Date captureDate;
 
-    public Pokemon(String id, int generation, String name, String description, ArrayList<String> types, ArrayList<String> abilities, double weight, double height, int captureRate, boolean isLegendary, Date captureDate) {
+    public Pokemon(String id, int generation, String name, String description, ArrayList<String> types,
+            ArrayList<String> abilities, double weight, double height, int captureRate, boolean isLegendary,
+            Date captureDate) {
         this.id = id;
         this.generation = generation;
         this.name = name;
@@ -103,27 +105,36 @@ class ArvoreBinaria {
         return no;
     }
 
-    public String pesquisar(String id) {
-        StringBuilder caminho = new StringBuilder();
-        boolean encontrado = pesquisar(raiz, id, caminho);
-        return caminho.toString() + (encontrado ? " SIM" : " NAO");
+    public String pesquisarPorNome(String nome) {
+        StringBuilder caminho = new StringBuilder("=>raiz ");
+        boolean encontrado = pesquisarPorNome(raiz, nome, caminho);
+        return caminho.toString() + (encontrado ? "SIM" : "NAO");
     }
 
-    private boolean pesquisar(No no, String id, StringBuilder caminho) {
+    private boolean pesquisarPorNome(No no, String nome, StringBuilder caminho) {
         if (no == null) {
             return false;
         }
-        if (id.equals(no.getPokemon().getId())) {
+        if (nome.equalsIgnoreCase(no.getPokemon().getName())) {
             no.getPokemon().imprimir();
             return true;
-        } else if (id.compareTo(no.getPokemon().getId()) < 0) {
-            caminho.append("esq ");
-            return pesquisar(no.esq, id, caminho);
-        } else {
-            caminho.append("dir ");
-            return pesquisar(no.dir, id, caminho);
         }
+        caminho.append("esq ");
+        if (pesquisarPorNome(no.esq, nome, caminho)) {
+            return true;
+        }
+        caminho.setLength(caminho.length() - 4); // Remove "esq " se não encontrado à esquerda
+    
+        caminho.append("dir ");
+        if (pesquisarPorNome(no.dir, nome, caminho)) {
+            return true;
+        }
+        caminho.setLength(caminho.length() - 4); // Remove "dir " se não encontrado à direita
+    
+        return false;
     }
+    
+    
 
     public void caminharCentral() {
         caminharCentral(raiz);
@@ -158,53 +169,68 @@ class No {
 }
 
 class Pokedex {
-    private final String FILE_NAME = "C:\\Users\\kino1\\Desktop\\Programacao\\MyPrograms\\TPs\\TP4\\tmp\\pokemon.csv";
+    // private final String FILE_NAME ="C:\\Users\\kino1\\Desktop\\Programacao\\MyPrograms\\TPs\\TP4\\tmp\\pokemon.csv"; // my directory in windows
+    private final String FILE_NAME = "/home/marcoslaine/Área de trabalho/Programacao/MyPrograms/TPs/TP4/tmp/pokemon.csv"; //my directory in linux
+    // private final String FILE_NAME = "/tmp/pokemon.csv"; // Verde's directory
     public ArvoreBinaria arvoreDePokemons = new ArvoreBinaria();
     private ArrayList<Pokemon> listaDePokemons = new ArrayList<>();
 
     public void lerDadosDoArquivo() {
+        listaDePokemons.clear();
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
         try (BufferedReader ler = new BufferedReader(new FileReader(FILE_NAME))) {
             String ln;
             ler.readLine(); // Pula o cabeçalho
             while ((ln = ler.readLine()) != null) {
-                String[] atributos = ln.split(",");
-                if (atributos.length >= 11) {
-                    String id = atributos[0].trim();
-                    int generation = Integer.parseInt(atributos[1].trim());
-                    String name = atributos[2].trim();
-                    String description = atributos[3].trim();
+                double weight, height;
+                String[] blocos = ln.split("\"");
+                String[] atributo = blocos[0].split(",");
+                String[] atributo2 = blocos[1].split(",");
+                String[] atributo3 = blocos[2].split(",");
+
+                if (atributo.length < 13000) { // Garante que todas as 11 colunas estão presentes
+                    String id = atributo[0].trim();
+                    int generation = Integer.parseInt(atributo[1].trim());
+                    String name = atributo[2].trim();
+                    String description = atributo[3].trim();
 
                     ArrayList<String> types = new ArrayList<>();
-                    for (String type : atributos[4].split(";")) {
+                    for (String type : atributo[4].split(",")) {
                         types.add(type.trim());
                     }
 
                     ArrayList<String> abilities = new ArrayList<>();
-                    for (String ability : atributos[5].split(";")) {
+                    for (int i = 0; i < atributo2.length; i++) {
+                        atributo2[i] = atributo2[i].replaceAll("\\[", "").replaceAll("\\]", "").replaceAll("\"", "");
+                    }
+                    for (String ability : atributo2) {
                         abilities.add(ability.trim());
                     }
 
-                    double weight = Double.parseDouble(atributos[6].trim());
-                    double height = Double.parseDouble(atributos[7].trim());
-                    int captureRate = Integer.parseInt(atributos[8].trim());
-                    boolean isLegendary = Integer.parseInt(atributos[9].trim()) == 1;
+                    weight = atributo3[1].equals("") ? 0 : Double.parseDouble(atributo3[1].trim());
+                    height = atributo3[2].equals("") ? 0 : Double.parseDouble(atributo3[2].trim());
+                    int captureRate = Integer.parseInt(atributo3[3].trim().replace("%", ""));
+
+                    int isLegendaryInt = Integer.parseInt(atributo3[4].trim());
+                    boolean isLegendary = isLegendaryInt == 1;
 
                     Date captureDate = null;
+
                     try {
-                        captureDate = dateFormat.parse(atributos[10].trim());
+                        captureDate = dateFormat.parse(atributo3[5].trim());
                     } catch (ParseException e) {
-                        System.out.println("Erro ao parsear a data: " + atributos[10].trim());
+                        System.out.println("Erro ao parsear a data: " + atributo3[5].trim());
                     }
 
-                    Pokemon pokemon = new Pokemon(id, generation, name, description, types, abilities, weight, height, captureRate, isLegendary, captureDate);
+                    Pokemon pokemon = new Pokemon(id, generation, name, description, types, abilities, weight, height,
+                            captureRate, isLegendary, captureDate);
                     listaDePokemons.add(pokemon);
                 } else {
                     System.out.println("Linha mal formatada ou incompleta: " + ln);
                 }
             }
-        } catch (IOException e) {
-            e.printStackTrace();
+        } catch (IOException x) {
+            x.printStackTrace();
         }
     }
 
@@ -239,14 +265,14 @@ public class ArvorePokemons {
         // Pesquisa de Pokémons na árvore
         entrada = sc.nextLine();
         while (!entrada.equals("FIM")) {
-            String resultado = pokedex.arvoreDePokemons.pesquisar(entrada);
+            String resultado = pokedex.arvoreDePokemons.pesquisarPorNome(entrada);
             System.out.println(resultado);
             entrada = sc.nextLine();
         }
 
         // Caminhada central (em ordem)
-        System.out.println("Caminhada Central:");
-        pokedex.arvoreDePokemons.caminharCentral();
+        // System.out.println("Caminhada Central:");
+        // pokedex.arvoreDePokemons.caminharCentral();
 
         sc.close();
     }
