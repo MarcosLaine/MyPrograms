@@ -3,6 +3,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "ArvorePokemons",
+      "request": "launch",
+      "mainClass": "ArvorePokemons",
+      "projectName": "MyPrograms"
+    },
+    {
+      "type": "java",
       "name": "ListaDePokemon",
       "request": "launch",
       "mainClass": "ListaDePokemon",
