@@ -84,7 +84,7 @@ class ArvoreBinaria {
         if (no == null) {
             return null;
         }
-        if (pokemon.getIntId() < no.getPokemon().getIntId()) {
+        if (id.compareTo(no.getPokemon().getId()) < 0) {
             no.esq = remover(no.esq, id);
         } else if (id.compareTo(no.getPokemon().getId()) > 0) {
             no.dir = remover(no.dir, id);
