@@ -6,4 +6,4 @@ bin
 .vs
 .metals
 *.txt
-*/bin
+build

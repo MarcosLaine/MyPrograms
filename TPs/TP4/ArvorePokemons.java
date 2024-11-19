@@ -47,6 +47,10 @@ class Pokemon {
     public void imprimir() {
         System.out.println(name);
     }
+
+    public int getIntId() {
+        return Integer.parseInt(id);
+    }
 }
 
 class ArvoreBinaria {
@@ -64,9 +68,9 @@ class ArvoreBinaria {
         if (no == null) {
             return new No(pokemon);
         }
-        if (pokemon.getId().compareTo(no.getPokemon().getId()) < 0) {
+        if (pokemon.getIntId() < no.getPokemon().getIntId()) {// the error is here
             no.esq = inserir(no.esq, pokemon);
-        } else if (pokemon.getId().compareTo(no.getPokemon().getId()) > 0) {
+        } else if (pokemon.getIntId() > no.getPokemon().getIntId()) {// the error is here
             no.dir = inserir(no.dir, pokemon);
         }
         return no;
@@ -124,17 +128,15 @@ class ArvoreBinaria {
             return true;
         }
         caminho.setLength(caminho.length() - 4); // Remove "esq " se não encontrado à esquerda
-    
+
         caminho.append("dir ");
         if (pesquisarPorNome(no.dir, nome, caminho)) {
             return true;
         }
         caminho.setLength(caminho.length() - 4); // Remove "dir " se não encontrado à direita
-    
+
         return false;
     }
-    
-    
 
     public void caminharCentral() {
         caminharCentral(raiz);
@@ -146,6 +148,22 @@ class ArvoreBinaria {
             no.getPokemon().imprimir();
             caminharCentral(no.dir);
         }
+    }
+
+    public void getMaior() {
+        No no = raiz;
+        if (no == null) {
+            System.out.println("A árvore está vazia.");
+            return;
+        }
+        while (no.dir != null) {
+            no = no.dir; // Percorre até o nó mais à direita
+        }
+        System.out.println("Maior Pokémon com base no id: " + no.getPokemon().getName() + " - " + no.getPokemon().getId());
+    }
+
+    public No getRaiz() {
+        return raiz;
     }
 }
 
@@ -169,8 +187,13 @@ class No {
 }
 
 class Pokedex {
-    // private final String FILE_NAME ="C:\\Users\\kino1\\Desktop\\Programacao\\MyPrograms\\TPs\\TP4\\tmp\\pokemon.csv"; // my directory in windows
-    private final String FILE_NAME = "/home/marcoslaine/Área de trabalho/Programacao/MyPrograms/TPs/TP4/tmp/pokemon.csv"; //my directory in linux
+    // private final String FILE_NAME
+    // ="C:\\Users\\kino1\\Desktop\\Programacao\\MyPrograms\\TPs\\TP4\\tmp\\pokemon.csv";
+    // // my directory in windows
+    private final String FILE_NAME = "/home/marcoslaine/Área de trabalho/Programacao/MyPrograms/TPs/TP4/tmp/pokemon.csv"; // my
+                                                                                                                          // directory
+                                                                                                                          // in
+                                                                                                                          // linux
     // private final String FILE_NAME = "/tmp/pokemon.csv"; // Verde's directory
     public ArvoreBinaria arvoreDePokemons = new ArvoreBinaria();
     private ArrayList<Pokemon> listaDePokemons = new ArrayList<>();
@@ -261,6 +284,9 @@ public class ArvorePokemons {
             }
             entrada = sc.nextLine();
         }
+
+        pokedex.arvoreDePokemons.getMaior();
+
 
         // Pesquisa de Pokémons na árvore
         entrada = sc.nextLine();
