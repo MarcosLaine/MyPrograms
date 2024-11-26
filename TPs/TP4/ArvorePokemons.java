@@ -68,26 +68,27 @@ class ArvoreBinaria {
         if (no == null) {
             return new No(pokemon);
         }
-        if (pokemon.getIntId() < no.getPokemon().getIntId()) {// the error is here
+        if (pokemon.getIntId() < no.getPokemon().getIntId()) {
             no.esq = inserir(no.esq, pokemon);
-        } else if (pokemon.getIntId() > no.getPokemon().getIntId()) {// the error is here
+        } else if (pokemon.getIntId() > no.getPokemon().getIntId()) {
             no.dir = inserir(no.dir, pokemon);
         }
         return no;
     }
+    
 
-    public void remover(String id) {
-        raiz = remover(raiz, id);
+    public void remover(Pokemon pokemon) {
+        raiz = remover(raiz, pokemon);
     }
 
-    private No remover(No no, String id) {
+    private No remover(No no, Pokemon pokemon) {
         if (no == null) {
             return null;
         }
-        if (id.compareTo(no.getPokemon().getId()) < 0) {
-            no.esq = remover(no.esq, id);
-        } else if (id.compareTo(no.getPokemon().getId()) > 0) {
-            no.dir = remover(no.dir, id);
+        if (pokemon.getIntId() < no.getPokemon().getIntId()) {
+            no.esq = remover(no.esq, pokemon);
+        } else if (pokemon.getIntId() > no.getPokemon().getIntId()) {
+            no.dir = remover(no.dir, pokemon);
         } else {
             if (no.esq == null) {
                 return no.dir;
@@ -96,7 +97,7 @@ class ArvoreBinaria {
             } else {
                 No sucessor = encontrarMinimo(no.dir);
                 no.setPokemon(sucessor.getPokemon());
-                no.dir = remover(no.dir, sucessor.getPokemon().getId());
+                no.dir = remover(no.dir, sucessor.getPokemon());
             }
         }
         return no;
@@ -109,34 +110,38 @@ class ArvoreBinaria {
         return no;
     }
 
-    public String pesquisarPorNome(String nome) {
+    public String pesquisarPorNome(String id) {
         StringBuilder caminho = new StringBuilder("=>raiz ");
-        boolean encontrado = pesquisarPorNome(raiz, nome, caminho);
+        boolean encontrado = pesquisarPorNome(raiz, id, caminho);
         return caminho.toString() + (encontrado ? "SIM" : "NAO");
     }
 
-    private boolean pesquisarPorNome(No no, String nome, StringBuilder caminho) {
+    private boolean pesquisarPorNome(No no, String id, StringBuilder caminho) {
         if (no == null) {
-            return false;
+            System.out.println(id);
+            return false; // Não encontrado
         }
-        if (nome.equalsIgnoreCase(no.getPokemon().getName())) {
+        
+        else if (id.equals(no.getPokemon().getId())) {
             no.getPokemon().imprimir();
-            return true;
+            return true; // Encontrado
         }
-        caminho.append("esq ");
-        if (pesquisarPorNome(no.esq, nome, caminho)) {
-            return true;
+        
+        else if (Integer.parseInt(id) > no.getPokemon().getIntId()) {
+            caminho.append("esq ");
+            if (pesquisarPorNome(no.esq, id, caminho)) {
+                return true; // Propaga o sucesso
+            }
+        } else if(Integer.parseInt(id) < no.getPokemon().getIntId()) {
+            caminho.append("dir ");
+            if (pesquisarPorNome(no.dir, id, caminho)) {
+                return true; // Propaga o sucesso
+            }
         }
-        caminho.setLength(caminho.length() - 4); // Remove "esq " se não encontrado à esquerda
-
-        caminho.append("dir ");
-        if (pesquisarPorNome(no.dir, nome, caminho)) {
-            return true;
-        }
-        caminho.setLength(caminho.length() - 4); // Remove "dir " se não encontrado à direita
-
-        return false;
+        
+        return false; // Não encontrado
     }
+    
 
     public void caminharCentral() {
         caminharCentral(raiz);
@@ -187,16 +192,11 @@ class No {
 }
 
 class Pokedex {
-    // private final String FILE_NAME
-    // ="C:\\Users\\kino1\\Desktop\\Programacao\\MyPrograms\\TPs\\TP4\\tmp\\pokemon.csv";
-    // // my directory in windows
-    private final String FILE_NAME = "/home/marcoslaine/Área de trabalho/Programacao/MyPrograms/TPs/TP4/tmp/pokemon.csv"; // my
-                                                                                                                          // directory
-                                                                                                                          // in
-                                                                                                                          // linux
-    // private final String FILE_NAME = "/tmp/pokemon.csv"; // Verde's directory
+    // private final String FILE_NAME = "C:\\Users\\kino1\\Desktop\\Programacao\\MyPrograms\\TPs\\TP4\\tmp\\pokemon.csv"; // my directory in windows
+    // private final String FILE_NAME = "/home/marcoslaine/Área de trabalho/Programacao/MyPrograms/TPs/TP4/tmp/pokemon.csv"; // my directory in linux
+    private final String FILE_NAME = "/tmp/pokemon.csv"; // Verde's directory
     public ArvoreBinaria arvoreDePokemons = new ArvoreBinaria();
-    private ArrayList<Pokemon> listaDePokemons = new ArrayList<>();
+    public ArrayList<Pokemon> listaDePokemons = new ArrayList<>();
 
     public void lerDadosDoArquivo() {
         listaDePokemons.clear();
@@ -285,13 +285,20 @@ public class ArvorePokemons {
             entrada = sc.nextLine();
         }
 
-        pokedex.arvoreDePokemons.getMaior();
+        // pokedex.arvoreDePokemons.getMaior();
 
 
         // Pesquisa de Pokémons na árvore
         entrada = sc.nextLine();
         while (!entrada.equals("FIM")) {
-            String resultado = pokedex.arvoreDePokemons.pesquisarPorNome(entrada);
+            String id = "";
+            for(Pokemon pokemonBuscado : pokedex.listaDePokemons){
+                if(pokemonBuscado.getName().equals(entrada)){
+                    id = pokemonBuscado.getId();
+                    break;
+                }
+            }
+            String resultado = pokedex.arvoreDePokemons.pesquisarPorNome(id);
             System.out.println(resultado);
             entrada = sc.nextLine();
         }
