@@ -128,12 +128,12 @@ class ArvoreBinaria {
             return true; // Encontrado
         }
         
-        else if (idInt > no.getPokemon().getIntId()) {
+        else if (idInt < no.getPokemon().getIntId()) {
             caminho.append("esq ");
             if (pesquisarPorNome(no.esq, id, caminho)) {
                 return true; // Propaga o sucesso
             }
-        } else if(idInt < no.getPokemon().getIntId()) {
+        } else if(idInt > no.getPokemon().getIntId()) {
             caminho.append("dir ");
             if (pesquisarPorNome(no.dir, id, caminho)) {
                 return true; // Propaga o sucesso
@@ -193,9 +193,9 @@ class No {
 }
 
 class Pokedex {
-    private final String FILE_NAME = "C:\\Users\\kino1\\Desktop\\Programacao\\MyPrograms\\TPs\\TP4\\tmp\\pokemon.csv"; // my directory in windows
+    // private final String FILE_NAME = "C:\\Users\\kino1\\Desktop\\Programacao\\MyPrograms\\TPs\\TP4\\tmp\\pokemon.csv"; // my directory in windows
     // private final String FILE_NAME = "/home/marcoslaine/Área de trabalho/Programacao/MyPrograms/TPs/TP4/tmp/pokemon.csv"; // my directory in linux
-    // private final String FILE_NAME = "/tmp/pokemon.csv"; // Verde's directory
+    private final String FILE_NAME = "/tmp/pokemon.csv"; // Verde's directory
     public ArvoreBinaria arvoreDePokemons = new ArvoreBinaria();
     public ArrayList<Pokemon> listaDePokemons = new ArrayList<>();
 
