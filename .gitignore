@@ -1,8 +1,8 @@
-*.exe
+.exe
 *.class
 *.in
 *.out
-bin
+*.bin
 .vs
 .metals
 *.txt
