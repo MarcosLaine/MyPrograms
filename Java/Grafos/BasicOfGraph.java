@@ -102,6 +102,7 @@ public class BasicOfGraph {
     }
 
     // Método principal para leitura do arquivo, construção do grafo e exibição das informações
+    @SuppressWarnings("resource")
     public static void main(String[] args) {
         // Caminho do arquivo. Pode ser passado via argumento ou usado o default.
         String caminhoArquivo = "graph-test-100-1.txt";
