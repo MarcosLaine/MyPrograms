@@ -4,7 +4,7 @@ import numpy as np
 import os
 from sklearn.tree import DecisionTreeClassifier, plot_tree
 from sklearn.model_selection import train_test_split
-from sklearn.metrics import accuracy_score, confusion_matrix
+from sklearn.metrics import accuracy_score, confusion_matrix, precision_score, recall_score, f1_score, classification_report
 import matplotlib.pyplot as plt
 
 # Muda para o diretório onde o script está localizado
@@ -80,6 +80,19 @@ acc = accuracy_score(y_val, y_val_pred)
 print("\nAcurácia na validação:", acc)
 print("Matriz de confusão:")
 print(confusion_matrix(y_val, y_val_pred))
+
+# Calcula e exibe métricas adicionais: precisão, recall e f1-score
+precision = precision_score(y_val, y_val_pred)
+recall = recall_score(y_val, y_val_pred)
+f1 = f1_score(y_val, y_val_pred)
+
+print(f"\nPrecisão: {precision:.4f}")
+print(f"Recall: {recall:.4f}")
+print(f"F1-Score: {f1:.4f}")
+
+# Exibe um relatório de classificação completo
+print("\nRelatório de classificação completo:")
+print(classification_report(y_val, y_val_pred, target_names=["Não Sobreviveu", "Sobreviveu"]))
 
 # =============================================================================
 # 7. Visualização da Árvore de Decisão
