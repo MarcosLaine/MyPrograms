@@ -3,6 +3,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "BasicOfGraphSearch",
+      "request": "launch",
+      "mainClass": "BasicOfGraphSearch",
+      "projectName": "MyPrograms"
+    },
+    {
+      "type": "java",
       "name": "BasicOfGraph",
       "request": "launch",
       "mainClass": "BasicOfGraph",
