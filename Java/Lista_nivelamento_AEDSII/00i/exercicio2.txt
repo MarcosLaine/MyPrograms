@@ -1,0 +1,66 @@
+Início:
+c1: [1, "aa"]
+vet[0]: null
+vet[1]: null
+vet[2]: null
+vet[3]: null
+vet[4]: null
+
+Antes do loop:
+c1: [1, "aa"]
+vet[0]: null
+vet[1]: null
+vet[2]: null
+vet[3]: null
+vet[4]: null
+
+Dentro do loop (i = 0):
+c1: [1, "aa"]
+vet[0]: [1, "aa"]
+vet[1]: null
+vet[2]: null
+vet[3]: null
+vet[4]: null
+
+Dentro do loop (i = 1):
+c1: [1, "aa"]
+vet[0]: [1, "aa"]
+vet[1]: [1, "aa"]
+vet[2]: null
+vet[3]: null
+vet[4]: null
+
+Dentro do loop (i = 2):
+c1: [1, "aa"]
+vet[0]: [1, "aa"]
+vet[1]: [1, "aa"]
+vet[2]: [1, "aa"]
+vet[3]: null
+vet[4]: null
+
+Dentro do loop (i = 3):
+c1: [1, "aa"]
+vet[0]: [1, "aa"]
+vet[1]: [1, "aa"]
+vet[2]: [1, "aa"]
+vet[3]: [1, "aa"]
+vet[4]: null
+
+Dentro do loop (i = 4):
+c1: [1, "aa"]
+vet[0]: [1, "aa"]
+vet[1]: [1, "aa"]
+vet[2]: [1, "aa"]
+vet[3]: [1, "aa"]
+vet[4]: [1, "aa"]
+
+
+
+
+SAIDA FINAL:
+
+[1, aa]/1/aa
+[1, aa]/1/aa
+[1, aa]/1/aa
+[1, aa]/1/aa
+[1, aa]/1/aa

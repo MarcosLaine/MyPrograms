@@ -1,0 +1,1 @@
+o 1° atribui o valor de i para i e após isso diminui 1 do valor, já o segundo, diminui 1 de i e depois atribui o novo valor a i. 

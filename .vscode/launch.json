@@ -1,0 +1,867 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "java",
+      "name": "GraphGenerator",
+      "request": "launch",
+      "mainClass": "GraphGenerator",
+      "projectName": "MyPrograms"
+    },
+    {
+      "type": "java",
+      "name": "DijkstraMinHeap",
+      "request": "launch",
+      "mainClass": "DijkstraMinHeap",
+      "projectName": "MyPrograms"
+    },
+    {
+      "type": "java",
+      "name": "DijkstraGraph",
+      "request": "launch",
+      "mainClass": "DijkstraGraph",
+      "projectName": "MyPrograms"
+    },
+    {
+      "type": "java",
+      "name": "BasicOfGraphSearch",
+      "request": "launch",
+      "mainClass": "BasicOfGraphSearch",
+      "projectName": "MyPrograms"
+    },
+    {
+      "type": "java",
+      "name": "BasicOfGraph",
+      "request": "launch",
+      "mainClass": "BasicOfGraph",
+      "projectName": "MyPrograms"
+    },
+    {
+      "type": "java",
+      "name": "MainGrafo",
+      "request": "launch",
+      "mainClass": "MainGrafo",
+      "projectName": "MyPrograms"
+    },
+    {
+      "type": "java",
+      "name": "ArvorePokemons",
+      "request": "launch",
+      "mainClass": "ArvorePokemons",
+      "projectName": "MyPrograms"
+    },
+    {
+      "type": "java",
+      "name": "ListaDePokemon",
+      "request": "launch",
+      "mainClass": "ListaDePokemon",
+      "projectName": "MyPrograms"
+    },
+    {
+      "type": "java",
+      "name": "PythonToExecutable",
+      "request": "launch",
+      "mainClass": "PythonToExecutable",
+      "projectName": "MyPrograms"
+    },
+    {
+      "type": "java",
+      "name": "SelectionSortPokemons",
+      "request": "launch",
+      "mainClass": "SelectionSortPokemons",
+      "projectName": "MyPrograms"
+    },
+    {
+      "type": "java",
+      "name": "Pokemon",
+      "request": "launch",
+      "mainClass": "Pokemon",
+      "projectName": "MyPrograms"
+    },
+    {
+      "type": "java",
+      "name": "QueueCreation",
+      "request": "launch",
+      "mainClass": "estudos_sobre_tads.QueueCreation",
+      "projectName": "MyPrograms"
+    },
+    {
+      "type": "java",
+      "name": "QueueCreation",
+      "request": "launch",
+      "mainClass": "QueueCreation",
+      "projectName": "MyPrograms"
+    },
+    {
+      "type": "java",
+      "name": "StackTest",
+      "request": "launch",
+      "mainClass": "StackTest",
+      "projectName": "MyPrograms"
+    },
+    {
+      "type": "java",
+      "name": "AlfabetoAlienigena",
+      "request": "launch",
+      "mainClass": "AlfabetoAlienigena",
+      "projectName": "MyPrograms"
+    },
+    {
+      "type": "java",
+      "name": "BinaryTreePlayer",
+      "request": "launch",
+      "mainClass": "BinaryTreePlayer",
+      "projectName": "MyPrograms"
+    },
+    {
+      "type": "java",
+      "name": "ArraySort",
+      "request": "launch",
+      "mainClass": "ArraySort",
+      "projectName": "MyPrograms"
+    },
+    {
+      "type": "java",
+      "name": "SortSortSort",
+      "request": "launch",
+      "mainClass": "SortSortSort",
+      "projectName": "MyPrograms"
+    },
+    {
+      "type": "java",
+      "name": "test",
+      "request": "launch",
+      "mainClass": "test",
+      "projectName": "MyPrograms"
+    },
+    {
+      "type": "java",
+      "name": "GodOfWar",
+      "request": "launch",
+      "mainClass": "GodOfWar",
+      "projectName": "MyPrograms"
+    },
+    {
+      "type": "java",
+      "name": "ArvoreRodar",
+      "request": "launch",
+      "mainClass": "ArvoreRodar",
+      "projectName": "MyPrograms"
+    },
+    {
+      "type": "java",
+      "name": "PrincipalListas",
+      "request": "launch",
+      "mainClass": "PrincipalListas",
+      "projectName": "MyPrograms"
+    },
+    {
+      "type": "java",
+      "name": "MergeSortPresentation",
+      "request": "launch",
+      "mainClass": "MergeSortPresentation",
+      "projectName": "MyPrograms"
+    },
+    {
+      "type": "java",
+      "name": "MergeSort",
+      "request": "launch",
+      "mainClass": "MergeSort",
+      "projectName": "MyPrograms"
+    },
+    {
+      "type": "java",
+      "name": "QuickSort",
+      "request": "launch",
+      "mainClass": "QuickSort",
+      "projectName": "MyPrograms"
+    },
+    {
+      "type": "java",
+      "name": "LinkedListTeste",
+      "request": "launch",
+      "mainClass": "LinkedListTeste",
+      "projectName": "MyPrograms"
+    },
+    {
+      "type": "java",
+      "name": "HashtableDemo",
+      "request": "launch",
+      "mainClass": "HashtableDemo",
+      "projectName": "MyPrograms"
+    },
+    {
+      "type": "java",
+      "name": "TPQ01",
+      "request": "launch",
+      "mainClass": "TPQ01",
+      "projectName": "MyPrograms"
+    },
+    {
+      "type": "java",
+      "name": "Personagem",
+      "request": "launch",
+      "mainClass": "Personagem",
+      "projectName": "MyPrograms"
+    },
+    {
+      "type": "java",
+      "name": "Cartas",
+      "request": "launch",
+      "mainClass": "Cartas",
+      "projectName": "MyPrograms"
+    },
+    {
+      "type": "java",
+      "name": "LED",
+      "request": "launch",
+      "mainClass": "LED",
+      "projectName": "MyPrograms"
+    },
+    {
+      "type": "java",
+      "name": "Encaixa",
+      "request": "launch",
+      "mainClass": "Encaixa",
+      "projectName": "MyPrograms"
+    },
+    {
+      "type": "java",
+      "name": "Contrato",
+      "request": "launch",
+      "mainClass": "Contrato",
+      "projectName": "MyPrograms"
+    },
+    {
+      "type": "java",
+      "name": "Criptografia",
+      "request": "launch",
+      "mainClass": "Criptografia",
+      "projectName": "MyPrograms"
+    },
+    {
+      "type": "java",
+      "name": "CifrementoRec",
+      "request": "launch",
+      "mainClass": "CifrementoRec",
+      "projectName": "MyPrograms"
+    },
+    {
+      "type": "java",
+      "name": "TicTacToe",
+      "request": "launch",
+      "mainClass": "TicTacToe",
+      "projectName": "MyPrograms"
+    },
+    {
+      "type": "java",
+      "name": "HashIndireta",
+      "request": "launch",
+      "mainClass": "HashIndireta",
+      "projectName": "MyPrograms"
+    },
+    {
+      "type": "java",
+      "name": "rehash",
+      "request": "launch",
+      "mainClass": "rehash",
+      "projectName": "MyPrograms"
+    },
+    {
+      "type": "java",
+      "name": "TabelaHashRehashing",
+      "request": "launch",
+      "mainClass": "TabelaHashRehashing",
+      "projectName": "MyPrograms"
+    },
+    {
+      "type": "java",
+      "name": "Rehash",
+      "request": "launch",
+      "mainClass": "Rehash",
+      "projectName": "MyPrograms"
+    },
+    {
+      "type": "java",
+      "name": "ReHash",
+      "request": "launch",
+      "mainClass": "ReHash",
+      "projectName": "MyPrograms"
+    },
+    {
+      "type": "java",
+      "name": "TabelaHash",
+      "request": "launch",
+      "mainClass": "TabelaHash",
+      "projectName": "MyPrograms"
+    },
+    {
+      "type": "java",
+      "name": "Tree",
+      "request": "launch",
+      "mainClass": "Tree",
+      "projectName": "MyPrograms"
+    },
+    {
+      "type": "java",
+      "name": "Principal",
+      "request": "launch",
+      "mainClass": "Principal",
+      "projectName": "MyPrograms"
+    },
+    {
+      "type": "java",
+      "name": "Doidona",
+      "request": "launch",
+      "mainClass": "Doidona",
+      "projectName": "MyPrograms"
+    },
+    {
+      "type": "java",
+      "name": "JogadorArvoreArvore",
+      "request": "launch",
+      "mainClass": "JogadorArvoreArvore",
+      "projectName": "MyPrograms"
+    },
+    {
+      "type": "java",
+      "name": "ArvoreBinaria2",
+      "request": "launch",
+      "mainClass": "ArvoreBinaria2",
+      "projectName": "MyPrograms"
+    },
+    {
+      "type": "java",
+      "name": "QuicksortJogador",
+      "request": "launch",
+      "mainClass": "QuicksortJogador",
+      "projectName": "MyPrograms"
+    },
+    {
+      "type": "java",
+      "name": "Matriz",
+      "request": "launch",
+      "mainClass": "Matriz",
+      "projectName": "MyPrograms"
+    },
+    {
+      "type": "java",
+      "name": "Player3",
+      "request": "launch",
+      "mainClass": "Player3",
+      "projectName": "MyPrograms"
+    },
+    {
+      "type": "java",
+      "name": "Player2",
+      "request": "launch",
+      "mainClass": "Player2",
+      "projectName": "MyPrograms"
+    },
+    {
+      "type": "java",
+      "name": "Player",
+      "request": "launch",
+      "mainClass": "Player",
+      "projectName": "MyPrograms"
+    },
+    {
+      "type": "java",
+      "name": "BeeCrowdOlimpieda",
+      "request": "launch",
+      "mainClass": "BeeCrowdOlimpieda",
+      "projectName": "MyPrograms"
+    },
+    {
+      "type": "java",
+      "name": "ListaSequencialJogador",
+      "request": "launch",
+      "mainClass": "ListaSequencialJogador",
+      "projectName": "MyPrograms"
+    },
+    {
+      "type": "java",
+      "name": "listaSequencialJogador",
+      "request": "launch",
+      "mainClass": "listaSequencialJogador",
+      "projectName": "MyPrograms"
+    },
+    {
+      "type": "java",
+      "name": "TP02Q05",
+      "request": "launch",
+      "mainClass": "TP02Q05",
+      "projectName": "MyPrograms"
+    },
+    {
+      "type": "java",
+      "name": "OrdenacaoParcialQuicksort",
+      "request": "launch",
+      "mainClass": "OrdenacaoParcialQuicksort",
+      "projectName": "MyPrograms"
+    },
+    {
+      "type": "java",
+      "name": "OrdenacaoParcialPorSelecao",
+      "request": "launch",
+      "mainClass": "OrdenacaoParcialPorSelecao",
+      "projectName": "MyPrograms"
+    },
+    {
+      "type": "java",
+      "name": "OrdenacaoPorMergesortJogador",
+      "request": "launch",
+      "mainClass": "OrdenacaoPorMergesortJogador",
+      "projectName": "MyPrograms"
+    },
+    {
+      "type": "java",
+      "name": "OrdenacaoPorCountingSortJogador",
+      "request": "launch",
+      "mainClass": "OrdenacaoPorCountingSortJogador",
+      "projectName": "MyPrograms"
+    },
+    {
+      "type": "java",
+      "name": "OrdenacaoPorHeapsortJogador",
+      "request": "launch",
+      "mainClass": "OrdenacaoPorHeapsortJogador",
+      "projectName": "MyPrograms"
+    },
+    {
+      "type": "java",
+      "name": "HeapsortJogador",
+      "request": "launch",
+      "mainClass": "HeapsortJogador",
+      "projectName": "MyPrograms"
+    },
+    {
+      "type": "java",
+      "name": "InsertionSortJogador",
+      "request": "launch",
+      "mainClass": "InsertionSortJogador",
+      "projectName": "MyPrograms"
+    },
+    {
+      "type": "java",
+      "name": "PesquisaSequencialJogador",
+      "request": "launch",
+      "mainClass": "PesquisaSequencialJogador",
+      "projectName": "MyPrograms"
+    },
+    {
+      "type": "java",
+      "name": "OrdenacaoPorSelecaoJogador",
+      "request": "launch",
+      "mainClass": "OrdenacaoPorSelecaoJogador",
+      "projectName": "MyPrograms"
+    },
+    {
+      "type": "java",
+      "name": "PesquisaJogador",
+      "request": "launch",
+      "mainClass": "PesquisaJogador",
+      "projectName": "MyPrograms"
+    },
+    {
+      "type": "java",
+      "name": "PesquisaSequencial",
+      "request": "launch",
+      "mainClass": "PesquisaSequencial",
+      "projectName": "MyPrograms"
+    },
+    {
+      "type": "java",
+      "name": "Jogador1",
+      "request": "launch",
+      "mainClass": "Jogador1",
+      "projectName": "MyPrograms"
+    },
+    {
+      "type": "java",
+      "name": "Memes",
+      "request": "launch",
+      "mainClass": "Memes",
+      "projectName": "MyPrograms"
+    },
+    {
+      "type": "java",
+      "name": "Classe",
+      "request": "launch",
+      "mainClass": "Classe",
+      "projectName": "MyPrograms"
+    },
+    {
+      "type": "java",
+      "name": "Jogador",
+      "request": "launch",
+      "mainClass": "Jogador",
+      "projectName": "MyPrograms"
+    },
+    {
+      "type": "java",
+      "name": "IdadeCompleta",
+      "request": "launch",
+      "mainClass": "IdadeCompleta",
+      "projectName": ""
+    },
+    {
+      "type": "java",
+      "name": "SequenciaEspelho",
+      "request": "launch",
+      "mainClass": "SequenciaEspelho",
+      "projectName": ""
+    },
+    {
+      "type": "java",
+      "name": "Espelho",
+      "request": "launch",
+      "mainClass": "Espelho",
+      "projectName": ""
+    },
+    {
+      "type": "java",
+      "name": "ContadorCaracteres",
+      "request": "launch",
+      "mainClass": "ContadorCaracteres",
+      "projectName": ""
+    },
+    {
+      "type": "java",
+      "name": "ContadorWeb",
+      "request": "launch",
+      "mainClass": "ContadorWeb",
+      "projectName": ""
+    },
+    {
+      "type": "java",
+      "name": "LeituraHTML",
+      "request": "launch",
+      "mainClass": "LeituraHTML",
+      "projectName": ""
+    },
+    {
+      "type": "java",
+      "name": "ExpressaoBooleana",
+      "request": "launch",
+      "mainClass": "ExpressaoBooleana",
+      "projectName": ""
+    },
+    {
+      "type": "java",
+      "name": "AlgebraBoleanaJoao",
+      "request": "launch",
+      "mainClass": "AlgebraBoleanaJoao",
+      "projectName": ""
+    },
+    {
+      "type": "java",
+      "name": "AlgebraBoleana",
+      "request": "launch",
+      "mainClass": "AlgebraBoleana",
+      "projectName": ""
+    },
+    {
+      "type": "java",
+      "name": "ReverseReadFile",
+      "request": "launch",
+      "mainClass": "ReverseReadFile",
+      "projectName": ""
+    },
+    {
+      "type": "java",
+      "name": "ReverseReadFileWithoutParse",
+      "request": "launch",
+      "mainClass": "ReverseReadFileWithoutParse",
+      "projectName": ""
+    },
+    {
+      "type": "java",
+      "name": "Arquivo",
+      "request": "launch",
+      "mainClass": "Arquivo",
+      "projectName": ""
+    },
+    {
+      "type": "java",
+      "name": "IsRec",
+      "request": "launch",
+      "mainClass": "IsRec",
+      "projectName": ""
+    },
+    {
+      "type": "java",
+      "name": "Is",
+      "request": "launch",
+      "mainClass": "Is",
+      "projectName": ""
+    },
+    {
+      "type": "java",
+      "name": "BooleanExpressionEvaluator",
+      "request": "launch",
+      "mainClass": "BooleanExpressionEvaluator",
+      "projectName": ""
+    },
+    {
+      "type": "java",
+      "name": "AlgebraBooleana",
+      "request": "launch",
+      "mainClass": "AlgebraBooleana",
+      "projectName": ""
+    },
+    {
+      "type": "java",
+      "name": "AlgebraBooleanaRec",
+      "request": "launch",
+      "mainClass": "AlgebraBooleanaRec",
+      "projectName": ""
+    },
+    {
+      "type": "java",
+      "name": "Somae2Numeros",
+      "request": "launch",
+      "mainClass": "exercício1.Somae2Numeros",
+      "projectName": ""
+    },
+    {
+      "type": "java",
+      "name": "CiframentoCesarRec",
+      "request": "launch",
+      "mainClass": "CiframentoCesarRec",
+      "projectName": ""
+    },
+    {
+      "type": "java",
+      "name": "CiframentoCesarReco",
+      "request": "launch",
+      "mainClass": "CiframentoCesarReco",
+      "projectName": ""
+    },
+    {
+      "type": "java",
+      "name": "CiframentoCesarRecursivo",
+      "request": "launch",
+      "mainClass": "CiframentoCesarRecursivo",
+      "projectName": ""
+    },
+    {
+      "type": "java",
+      "name": "SubstituirLetrasRec",
+      "request": "launch",
+      "mainClass": "SubstituirLetrasRec",
+      "projectName": ""
+    },
+    {
+      "type": "java",
+      "name": "SubstituirLetrasRecursivo",
+      "request": "launch",
+      "mainClass": "SubstituirLetrasRecursivo",
+      "projectName": ""
+    },
+    {
+      "type": "java",
+      "name": "SubstituirLetras",
+      "request": "launch",
+      "mainClass": "SubstituirLetras",
+      "projectName": ""
+    },
+    {
+      "type": "java",
+      "name": "PalindromoRec",
+      "request": "launch",
+      "mainClass": "PalindromoRec",
+      "projectName": ""
+    },
+    {
+      "type": "java",
+      "name": "CiframentoDeCesar",
+      "request": "launch",
+      "mainClass": "CiframentoDeCesar",
+      "projectName": ""
+    },
+    {
+      "type": "java",
+      "name": "palindromo",
+      "request": "launch",
+      "mainClass": "palindromo",
+      "projectName": ""
+    },
+    {
+      "type": "java",
+      "name": "Olá/Ola",
+      "request": "launch",
+      "mainClass": "Olá/Ola",
+      "projectName": "Olá"
+    },
+    {
+      "type": "java",
+      "name": "teste",
+      "request": "launch",
+      "mainClass": "teste",
+      "projectName": ""
+    },
+    {
+      "type": "java",
+      "name": "ExemploMyIO",
+      "request": "launch",
+      "mainClass": "ExemploMyIO",
+      "projectName": ""
+    },
+    {
+      "type": "java",
+      "name": "CiframentoCesar",
+      "request": "launch",
+      "mainClass": "CiframentoCesar",
+      "projectName": ""
+    },
+    {
+      "type": "java",
+      "name": "Aplicacao",
+      "request": "launch",
+      "mainClass": "app.Aplicacao",
+      "projectName": ""
+    },
+    {
+      "type": "java",
+      "name": "TorreDeHanoi",
+      "request": "launch",
+      "mainClass": "TorreDeHanoi.TorreDeHanoi",
+      "projectName": ""
+    },
+    {
+      "type": "java",
+      "name": "Calculadora",
+      "request": "launch",
+      "mainClass": "Calculadora",
+      "projectName": ""
+    },
+    {
+      "type": "java",
+      "name": "Aplicacao",
+      "request": "launch",
+      "mainClass": "Vitor/app.Aplicacao",
+      "projectName": ""
+    },
+    {
+      "type": "java",
+      "name": "Monitoria2",
+      "request": "launch",
+      "mainClass": "Monitoria2",
+      "projectName": ""
+    },
+    {
+      "type": "java",
+      "name": "Monitoria1",
+      "request": "launch",
+      "mainClass": "Monitoria1",
+      "projectName": ""
+    },
+    {
+      "type": "java",
+      "name": "Salario",
+      "request": "launch",
+      "mainClass": "Salario",
+      "projectName": ""
+    },
+    {
+      "type": "java",
+      "name": "Main",
+      "request": "launch",
+      "mainClass": "Main",
+      "projectName": ""
+    },
+    {
+      "type": "java",
+      "name": "Teste",
+      "request": "launch",
+      "mainClass": "teste.Teste",
+      "projectName": ""
+    },
+    {
+      "type": "java",
+      "name": "SomaBeeCrowd",
+      "request": "launch",
+      "mainClass": "SomaBeeCrowd",
+      "projectName": ""
+    },
+    {
+      "type": "java",
+      "name": "MatrizGrid",
+      "request": "launch",
+      "mainClass": "MatrizGrid",
+      "projectName": "Programação_e03b41a7"
+    },
+    {
+      "type": "java",
+      "name": "InteiroNImpares",
+      "request": "launch",
+      "mainClass": "InteiroNImpares",
+      "projectName": "Programação_d67d99f3"
+    },
+    {
+      "type": "java",
+      "name": "triangulos",
+      "request": "launch",
+      "mainClass": "triangulos",
+      "projectName": "Programação_d67d99f3"
+    },
+    {
+      "type": "java",
+      "name": "arquivos",
+      "request": "launch",
+      "mainClass": "arquivos",
+      "projectName": "Programação_d67d99f3"
+    },
+    {
+      "name": "Java Run",
+      "type": "java",
+      "request": "launch",
+      "mainClass": "${file}"
+    },
+    {
+      "name": "(gdb) Launch",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "enter program name, for example ${workspaceFolder}/a.exe",
+      "args": [],
+      "stopAtEntry": false,
+      "cwd": "${fileDirname}",
+      "environment": [],
+      "externalConsole": false,
+      "MIMode": "gdb",
+      "miDebuggerPath": "/path/to/gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        },
+        {
+          "description": "Set Disassembly Flavor to Intel",
+          "text": "-gdb-set disassembly-flavor intel",
+          "ignoreFailures": true
+        }
+      ]
+    },
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "cppdbg",
+      "request": "launch",
+      "args": [],
+      "stopAtEntry": false,
+      "externalConsole": false,
+      "cwd": "/home/marcoslaine/Área de trabalho/Programacao/MyPrograms/C/estudos",
+      "program": "/home/marcoslaine/Área de trabalho/Programacao/MyPrograms/C/estudos/build/Debug/outDebug",
+      "MIMode": "gdb",
+      "miDebuggerPath": "gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+#include <stdio.h>
+
+// Função que verifica se um elemento está presente no array usando busca binária
+int buscaBinaria(int array[], int tamanho, int x) {
+    int esquerda = 0;
+    int direita = tamanho - 1;
+
+    while (esquerda <= direita) {
+        int meio = esquerda + (direita - esquerda) / 2;
+
+        if (array[meio] == x) {
+            return 1; // Retorna 1 se o elemento estiver presente
+        } else if (array[meio] < x) {
+            esquerda = meio + 1;
+        } else {
+            direita = meio - 1;
+        }
+    }
+
+    return 0; // Retorna 0 se o elemento não estiver presente
+}
+
+int main() {
+    int tamanho;
+    
+    printf("Digite o tamanho do array: ");
+    scanf("%d", &tamanho);
+
+    int array[tamanho];
+
+    // Preenchendo o array com os valores fornecidos pelo usuário
+    for (int i = 0; i < tamanho; i++) {
+        printf("Digite o valor para a posição %d: ", i);
+        scanf("%d", &array[i]);
+    }
+
+    int x;
+    printf("Digite o valor de x: ");
+    scanf("%d", &x);
+
+    // Verificando se x está contido no array usando busca binária
+    if (buscaBinaria(array, tamanho, x)) {
+        printf("%d está contido no array.\n", x);
+    } else {
+        printf("%d não está contido no array.\n", x);
+    }
+
+    return 0;
+}

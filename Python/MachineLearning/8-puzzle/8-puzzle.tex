@@ -1,0 +1,128 @@
+% Documento de documentação do 8-Puzzle Solver em Python
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[brazil]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{hyperref}
+\geometry{margin=1in}
+
+% Configuração do pacote listings para exibir o código-fonte
+\definecolor{lightgray}{gray}{0.95}
+\lstset{
+  backgroundcolor=\color{lightgray},
+  basicstyle=\ttfamily\small,
+  numbers=left,
+  numberstyle=\tiny,
+  frame=single,
+  breaklines=true,
+  captionpos=b
+}
+
+\title{Documentação do 8-Puzzle Solver}
+\author{Marcos Laine}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Este documento apresenta a descrição detalhada do projeto \textit{8-Puzzle Solver} implementado em Python com interface gráfica \texttt{Tkinter}. São abordados os algoritmos de busca implementados (BFS, Busca Gulosa, Dijkstra e A*), as heurísticas utilizadas, a estrutura do código e instruções de uso.
+\end{abstract}
+
+\section{Introdução}
+O \textit{8-puzzle} é um quebra-cabeça clássico que consiste em um tabuleiro $3\times3$ contendo oito peças numeradas e um espaço vazio. O objetivo é alcançar uma configuração meta a partir de uma disposição inicial, movimentando as peças para o espaço vazio.
+
+\section{Visão Geral do Projeto}
+O projeto consiste em um único arquivo Python:
+\begin{itemize}
+  \item \texttt{8-puzzle.py}: implementação completa da lógica de resolução e interface gráfica.
+\end{itemize}
+
+A interface gráfica permite:
+\begin{enumerate}
+  \item Inserir manualmente um estado inicial.
+  \item Embaralhar automaticamente para um estado aleatório solucionável.
+  \item Selecionar o método de busca (BFS, Busca Gulosa, Dijkstra ou A*).
+  \item Escolher a heurística (Manhattan ou Misplaced) quando aplicável (A*).
+  \item Exibir tempo de execução, número de nós expandidos e número de passos.
+  \item Navegar passo a passo pela solução encontrada usando os botões \texttt{Anterior} e \texttt{Próximo}.
+  \item O espaço vazio é representado por uma célula em branco, como no quebra-cabeça tradicional.
+\end{enumerate}
+
+\section{Algoritmos de Busca}
+\subsection{Busca em Largura (BFS)}
+O BFS explora o espaço de estados nível a nível, garantindo encontrar a solução com o menor número de movimentos, mas com alto consumo de memória.
+
+\subsection{Busca Gulosa (Greedy Best-First Search)}
+A busca gulosa utiliza apenas a heurística para escolher o próximo estado, sem considerar o custo do caminho já percorrido. É rápida, mas não garante o menor caminho.
+
+\subsection{Dijkstra}
+O algoritmo de Dijkstra encontra o caminho de menor custo sem utilizar heurística, considerando apenas o número de movimentos realizados.
+
+\subsection{A*}
+O A* combina o custo percorrido e a estimativa heurística.
+\begin{itemize}
+  \item \textbf{Heurística Manhattan}: soma das distâncias de Manhattan de cada peça até sua posição alvo.
+  \item \textbf{Heurística Misplaced}: número de peças fora do lugar.
+\end{itemize}
+O A* oferece compromisso ideal entre qualidade de solução e desempenho, dependendo da heurística.
+
+\section{Uso}
+Para executar o programa:
+\begin{enumerate}
+  \item \texttt{execute o arquivo 8\_puzze.exe}
+  	\begin{itemize}
+        	\item \texttt{é possível que precise marcar como seguro em seu antivírus, pois como é um arquivo .exe gerado a partir de um código em python sem assinatura, ele detecte como malicioso}
+    \end{itemize}
+  \item \textbf{OU}
+  \item No terminal, execute:
+  \begin{verbatim}
+cd caminho/para/o/arquivo
+python 8-puzzle.py
+  \end{verbatim}
+  \item Na janela, escolha ou embaralhe o estado e clique em \textit{Resolver}.
+  \item Use os botões \texttt{Anterior} e \texttt{Próximo} para visualizar cada passo da solução.
+\end{enumerate}
+
+\section{Análise de Desempenho}
+
+Nesta seção, apresentamos os resultados reais obtidos para o mesmo estado inicial do 8-puzzle, utilizando diferentes algoritmos e heurísticas. Foram considerados o tempo de execução, o número de nós expandidos e o número de passos da solução.
+
+\subsection{Resultados Obtidos}
+\begin{itemize}
+  \item \textbf{A* (Manhattan)}: \\ 
+  Passos: 18 \\ 
+  Tempo: 0,0062s \\ 
+  Nós expandidos: 349
+  \item \textbf{A* (Misplaced)}: \\ 
+  Passos: 18 \\ 
+  Tempo: 0,0065s \\ 
+  Nós expandidos: 1464
+  \item \textbf{BFS}: \\ 
+  Passos: 18 \\ 
+  Tempo: 0,0780s \\ 
+  Nós expandidos: 22545
+  \item \textbf{Busca Gulosa (Manhattan)}: \\ 
+  Passos: 54 \\ 
+  Tempo: 0,0054s \\ 
+  Nós expandidos: 737
+  \item \textbf{Dijkstra}: \\ 
+  Passos: 18 \\ 
+  Tempo: 0,0836s \\ 
+  Nós expandidos: 19279
+\end{itemize}
+
+\subsection{Discussão}
+Os resultados mostram que o algoritmo A* com heurística de Manhattan foi o mais eficiente em termos de nós expandidos e tempo, encontrando a solução ótima rapidamente. O A* com Misplaced também encontra a solução ótima, mas expande mais nós. O BFS e o Dijkstra garantem a solução ótima, porém com custo computacional significativamente maior. A Busca Gulosa é rápida e expande poucos nós, mas não garante a solução ótima, resultando em um caminho mais longo (mais passos).
+
+\section{Resolução de Problemas}
+\begin{itemize}
+  \item Se o antivírus detectar o executável como ameaça, adicione-o à lista de exceções ou assine digitalmente o arquivo.
+  \item Certifique-se de que o Python e o Tkinter estão corretamente instalados.
+  \item Para dúvidas ou sugestões, consulte o repositório do projeto ou entre em contato com o autor.
+\end{itemize}
+
+\end{document}

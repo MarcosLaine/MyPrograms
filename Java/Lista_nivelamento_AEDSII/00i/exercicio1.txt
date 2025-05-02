@@ -1,0 +1,10 @@
+Início:
+x: 5
+
+Chamada para passagemDeTipoPrimitivo(x):
+x: 5
+a: 5
+a: 10
+
+Após a chamada:
+x: 5

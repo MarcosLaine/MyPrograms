@@ -1,0 +1,64 @@
+Inicialmente:
+x1 = (uninitialized)
+x2 = (uninitialized)
+x3 = (uninitialized)
+
+Após x1 = (int*) malloc(sizeof(int)):
+x1 = (allocated memory)
+  Valor: uninitialized
+x2 = (uninitialized)
+x3 = (uninitialized)
+
+Após *x1 = 20:
+x1 = (allocated memory)
+  Valor: 20
+x2 = (uninitialized)
+x3 = (uninitialized)
+
+Após x2 = *x1:
+x1 = (allocated memory)
+  Valor: 20
+x2 = 20
+x3 = (uninitialized)
+
+Após *x3 = x2 * *x1:
+x1 = (allocated memory)
+  Valor: 20
+x2 = 20
+x3 = 400
+
+Após x3 = &x2:
+x1 = (allocated memory)
+  Valor: 20
+x2 = 20
+x3 = (address of x2)
+
+Após x2 = 15:
+x1 = (allocated memory)
+  Valor: 20
+x2 = 15
+x3 = (address of x2)
+
+Após x2 = 13 & 3:
+x1 = (allocated memory)
+  Valor: 20
+x2 = 13
+x3 = (address of x2)
+
+Após x2 = 13 | 3:
+x1 = (allocated memory)
+  Valor: 20
+x2 = 15
+x3 = (address of x2)
+
+Após x2 = 13 >> 1:
+x1 = (allocated memory)
+  Valor: 20
+x2 = 6
+x3 = (address of x2)
+
+Após x2 = 13 << 1:
+x1 = (allocated memory)
+  Valor: 20
+x2 = 12
+x3 = (address of x2)

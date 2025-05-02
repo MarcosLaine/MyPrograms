@@ -1,0 +1,10 @@
+*.exe
+*.class
+*.in
+*.out
+bin
+.vs
+.metals
+*.txt
+build
+Flutter/data_persistence.zip

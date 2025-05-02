@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="Java/TP02"/>
+	<classpathentry kind="src" path="Java/TP03"/>
+	<classpathentry kind="src" path="Java/Exercícios_e_testes"/>
+	<classpathentry kind="src" path="Java/TP04"/>
+	<classpathentry kind="src" path="Java/Estudos"/>
+	<classpathentry kind="src" path="Java/Jogo da Velha"/>
+	<classpathentry kind="src" path="TPs/TP1"/>
+	<classpathentry kind="src" path="TPs/TP2"/>
+	<classpathentry kind="src" path="Python/Py2Exe"/>
+	<classpathentry kind="src" path="TPs/TP3"/>
+	<classpathentry kind="src" path="TPs/TP4"/>
+	<classpathentry kind="src" path="Java/Grafos"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

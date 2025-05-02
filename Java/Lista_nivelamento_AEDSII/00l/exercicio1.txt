@@ -1,0 +1,11 @@
+Início:
+f1: null
+
+Antes da criação do objeto:
+f1: null
+
+Após a criação do objeto (f1 = new Funcionario()):
+f1: [codigo: 0, nome: null]
+
+Após a criação do segundo objeto (f1 = new Funcionario(5)):
+f1: [codigo: 5, nome: null]

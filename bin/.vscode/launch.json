@@ -1,0 +1,52 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Palindromo",
+      "request": "launch",
+      "mainClass": "Palindromo",
+      "projectName": "TP1_d37c9ed3"
+    },
+    {
+      "type": "java",
+      "name": "Is",
+      "request": "launch",
+      "mainClass": "Is",
+      "projectName": "TP1_d37c9ed3"
+    },
+    {
+      "type": "java",
+      "name": "Alteracao",
+      "request": "launch",
+      "mainClass": "Alteracao",
+      "projectName": "TP1_d37c9ed3"
+    },
+    {
+      "type": "java",
+      "name": "Ciframento",
+      "request": "launch",
+      "mainClass": "Ciframento",
+      "projectName": "TP1_d37c9ed3"
+    },
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "cppdbg",
+      "request": "launch",
+      "args": [],
+      "stopAtEntry": false,
+      "externalConsole": true,
+      "cwd": "c:/Users/kino1/Desktop/Programacao/MyPrograms/TPs/TP1",
+      "program": "c:/Users/kino1/Desktop/Programacao/MyPrograms/TPs/TP1/build/Debug/outDebug",
+      "MIMode": "gdb",
+      "miDebuggerPath": "gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ]
+    }
+  ]
+}
